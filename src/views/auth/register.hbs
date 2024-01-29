@@ -1,39 +1,42 @@
-<link rel="stylesheet" href="/css/registro.css">
+<link rel="stylesheet" href="../../public/css/register.css">
 
 <body>
     <section id="container">
         <header>Registrate</header>
-       
+
         <form action="/signup" method="POST" id="form">
             <div id="input-box">
                 <label>Nombres:</label>
-                <input type="text" name="nombres_Dueño" placeholder="Ingresa tus nombres completos" required />
+                <input type="text" name="nombres_Dueño" placeholder="Ingresa tus nombres completos"  />
             </div>
             <div id="input-box">
                 <label>Apellidos:</label>
-                <input type="text" name="apellidos_Dueño" placeholder="Ingresa tus apellidos completos" required />
+                <input type="text" name="apellidos_Dueño" placeholder="Ingresa tus apellidos completos"  />
             </div>
-            <div id="input-box">
-                <label>Contraseña:</label>
-                <input type="password" name="password_Dueño" placeholder="*******" required />
-            </div>
-            <div id="input-box">
-                <label>Correo Electronico:</label>
-                <input type="email"  name="correo_electronico_Dueño" placeholder="ejemplo@gmail.com" required />
-            </div>
+
             <div id="column">
                 <div id="input-box">
                     <label>Celular:</label>
-                    <input type="number" name="celular_Dueño" placeholder="099860898" required />
+                    <input type="number" name="celular_Dueño" placeholder="099860898"  />
                 </div>
                 <div id="input-box">
                     <label>Cedula:</label>
-                    <input type="number" name="cedula_Dueño" placeholder="######" required />
+                    <input type="number" name="cedula_Dueño" placeholder="######"  />
                 </div>
             </div>
-            <button type="submit" >Guardar</button>
+            <div id="input-box">
+                <label>Correo Electronico:</label>
+                <input type="email" name="correo_electronico_Dueño" placeholder="ejemplo@gmail.com"  />
+            </div>
+
+            <div id="input-box">
+                <label>Contraseña:</label>
+                <input type="password" name="password_Dueño" placeholder="*******"  />
+            </div>
+
+            <button type="submit">Guardar</button>
         </form>
 
     </section>
-     <center>¿Ya tienes una cuenta? <a href="/signin">Inicia Sesion</a></center>
+    <center>¿Ya tienes una cuenta? <a href="/signin">Inicia Sesion</a></center>
 </body>
