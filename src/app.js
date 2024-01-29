@@ -88,6 +88,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Rutas - Definir tus rutas aquí
 app.use(require('./router/auth.router'))
+app.get('/', (req, res) => {
+    res.redirect('/signin');
+  });
 app.use(require('./router/factura.router'))
 
 

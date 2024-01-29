@@ -19,7 +19,7 @@ router.get('/signin', isNotLoggedIn, (req, res) => {
       failureFlash: true
     })(req, res, next);
   });
-  
+
   
   router.get('/signup', isNotLoggedIn, (req, res) => {
     res.render('auth/register');
