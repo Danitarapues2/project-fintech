@@ -7,6 +7,7 @@ const forma_pago=(sequelize,type)=>{
         },
 
         nombre_forma_pago: type.STRING,
+        estado: type.STRING,
 
         crearFormaPago:{
             type:'TIMESTAMP',

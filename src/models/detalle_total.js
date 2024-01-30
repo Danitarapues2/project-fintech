@@ -6,8 +6,8 @@ const detalle_total=(sequelize,type)=>{
             autoIncrement:true 
         },
         
-        base_imponible_12: type.STRING,
-        base_imponible_0: type.STRING,
+        impuesto_12: type.STRING,
+        impuesto_0: type.STRING,
         descuento: type.STRING,
         valor_subtotal: type.STRING,
         valor_iva: type.STRING,
