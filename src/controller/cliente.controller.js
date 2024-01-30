@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const clienteCtl = {}
 const orm =require('../database/dataBase.orm')
 const sql =require('../database/dataBase.sql')
@@ -58,3 +59,6 @@ clienteCtl.eliminar= async(req,res)=>{
 
 }
 module.exports=clienteCtl
+=======
+const objetivoCtl ={}
+>>>>>>> 9e4af19272f5ce64e27ccaa3cd76eac25a62688a

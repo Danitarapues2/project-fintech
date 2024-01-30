@@ -6,7 +6,7 @@ const tienda=(sequelize,type)=>{
             autoIncrement:true 
         },
         nombre_tienda: type.STRING,
-        RUC_tienda: type.STRING,
+        ruc_tienda: type.STRING,
         dirección_matriz: type.STRING,
         direccion_sucursal: type.STRING,
         correo_electronico_tienda: type.STRING,
