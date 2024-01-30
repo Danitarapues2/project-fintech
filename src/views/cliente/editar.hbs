@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="/css/cliente.css">
+<div="contenedor">
+    {{#each lista}}
+    <form action="/cliente/editar" method="POST">
+        <div id="titulo">
+            <h2>Actualizar cliente</h2>
+        </div>
+        <div id="nombre">
+            <label>nombre Cliente:</label>
+            <input type="text" name="nombre_cliente" value="{{nombre_cliente}}" required
+                placeholder="Ingrese su nombre">
+        </div>
+
+        <div id="apellido">
+            <label>apellido Cliente:</label>
+            <input type="text" name="apellido_cliente" value="{{apellido_cliente}}" required
+                placeholder="Ingrese su apellido">
+        </div>
+
+        <div id="direccion">
+            <label>direccion Cliente:</label>
+            <input type="text" name="direccion_cliente" value="{{direccion_cliente}}" required
+                placeholder="Ingrese su direccion">
+        </div>
+
+        <div id="correo">
+            <label>correo Cliente:</label>
+            <input type="text" name="correo_cliente" value="{{correo_cliente}}" required
+                placeholder="Ingrese su correo">
+        </div>
+
+        <div id="celular">
+            <label>celular Cliente:</label>
+            <input type="text" name="celular_cliente" value="{{celular_cliente}}" required
+                placeholder="Ingrese su celular">
+        </div>
+
+        <div id="cedula">
+            <label>cedula Cliente:</label>
+            <input type="text" name="cedula_cliente" value="{{cedula_cliente}}" required
+                placeholder="Ingrese su cedula">
+        </div>
+
+        <div id="boton">
+            <button type="submit">Actualizar</button>
+        </div>
+    </form>
+    {{/each}}
+</div>

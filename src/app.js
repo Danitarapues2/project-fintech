@@ -92,7 +92,7 @@ app.get('/', (req, res) => {
     res.redirect('/signin');
   });
 app.use(require('./router/factura.router'))
-
+app.use('/cliente', require('./router/cliente.router'))
 
 // Exportar la aplicación
 module.exports = app;
