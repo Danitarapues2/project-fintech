@@ -1,30 +1,32 @@
-<link rel="stylesheet" href="/css/cliente/cliente.css">
-<form action="cliente/listar/"method="get"></form>
 
-<h1>Listado del Clientes</h1>
-<div id="contenedor">
-    
+<link rel="stylesheet" href="/css/cliente/listar.css">
+<form action="cliente/listar/" method="get"></form>
+
+
+<div id="cliente-listar-container">
+    <h1>Listado del Clientes</h1>
     <div class="row">
         {{#each lista}}
         <div id="tarjeta">
-            <u><h2>Datos del Cliente</h2></u>
+            <u>
+                <h2>Datos del Cliente</h2>
+            </u>
             <div>
                 <p>{{nombre_cliente}}</p>
                 <p>{{apellido_cliente}}</p>
                 <p>{{direccion_cliente}}</p>
                 <p>{{correo_cliente}}</p>
                 <p>{{cedula_cliente}}</p>
-
-
-            <div>
                 <div>
-                    <a href="/cliente/editar/{{id_cliente}}"><button type="button">Editar</button></a>
-                </div></p>
-                <div>
-                    <a href="/cliente/eliminar/{{id_cliente}}"><button type="button" style="background-color: red;">Eliminar</button></a>
-                </div></p>
+                    <div>
+                        <a href="/cliente/editar/{{id_cliente}}"><button type="button">Editar</button></a>
+                    </div>
+                    <div>
+                        <a href="/cliente/eliminar/{{id_cliente}}"><button type="button"
+                                style="background-color: red;">Eliminar</button></a>
+                    </div>
+                </div>
             </div>
+            {{/each}}
         </div>
-        {{/each}}
     </div>
-</div>

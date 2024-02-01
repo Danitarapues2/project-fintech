@@ -8,7 +8,7 @@ const usuarios = require('../models/usuario');
 
 
 router.get('/signin', isNotLoggedIn, (req, res) => {
-    res.render('auth/login');
+    res.render('auth/login', { showNavbar: false });
   });
   
   router.post('/signin', isNotLoggedIn, async (req, res, next) => {
@@ -22,7 +22,7 @@ router.get('/signin', isNotLoggedIn, (req, res) => {
 
   
   router.get('/signup', isNotLoggedIn, (req, res) => {
-    res.render('auth/register');
+    res.render('auth/register', { showNavbar: false });
   });
   
   router.post('/signup', passport.authenticate('local.signup', {

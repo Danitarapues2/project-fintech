@@ -1,9 +1,9 @@
 const clienteCtl = {}
-const sql = require('../Database/dataBase.sql')
-const orm = require('../Database/dataBase.orm')
+const sql = require('../database/dataBase.sql')
+const orm = require('../database/dataBase.orm')
 
 clienteCtl.mostrar = (req, res) => {
-    res.render('cliente/agregar');
+    res.render('cliente/agregar', { showNavbar: true });
 }
 
 //mandar
@@ -26,14 +26,14 @@ clienteCtl.mandar = async (req, res) => {
 
 clienteCtl.listar = async (req, res) => {
     const lista = await sql.query('select * from clientes')
-    res.render('cliente/listar', { lista })
+    res.render('cliente/listar', { lista, showNavbar: true })
 }
 
 //traer datos
 clienteCtl.traer = async (req, res) => {
     const ids = req.params.id
     const lista = await sql.query('select * from clientes where id_cliente =?', [ids])
-    res.render('cliente/editar', { lista })
+    res.render('cliente/editar',{ lista, showNavbar: true })
 }
 
 clienteCtl.actualizar = async (req, res) => {

@@ -1,36 +1,34 @@
-<link rel="stylesheet" href="/css/cliente/cliente.css">
+<link rel="stylesheet" href="/css/cliente/agregar.css">
 <form action="/cliente/agregar" method="post">
 
-   <body>
-      <div id="container">
+   <div id="cliente-agregar-container">
 
-         <h2>Agregar Clientes</h2>
-      
-         <label id="nombre" for="nombre">Nombres</label> <br>
-         <input type="text" id="nombre_cliente" name="nombre_cliente" required>
+      <h2>Agregar Clientes</h2>
 
-         <label id="apellido" for="apellido">Apellidos</label> <br>
-         <input type="text" id="apellido_cliente" name="apellido_cliente" required>
+      <label id="nombre" for="nombre">Nombres</label>
+      <input type="text" id="nombre_cliente" name="nombre_cliente" required>
+      <br>
+      <label id="apellido" for="apellido">Apellidos</label>
+      <input type="text" id="apellido_cliente" name="apellido_cliente" required>
+      <br>
+      <label id="direccion" for="direccion">Dirrecion</label>
+      <input type="text" id="direccion_cliente" name="direccion_cliente" required>
+      <br>
+      <label id="correo" for="correo">Correo</label>
+      <input type="text" id="correo_cliente" name="correo_cliente" required>
+      <br>
+      <label id="celular" for="celular_cliente">Celular</label>
+      <input type="text" id="celular_cliente" name="celular_cliente" required>
+      <br>
+      <label id="cedula" for="cedula<">Cedula</label>
+      <input type="text" id="cedula_cliente" name="cedula_cliente" required>
 
-         <label id="direccion" for="direccion">Dirrecion</label> <br>
-         <input type="text" id="direccion_cliente" name="direccion_cliente" required>
+      <br> <br><br>
 
-         <label id="correo" for="correo">Correo</label> <br>
-         <input type="text" id="correo_cliente" name="correo_cliente" required>
-
-         <label id="celular" for="celular_cliente">Celular</label> <br>
-         <input type="text" id="celular_cliente" name="celular_cliente" required>
-
-         <label id="cedula" for="cedula<">Cedula</label> <br>
-         <input type="text" id="cedula_cliente" name="cedula_cliente" required>
-
-         <br> <br><br>
-         <br> <br>
-         <div class="registrarse">
-            <button (click)="crearRegistro()">Registrar</button>
-         </div>
-         <div id="boton">
-            <button type="submit" id="">Guardar</button>
-         </div>
-   </body>
+      <div class="registrarse">
+         <button (click)="crearRegistro()">Registrar</button>
+      </div>
+      <div id="boton">
+         <button type="submit" id="">Guardar</button>
+      </div>
 </form>

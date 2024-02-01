@@ -1,28 +1,35 @@
-<link rel="stylesheet" href="/css/login.css">
+<link rel="stylesheet" href="/css/auth/login.css">
 <title>Inicio de Sesion</title>
-<body>
+
+<body id="body">
     <div class="box">
-         <div class="form">
-    <section id="container">
-        <h2><center>Iniciar Sesion</h2></center>
-              
-        <form action="/signin" method="POST" id="form">
-            <div class="input-box">
-                <span>Correo Electrónico:</span>
-                <input type="email" name="correo_electronico_Dueño"required="required" />
-                <i></i>
-            </div>
-            <div class="input-box">
-                <span>Contraseña:</span>
-                <input type="password" name="password_Dueño" required="required" />
-                <i></i>
-            </div>
-            <center><button type="submit">Ingresar</button></center>
-            <br>
-            <div class="links">
-            <center>¿No tienes una cuenta? <a href="/signup">Registrate</a></center>
-            </div>
-            </div>
-        </form>
-    </section>
+        <div class="form">
+            <section id="container">
+                <h2>
+                    <center>Iniciar Sesion
+                </h2>
+                </center>
+
+                <form action="/signin" method="POST" id="form">
+                    <div class="input-box">
+                        <span>Correo Electrónico:</span>
+                        <input type="email" name="correo_electronico_Dueño" required="required" />
+                        <i></i>
+                    </div>
+                    <div class="input-box">
+                        <span>Contraseña:</span>
+                        <input type="password" name="password_Dueño" required="required" />
+                        <i></i>
+                    </div>
+                    <center><button type="submit">Ingresar</button></center>
+                    <br>
+                    <div class="links">
+                        <center>¿No tienes una cuenta? <a href="/signup">Registrate</a></center>
+                    </div>
+                </form>
+            </section>
+        </div>
+
+
+    </div>
 </body>
