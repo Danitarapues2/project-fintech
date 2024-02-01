@@ -39,11 +39,11 @@ sequelize.sync({ force: false })
 	});
 
 
-const usuarioModel = require('../models/usuario')
-const tiendaModel = require('../models/tienda')
+const usuarioModel = require('../models/usuario');
+const tiendaModel = require('../models/tienda');
 const clienteModel = require('../models/cliente');
-const facturaModel = require('../models/factura')
-const formaPagoModel = require('../models/forma_pago')
+const facturaModel = require('../models/factura');
+const formaPagoModel = require('../models/forma_pago');
 const detalleFacturaModel = require("../models/detalle_factura");
 const detalleTotalModel = require("../models/detalle_total");
 
@@ -91,10 +91,8 @@ module.exports = {
 	forma_pago,
 	cliente,
 	detalle_factura,
-	detalle_total
+	detalle_total,
 };
 
 
-// Exportar el objeto sequelize
-module.exports = sequelize;
 

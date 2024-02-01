@@ -1,9 +1,9 @@
-const cliente=(sequelize,type)=>{
-    return sequelize.define('clientes',{
-        id_cliente:{
-            type:type.INTEGER,
-            primaryKey:true,
-            autoIncrement:true 
+const cliente = (sequelize, type) => {
+    return sequelize.define('clientes', {
+        id_cliente: {
+            type: type.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
         },
         nombre_cliente: type.STRING,
         apellido_cliente: type.STRING,
@@ -11,19 +11,24 @@ const cliente=(sequelize,type)=>{
         correo_cliente: type.STRING,
         celular_cliente: type.STRING,
         cedula_cliente: type.STRING,
-
+    
         crearCliente:{
-            type:'TIMESTAMP',
+            type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP'),
-            allowNull:false
+            allowNull: false
         },
-        actualizarCliente:{
-            type:'TIMESTAMP',
+        actualizarCliente: {
+            type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP'),
-            allowNull:false
+            allowNull: false
         }
     }, {
-        timestamps:false,
+        timestamps: false,
     });
 }
 module.exports = cliente
+
+
+
+        
+

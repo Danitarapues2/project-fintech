@@ -1,50 +1,30 @@
-<link rel="stylessheet" href="/css/cliente/cliente.css" />
+<link rel="stylesheet" href="/css/cliente/cliente.css">
+<form action="cliente/listar/"method="get"></form>
+
+<h1>Listado del Clientes</h1>
+<div id="contenedor">
+    
+    <div class="row">
+        {{#each lista}}
+        <div id="tarjeta">
+            <u><h2>Datos del Cliente</h2></u>
+            <div>
+                <p>{{nombre_cliente}}</p>
+                <p>{{apellido_cliente}}</p>
+                <p>{{direccion_cliente}}</p>
+                <p>{{correo_cliente}}</p>
+                <p>{{cedula_cliente}}</p>
 
 
-<form action="/cliente/listar/{{id_cliente}}" method="get">
-    <div id="container">
-        <div class="row">
-            {{#each lista}}
-            <div id="nombre">
-                <h3>Nombre del cliente</h3>
-                <p><strong>Nombre Cliente</strong>{{nombre_cliente}}</p>
+            <div>
+                <div>
+                    <a href="/cliente/editar/{{id_cliente}}"><button type="button">Editar</button></a>
+                </div></p>
+                <div>
+                    <a href="/cliente/eliminar/{{id_cliente}}"><button type="button" style="background-color: red;">Eliminar</button></a>
+                </div></p>
             </div>
-
-            <div id="apellido">
-                <h3>Apellido del cliente</h3>
-                <p><strong>Apellido Cliente</strong>{{apellido_cliente}}</p>
-            </div>
-
-            <div id="direccion">
-                <h3>Direccion del cliente</h3>
-                <p><strong>Direccion Cliente</strong>{{direccion_cliente}}</p>
-            </div>
-
-            <div id="correo">
-                <h3>Correo del cliente</h3>
-                <p><strong>Correo Cliente</strong>{{correo_cliente}}</p>
-            </div>
-
-            <div id="celular">
-                <h3>Celular del cliente</h3>
-                <p><strong>Celular Cliente</strong>{{celular_cliente}}</p>
-            </div>
-
-            <div id="cedula">
-                <h3>Cedula del cliente</h3>
-                <p><strong>Cedula Cliente</strong>{{cedula_cliente}}</p>
-            </div>
-
-            <div id="boton">
-                <a href="/cliente/editar/{{id_cliente}}"><button type="button">Editar</button></a>
-            </div>
-
-            <div id="eliminar">
-                <a href="/cliente/eliminar/{{id_cliente}}"><button type="button">Eliminar</button></a>
-            </div>
-
-            {{/each }}
         </div>
+        {{/each}}
     </div>
-
-</form>
+</div>
