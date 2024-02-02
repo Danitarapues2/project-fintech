@@ -62,11 +62,11 @@ label {
 
 #iniciar-sesion-link {
     color: cornflowerblue;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 #separacion {
-    padding-left: 50px;
+    padding-left: 10px;
 }
 
 button[type="submit"] {
@@ -96,7 +96,7 @@ input {
 img {
     position: absolute;
     top: 0;
-    width: 13%;
+    width: 15%;
     margin-bottom: 5px;
 
 }
