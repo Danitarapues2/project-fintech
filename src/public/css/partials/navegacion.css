@@ -156,11 +156,11 @@ select {
 .navbar-container {
     top: 0;
     padding: 0;
-    width: 5em;
+    width: 5.5em;
     height: 100vh;
     position: fixed;
     background-color: #1f547e;
-    transition: width .30s cubic-bezier(var(--transition-main), 1);
+    transition: width .35s cubic-bezier(var(--transition-main), 1);
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -191,13 +191,18 @@ select {
 
 /* Navbar Logo */
 .navbar-logo {
-    margin: 0 0 1em 0;
+    margin: 0 0 0.5em 0;
     width: 100%;
     height: 5em;
+    padding-left: 5px;
+    box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.514);
+    border-radius: 45px;
+
 }
 
 .navbar-logo>.navbar-item-inner {
     width: calc(5rem - 6px);
+
 }
 
 .navbar-logo>.navbar-item-inner:hover {
