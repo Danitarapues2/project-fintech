@@ -1,0 +1,113 @@
+.body {
+    background-color: #918f8f;
+}
+
+.box {
+    box-sizing: border-box;
+    font-family: 'bold, Times New Roman', Times, serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    padding-left: 100px;
+}
+
+.form {
+    inset: 2%;
+    border-radius: 4%;
+    background: #ffffff;
+    padding: 2% 9%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 7%;
+}
+
+.form h1 {
+    color: #494F70;
+    font-size: 300%;
+    font-family: corber;
+    font-weight: 800;
+    text-align: center;
+    letter-spacing: 0.1em;
+}
+
+.box-nombre-apellido {
+    position: relative;
+    width: 250px;
+    margin-top: 20px;
+}
+
+.box-celular-cedula {
+    position: relative;
+    width: 250px;
+    margin-top: 20px;
+}
+
+.box-correo-contraseña {
+    position: relative;
+    width: 250px;
+    margin-top: 20px;
+}
+
+#input-box {
+    display: flex;
+    flex-direction: row;
+}
+
+label {
+    color: #2874A6;
+    font-size: 20px;
+}
+
+#iniciar-sesion-link {
+    color: cornflowerblue;
+    font-size: 25px;
+}
+
+#separacion {
+    padding-left: 50px;
+}
+
+button[type="submit"] {
+    border: none;
+    outline: none;
+    background: #1F547E;
+    padding: 11px 25px;
+    width: 200px;
+    margin-top: 10px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+}
+
+button[type="submit"]:active {
+    margin: 0 auto;
+    opacity: 0.4;
+}
+
+input {
+    height: 30px;
+    border-radius: 10px;
+    border: solid #EAE7EE;
+}
+
+img {
+    position: absolute;
+    top: 0;
+    width: 13%;
+    margin-bottom: 5px;
+
+}
+
+#pregunta-cuenta {
+    color: #494F70;
+}
+
+#iniciar-sesion {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+}

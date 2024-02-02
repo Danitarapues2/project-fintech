@@ -1,42 +1,50 @@
-<link rel="stylesheet" href="/css/register.css">
+<link rel="stylesheet" href="/css/auth/register.css">
 
-<body>
-    <section id="container">
-        <header>Registrate</header>
-        <h1>titulo</h1>
+<body class="body">
+    <div class="box">
+        <img src="/img/logo.png" alt="MDN"/>
+        <div class="form">
+            <section id="container">
+                <h1>Registrate</h1>
+                <div id="iniciar-sesion"><div id="pregunta-cuenta">¿Ya tienes una cuenta?</div> <a id="iniciar-sesion-link" href="/signin">Inicia Sesion</a></div>
+                <form action="/signup" method="POST" id="form">
+                    <div id="input-box" class="box-nombre-apellido">
+                        <div>
+                            <label>Nombres:</label>
+                            <input type="text" name="nombres_Dueño" placeholder="Ingresa tus nombres completos" />
+                        </div>
+                        <div id="separacion">
+                            <label>Apellidos:</label>
+                            <input type="text" name="apellidos_Dueño" placeholder="Ingresa tus apellidos completos" />
+                        </div>
+                    </div>
+                    <div id="input-box" class="box-celular-cedula">
+                        <div>
+                            <label>Celular:</label>
+                            <input type="number" name="celular_Dueño" placeholder="099860898" />
+                        </div>
+                        <div id="separacion">
+                            <label>Cedula:</label>
+                            <input type="number" name="cedula_Dueño" placeholder="######" />
+                        </div>
+                    </div>
 
-        <form action="/signup" method="POST" id="form">
-            <div id="input-box">
-                <label>Nombres:</label>
-                <input type="text" name="nombres_Dueño" placeholder="Ingresa tus nombres completos" />
-            </div>
-            <div id="input-box">
-                <label>Apellidos:</label>
-                <input type="text" name="apellidos_Dueño" placeholder="Ingresa tus apellidos completos" />
-            </div>
-            <div id="column">
-                <div id="input-box">
-                    <label>Celular:</label>
-                    <input type="number" name="celular_Dueño" placeholder="099860898" />
-                </div>
-                <div id="input-box">
-                    <label>Cedula:</label>
-                    <input type="number" name="cedula_Dueño" placeholder="######" />
-                </div>
-            </div>
-            <div id="input-box">
-                <label>Correo Electronico:</label>
-                <input type="email" name="correo_electronico_Dueño" placeholder="ejemplo@gmail.com" />
-            </div>
+                    <div id="input-box" class="box-correo-contraseña">
+                        <div>
+                            <label>Correo:</label>
+                            <input type="email" name="correo_electronico_Dueño" placeholder="ejemplo@gmail.com" />
+                        </div>
+                        <div id="separacion">
+                            <label>Contraseña:</label>
+                            <input type="password" name="password_Dueño" placeholder="*******" />
+                        </div>
+                    </div>
+                    <div >
+                    <center><button type="submit">Guardar</button></center>
+                    </div>
+                </form>
 
-            <div id="input-box">
-                <label>Contraseña:</label>
-                <input type="password" name="password_Dueño" placeholder="*******" />
-            </div>
-
-            <button type="submit">Guardar</button>
-        </form>
-
-    </section>
-    <center>¿Ya tienes una cuenta? <a href="/signin">Inicia Sesion</a></center>
+            </section>
+        </div>
+    </div>
 </body>
