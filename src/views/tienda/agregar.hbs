@@ -1,8 +1,23 @@
 <link rel="stylesheet" href="/css/tienda/agregar.css">
 
-
-
 <div id="tienda-agregar-container">
     <h1>tienda Agregar</h1>
+    <div>
+        <form action="/tienda/agregar/" method="post" id="contenedor">
 
+            <input name="nombre_tienda" type="text" id="nombre_tienda" placeholder="Nombre del Negocio">
+            <br>
+            <input name="ruc_tienda" type="text" id="ruc_tienda" placeholder="No. de Ruc">
+            <br>
+            <input name="direccion_matriz" type="text" id="direccion_matriz" placeholder="Ingresa la direccion Matriz">
+            <br>
+            <input name="direccion_sucursal" type="text" id="direccion_sucursal" placeholder="ingresa la direccion Sucural">
+            <br>
+            <input name="correo_electronico_tienda" type="text" id="correo_electronico_tienda" placeholder="Ingresa el correo de la tienda">
+            <br>
+            <input name="telefono_tienda" type="text" id="telefono_tienda" placeholder="No. telefono">
+
+            <button id="btn" type="submit">Guardar</button>
+        </form>
+    </div>
 </div>

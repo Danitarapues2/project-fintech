@@ -4,5 +4,27 @@
 
 <div id="tienda-editar-container">
     <h1>tienda editar</h1>
+    {{#each lista}}
+    <form action="/tienda/editar/{{id_tienda}}" method="post" id="contenedor">
 
+        <input name="nombre_tienda" value="{{nombre_tienda}}" type="text" id="negocio" placeholder="Nombre del Negocio">
+        <br>
+        <input name="ruc_tienda" value="{{ruc_tienda}}" type="number" id="ruc" placeholder="No. de Ruc">
+        <br>
+        <input name="direccion_matriz" value="{{direccion_matriz}}" type="text" id="matriz"
+            placeholder="Direccion Matriz">
+        <br>
+
+        <input name="direccion_sucursal" value="{{direccion_sucursal}}" type="text" id="sucursal"
+            placeholder="Direccion Sucural">
+        <br>
+        <input name="correo_electronico_tienda" value="{{correo_electronico_tienda}}" type="text" id="email"
+            placeholder="Correo Electronico">
+        <br>
+        <input name="telefono_tienda" value="{{telefono_tienda}}" type="number" id="telefono"
+            placeholder="No. telefono">
+        <br>
+        <button id="btn" type="submit">Actualizar</button>
+    </form>
+    {{/each}}
 </div>

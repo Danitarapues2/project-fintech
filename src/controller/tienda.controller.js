@@ -9,12 +9,12 @@ tiendaCtl.mostrar = (req, res) => {
 //mandar
 tiendaCtl.mandar = async (req, res) => {
     const id =req.id_tienda  //ojo
-    const { nombre_tienda,ruc_tienda,direccion_cliente,dirección_matriz,direccion_sucursal,correo_electronico_tienda,telefono_tienda } = req.body
+    const { nombre_tienda,ruc_tienda,direccion_cliente,direccion_matriz,direccion_sucursal,correo_electronico_tienda,telefono_tienda } = req.body
     const nuevoEnvio = {
         nombre_tienda,
         ruc_tienda,
         direccion_cliente,
-        dirección_matriz,
+        direccion_matriz,
         direccion_sucursal,
         correo_electronico_tienda,
         telefono_tienda
@@ -39,12 +39,12 @@ tiendaCtl.traer = async (req, res) => {
 
 tiendaCtl.actualizar = async (req, res) => {
     const ids = req.params.id
-    const {nombre_tienda,ruc_tienda,direccion_cliente,dirección_matriz,direccion_sucursal,correo_electronico_tienda,telefono_tienda } = req.body
+    const {nombre_tienda,ruc_tienda,direccion_cliente,direccion_matriz,direccion_sucursal,correo_electronico_tienda,telefono_tienda } = req.body
     const nuevoEnvio = {
         nombre_tienda,
         ruc_tienda,
         direccion_cliente,
-        dirección_matriz,
+        direccion_matriz,
         direccion_sucursal,
         correo_electronico_tienda,
         telefono_tienda

@@ -1,8 +1,17 @@
 <link rel="stylesheet" href="/css/tienda/listar.css">
 
 
-
 <div id="tienda-listar-container">
     <h1>tienda Listar</h1>
+    {{#each lista}}
 
+    <a href="/tienda/editar/{{id_tienda}}"><button id="btn">Editar</button></a>
+    <p>{{nombre_tienda}}</p>
+    <p>{{ruc_tienda}}</p>
+    <p>{{direccion_matriz}}</p>
+    <p>{{direccion_sucursal}}</p>
+    <p>{{correo_electronico}}</p>
+    <p>{{telefono_tienda}}</p>
+
+    {{/each}}
 </div>
