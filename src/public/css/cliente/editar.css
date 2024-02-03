@@ -1,12 +1,9 @@
-#cliente-editar-container{
-    padding-left: 400px;
-}
 body {
     font-family: Arial, sans-serif;
     background-color: #c9c9c9;
 }
 
-#cliente-agregar-container {
+#cliente-editar-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,8 +13,8 @@ body {
 .box {
     background-color: #f1f0f0;
     width: 30%;
-    padding: 60px;
-    height: 60vh;
+    padding: 70px;
+    height: 75vh;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -72,11 +69,11 @@ button[type="submit"] {
     cursor: pointer;
  }
 
- button:hover {
+ button:hover [type="submit"]{
     background-color: #1F547E;
 }
 
-button {
+button[type="cancelar"] {
     padding: 10px 20px;
     margin-right: 10px;
     background-color: #9e0000;
@@ -86,6 +83,6 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+button:hover[type="cancelar"] {
     background-color: #9e0000;
 }
