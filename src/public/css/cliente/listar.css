@@ -1,3 +1,110 @@
-#cliente-listar-container{
-    padding-left: 400px;
+#cliente-listar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: -160px;
+}
+
+#cliente-listar-contenido {
+    border: 1px solid black;
+    display: flex;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.thead-titulos {
+    overflow: hidden;
+    border-radius: 10px;
+    border: 2px solid black;
+    background-color: #ffffff;
+}
+
+table {
+    border-collapse: separate;
+}
+
+.fila-titulos th {
+    border: none;
+
+    padding: 1px 15px 1px 15px;
+}
+
+p {
+    font-size: 15px;
+    font-weight: bold;
+    color: #604E4E;
+    font-family: Arial, sans-serif;
+}
+
+.titulo-gestion {
+    size: 50px;
+    font-weight: bold;
+    color: black;
+    font-family: Arial, sans-serif;
+    padding-top: 5px;
+    margin-left: 288px;
+
+}
+
+.th-titulos-esquina-izquierda {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+
+.th-titulos-esquina-derecha {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.td-campos {
+    padding: 5px 10px 5px 10px;
+    font-size: 15px;
+    font-weight: bold
+}
+
+.titulo-gestion {
+    justify-content: center;
+    font-size: 15px;
+    font-weight: bold
+}
+
+.div-table {
+    background-color: #EAEAEA;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+    display: inline-table;
+    padding: 1px;
+    border-radius: 10px;
+    display: inline-block;
+    justify-content: center;
+}
+
+.fila-titulos {
+    border-radius: 10px;
+}
+
+.button-agregar {
+    background-color: #1F547E;
+    padding: 5px 15px 5px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 0 auto;
+    margin-top: 15px;
+    display: block;
+    border: solid #1F547E;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.270);
+}
+
+.buscador {
+    text-align: right;
+
+}
+
+.buscador input {
+    border: 1px solid rgb(96, 96, 96);
+    border-radius: 5px;
+    width: 200px;
+    height: 25px;
+    text-align: center;
 }
