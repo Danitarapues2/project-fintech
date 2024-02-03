@@ -77,7 +77,7 @@ passport.use(
             } else {
                 if (usuarios) {
                     const usuario = usuarios;
-                    if (username == usuario.nombres_Usuarios) {
+                    if (username == usuario.nombres_usuarios) {
                         done(null, false, req.flash("message", "El nombre de usuario ya existe."));
                     } else {
                         let nuevoUsuario = {
