@@ -42,6 +42,7 @@ input {
     border: 1px solid #1F547E;
     border-radius: 2px;
     background-color:#1F547E ;
+    align-content: center;
 }
 .input-box input {
     position: relative;
