@@ -69,7 +69,7 @@ button[type="submit"] {
     cursor: pointer;
  }
 
- button:hover {
+ button:hover[type="submit"] {
     background-color: #1F547E;
 }
 

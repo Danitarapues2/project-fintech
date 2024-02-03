@@ -2,20 +2,26 @@
 <title>Inicio de Sesion</title>
 <body>
     <section id="container">
-        <header>Iniciar Sesion</header>
+        <div class="box">
+            <div class="form">
+        <h2>Iniciar Sesion</h2>
         <center><a href="/"><img src="/img/logo.png" alt=""></a></center>
         <form action="/login" method="POST" id="form">
-            <div id="input-box">
+            <div class="input-box">
                 <label>Tu Email:</label>
                 <input type="email" name="correo_electronico_usuario" placeholder="ejemplo@gmail.com" required />
             </div>
-            <div id="input-box">
+            <div class="input-box">
                 <label>Contraseña:</label>
                 <input type="password" name="password_usuario" placeholder="Contraseña:" required />
             </div>
-            <button type="submit">Ingregsar</button>
+            <center><button type="submit">Ingresar</button></center>
             <br>
+             <div class="links">
             <center>¿No tienes una cuenta? <a href="/registro">Registrate</a></center>
+            </div>
+            </div>
+            </div>
         </form>
     </section>
 </body>
