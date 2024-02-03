@@ -87,7 +87,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 // Rutas - Definir tus rutas aquí
-app.use(require('./router/auth.router'))
+app.use(require("./router/registro.router"))
 app.use('/cliente', require('./router/cliente.router'))
 app.use('/tienda', require('./router/tienda.router'))
 

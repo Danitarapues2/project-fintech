@@ -1,0 +1,361 @@
+<link rel="stylesheet" href="/css/crear.css">
+
+<title>Crear Factura</title>
+
+<head>
+    <script>
+
+        // Función para mostrar la fecha de creación
+        function mostrarFechaCreacion() {
+            var fechaActual = new Date();
+            var dia = fechaActual.getDate();
+            var mes = fechaActual.getMonth() + 1; // Los meses en JavaScript son base 0
+            var anio = fechaActual.getFullYear();
+
+            var fechaCreacion = dia + '/' + mes + '/' + anio;
+
+            document.getElementById('fecha-creacion').innerHTML = fechaCreacion;
+        }
+
+        function calcularTotales(row) {
+            if (row) {
+                const cantidad = parseInt(row.querySelector('input[name="cantidad"]').value);
+                const precioUnitario = parseFloat(row.querySelector('input[name="precio_unitario"]').value);
+
+                const precioTotalInput = row.querySelector('input[name="precio_total"]');
+                const precioTotal = cantidad * precioUnitario;
+
+                precioTotalInput.value = precioTotal.toFixed(2);
+            }
+
+            calcularSubtotal();
+            calcularBaseImponible();
+            calcularDescuento();
+            calcularIVA();
+            calcularValorTotal();
+        }
+
+        function calcularSubtotal() {
+            const precioTotalInputs = document.querySelectorAll('input[name="precio_total"]');
+            let subtotal = 0;
+
+            precioTotalInputs.forEach(input => {
+                const precioTotal = parseFloat(input.value);
+                if (!isNaN(precioTotal)) {
+                    subtotal += precioTotal;
+                }
+            });
+
+            const subtotalInput = document.getElementById('sub_total');
+            subtotalInput.value = subtotal.toFixed(2);
+        }
+
+        function calcularBaseImponible() {
+            const baseImponible0Input = document.querySelector('input[name="base_imponible_0"]');
+            const baseImponible12Input = document.querySelector('input[name="base_imponible_12"]');
+
+            baseImponible0Input.value = '0.00';
+            baseImponible12Input.value = '0.00';
+
+            const precioTotalInputs = document.querySelectorAll('input[name="precio_total"]');
+
+            precioTotalInputs.forEach(input => {
+                const precioTotal = parseFloat(input.value);
+                if (!isNaN(precioTotal)) {
+                    const precioUnitario = parseFloat(input.parentNode.parentNode.querySelector('input[name="precio_unitario"]').value);
+                    if (precioUnitario == 0) {
+                        baseImponible0Input.value = (parseFloat(baseImponible0Input.value) + precioTotal).toFixed(2);
+                    } else {
+                        baseImponible12Input.value = (parseFloat(baseImponible12Input.value) + precioTotal).toFixed(2);
+                    }
+                }
+            });
+        }
+        function calcularDescuento() {
+            const descuentoInput = document.querySelector('input[name="descuento"]');
+            const descuento = parseFloat(descuentoInput.value);
+
+            if (!isNaN(descuento)) {
+                // No es necesario realizar cálculos aquí, el descuento se aplicará en calcularValorTotal()
+                calcularValorTotal();
+            }
+        }
+
+        function calcularIVA() {
+            const baseImponible12 = parseFloat(document.querySelector('input[name="base_imponible_12"]').value);
+            const valorIVAInput = document.querySelector('input[name="valor_iva"]');
+
+            if (!isNaN(baseImponible12)) {
+                const valorIVA = (baseImponible12 * 0.12).toFixed(2);
+                valorIVAInput.value = valorIVA;
+            }
+            calcularValorTotal();
+        }
+
+        function calcularValorTotal() {
+            const subtotal = parseFloat(document.getElementById('sub_total').value);
+            const valorIVA = parseFloat(document.querySelector('input[name="valor_iva"]').value);
+            const descuento = parseFloat(document.querySelector('input[name="descuento"]').value);
+
+            const valorTotalInput = document.querySelector('input[name="valor_total"]');
+            const valorTotal = (subtotal + valorIVA - descuento).toFixed(2);
+
+            valorTotalInput.value = valorTotal;
+        }
+
+
+    </script>
+
+
+</head>
+
+<body onload="mostrarFechaCreacion()">
+
+    <nav>
+        <div id="logoFintech"><a href="/"><img src="/img/logo.png" alt="FINTECH" height="80px"></a></div>
+        <label for="click" id="menu-btn">
+            <i id="fas fa-bars"></i>
+        </label>
+    </nav>
+    <div id="contenedor">
+    
+        <form id="formulario" action="factura/add/{{idTienda}}" method="post">
+         
+            <div id="divConLinea">
+                <div id="izquierda">
+                    <img id="imagen-adaptable" src="/img/agregar.png" alt="Imagen Adaptable">
+                    <h2 value="{{nombreTienda}}">{{nombreTienda}}</h2>
+                    <div id="contenedor2">
+                        <h1>{{dueñoTienda}}</h1>
+                    </div>
+                    <br>
+                    <div>
+                        <p>Direccion Matriz: <b>{{dirección_matriz_tienda}}</b></p>
+                        <p>Direccion Sucursal: <b>{{direccion_sucursal_tienda}}</b></p><br>
+                        <p>Contacto:<b> {{telefono}}</b></p>
+                    </div>
+                </div>
+                <div id="derecha">
+                    <div id="tabla-contenedor">
+                        <table border="1" id="numero">
+                            <tr>
+                                <td>
+                                    <h3>RUC</h3>
+                                </td>
+                                <td>
+                                    <h3>{{RUCTienda}}</h3>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" id="nFactura">
+                                    <h3>Factura </h3>
+                                    <h3>NO. OO2-002-123456789</h3>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h3>AUT.SRI</h3>
+                                </td>
+                                <td>
+                                    <h3>1234567890</h3>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <br>
+                    <p>Fecha de Autorización: 11/10/2022 </p>
+           
+                </div>
+            </div>
+            <div id="divConLinea">
+                <div id="izquierda">
+                    <table id="cliente">
+                        <br>
+                        <tr>
+                            <th>
+                                <label>Sr (es):</label>
+                            </th>
+                            <td><input name="nombre_cliente" type="text"></td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label>Dirección:</label>
+                            </th>
+                            <td><input name="direccion_cliente" type="text "></td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label>Celular:</label>
+                            </th>
+                            <td><input name="celular_cliente" type="text"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="derecha">
+                    <table id="cliente">
+                        <tr>
+                            <th>
+                                <label>R.U.C/C.I. :</label>
+                            </th>
+                            <td><input name="cedula_cliente" type="text"></td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label>Correo:</label>
+                            </th>
+                            <td><input name="correo_cliente" type="email"></td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label>Fecha de emisión:</label>
+                            </th>
+                            <td>
+                                <p> <span name="fecha_emision" id="fecha-creacion"></span></p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="divSeccion">
+                <table id="detalle_factura">
+                    <tr>
+                        <th>
+                            <label>CANT.</label>
+                        </th>
+                        <th>
+                            <label>DESCRIPCION</label>
+                        </th>
+                        <th>
+                            <label>P.UNITARIO</label>
+                        </th>
+                        <th>
+                            <label>V.TOTAL</label>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td><input name="cantidad" type="number" oninput="calcularTotales(this.parentNode.parentNode)">
+                        </td>
+                        <td><input name="descripcion" type="text"></td>
+                        <td><input name="precio_unitario" type="text"
+                                oninput="calcularTotales(this.parentNode.parentNode)"></td>
+                        <td><input name="precio_total" type="text" readonly></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="divSeccion">
+                <div id="izquierda">
+                    <div id="izquierda_forma_pago">
+                        <table id="formaPago">
+                            <tr>
+                                <th colspan="3">
+                                    <h3>FORMA DE PAGO</h3>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td> Efectivo</td>
+                                <td>
+                                    <input type="checkbox" name="efectivo" id="efectivo">
+                                    <label for="efectivo"></label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Tarjeta de crédito</td>
+                                <td>
+                                    <input type="checkbox" name="tarjeta" id="credito">
+                                    <label for="credito"></label>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="derecha">
+                    <div id="detalle_total">
+                        <table>
+                            <tr>
+                                <th><label>SUB TOTAL</label></th>
+                                <td><input name="valor_subtotal" id="sub_total" type="text" readonly></td>
+                            </tr>
+                            <tr>
+                                <th><label>BASE IMPONIBLE 0%</label></th>
+                                <td><input name="base_imponible_0" type="text" readonly> </td>
+                            </tr>
+                            <tr>
+                                <th><label>BASE IMPONIBLE 12%</label></th>
+                                <td><input name="base_imponible_12" type="text" readonly></td>
+                            </tr>
+                            <tr>
+                                <th><label>DESCUENTO</label></th>
+                                <td><input name="descuento" type="text" oninput="calcularDescuento()"></td>
+                            </tr>
+                            <tr>
+                                <th><label>IVA 12%</label></th>
+                                <td><input name="valor_iva" type="text" readonly></td>
+                            </tr>
+                            <tr>
+                                <th><label>VALOR TOTAL</label></th>
+                                <td><input name="valor_total" type="text" readonly></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <br>
+            
+            <button type="submit">Crear</button>
+                        <br>
+            <br>
+            <br>
+            
+        </form>
+        <!-- Termina el formulario -->
+    <div id="herramientasDiv">
+            <table id="herramientas">
+                <tr>
+                    <th colspan="2">Herramientas</th>
+                </tr>
+                <tr>
+                    <td>Agregar Fila</td>
+                    <td><button id="add-row">+</button></td>
+                </tr>
+                <tr>
+                    <td>Eliminar Fila</td>
+                    <td><button id="remove-row">-</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+<script>
+        const addButton = document.getElementById("add-row");
+        const removeButton = document.getElementById("remove-row");
+        const table = document.getElementById("detalle_factura");
+
+        addButton.addEventListener("click", function () {
+            const newRow = table.rows[1].cloneNode(true);
+            const inputs = newRow.getElementsByTagName("input");
+            for (let input of inputs) {
+                input.value = "";
+                input.removeAttribute("readonly"); // Habilitar edición para la nueva fila
+            }
+            table.appendChild(newRow);
+        });
+
+        removeButton.addEventListener("click", function () {
+            const rows = table.getElementsByTagName("tr");
+            if (rows.length > 2) {
+                table.removeChild(rows[rows.length - 1]);
+                calcularTotales(); // Calcular totales después de eliminar la fila
+                calcularBaseImponible(); // Recalcular las bases imponibles
+                calcularDescuento(); // Recalcular el descuento después de eliminar la fila
+                calcularIVA(); // Recalcular el IVA después de eliminar la fila
+                calcularValorTotal(); // Recalcular el valor total después de eliminar la fila
+            } 
+            else{
+                alert("No se pueden eliminar mas filas")
+            }
+        });
+
+
+    </script>
+
+</body>

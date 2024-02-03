@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="/css/auth/login.css">
+<title>Inicio de Sesion</title>
+<body>
+    <section id="container">
+        <header>Iniciar Sesion</header>
+        <center><a href="/"><img src="/img/logo.png" alt=""></a></center>
+        <form action="/login" method="POST" id="form">
+            <div id="input-box">
+                <label>Tu Email:</label>
+                <input type="email" name="correo_electronico_usuario" placeholder="ejemplo@gmail.com" required />
+            </div>
+            <div id="input-box">
+                <label>Contraseña:</label>
+                <input type="password" name="password_usuario" placeholder="Contraseña:" required />
+            </div>
+            <button type="submit">Ingregsar</button>
+            <br>
+            <center>¿No tienes una cuenta? <a href="/registro">Registrate</a></center>
+        </form>
+    </section>
+</body>

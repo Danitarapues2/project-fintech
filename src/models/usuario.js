@@ -6,9 +6,9 @@ const usuario = (sequelize,type)=>{
             autoIncrement:true 
         },
 
-        cedula_usuario:type.STRING,
         nombres_usuario:type.STRING,
         apellidos_usuario:type.STRING,
+        cedula_usuario:type.STRING,
         celular_usuario:type.STRING,
         correo_electronico_usuario:type.STRING,
         password_usuario: type.STRING,
