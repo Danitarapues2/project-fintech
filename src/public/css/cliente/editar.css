@@ -1,3 +1,91 @@
 #cliente-editar-container{
     padding-left: 400px;
 }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #c9c9c9;
+}
+
+#cliente-agregar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.box {
+    background-color: #f1f0f0;
+    width: 30%;
+    padding: 60px;
+    height: 60vh;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.input-box {
+    margin-top: 0px;
+}
+
+/* Estilos para las etiquetas y campos de entrada */
+label {
+    display: block;
+    margin-bottom: 0px;
+    color: #616060;
+}
+
+input {
+    width: 100%;
+    padding: 4px;
+    margin-bottom: 8px;
+    border: 1px solid #1F547E;
+    border-radius: 2px;
+    background-color:#1F547E ;
+}
+.input-box input {
+    position: relative;
+    width: 100%;
+    padding: 5px 2px 2px;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    font-size: 1em;
+    letter-spacing: 0.05em;
+}
+
+
+/* Estilos para los botones */
+#boton {
+    text-align: center;
+}
+button[type="submit"] {
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #1F547E;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+ }
+
+ button:hover {
+    background-color: #1F547E;
+}
+
+button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #9e0000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #9e0000;
+}
