@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="/css/auth/login.css">
-<title>Inicio de Sesion</title>
+<!--<title>Inicio de Sesion</title>
 <body>
     <section id="container">
         <header>Iniciar Sesion</header>
@@ -18,4 +18,26 @@
             <center>¿No tienes una cuenta? <a href="/registro">Registrate</a></center>
         </form>
     </section>
+</body>-->
+
+<body>
+    <img src="/img/logo.png"  class="centered-image">
+    <div class="container">
+        <h1>Iniciar Sesion</h1>
+        <form action="/login" method="POST" id="form">
+            <div class="form-group">
+                <label>Correo Electronico:</label>
+                <input type="email" name="correo_electronico_usuario" placeholder="ejemplo@gmail.com" required />
+            </div>
+            <div class="form-group">
+                <label>Contraseña:</label>
+                <input type="password" name="password_usuario" placeholder="Contraseña:" required />
+            </div>
+            <br>
+            <button type="submit">Ingresar</button>
+            <p>
+            ¿Ya tienes una cuenta? <a href="/registro">Registrate</a>
+            </p>
+        </form>
+    </div>
 </body>

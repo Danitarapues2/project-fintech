@@ -1,4 +1,4 @@
-.box {
+/*.box {
     box-sizing: border-box;
     font-family: 'bold, Times New Roman', Times, serif;
     display: flex;
@@ -126,4 +126,103 @@ button[type="submit"] {
 
 button[type="submit"]:active {
     opacity: 0.4;
+}*/
+
+body {
+    font-family: Corben;
+    background-color: #E1E1E1;
+    margin: 0;
+}
+
+.centered-image {
+    display: block;
+    margin: 10px auto;
+    width: 15%;
+    height: 15%;
+}
+
+.container {
+    width: 80%;
+    max-width: 600px;
+    margin: 8px auto;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-shadow: 1px 1px 1px 1px #8a8a8a4b;
+}
+
+h1 {
+    margin: 10px;
+    text-align: center;
+    font-size: 40px;
+    font-style: normal;
+}
+
+a {
+    color: #1F547E;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+p {
+    margin: 20px;
+    text-align: center;
+    line-height: normal;
+}
+
+form {
+    text-align: center;
+}
+
+.form-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.input-group {
+    flex-basis: calc(48% - 10px); /* Ocupar el 48% d */
+    margin-bottom: 20px;
+}
+
+label {
+    display: flex;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #1F547E;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #dadada;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #1F547E;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.363);
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Consulta de medios para pantallas más pequeñas */
+@media screen and (max-width: 600px) {
+    .input-group {
+        flex-basis: 100%; /* Ocupar el 100% del ancho en pantallas más pequeñas */
+    }
 }
