@@ -1,41 +1,20 @@
 <link rel="stylesheet" href="/css/tienda/agregar.css">
 <form action="/tienda/agregar" method="post">
-
     <div id="tienda-agregar-container">
-
         <div class="box">
-
             <h2>Agregar Tienda</h2>
 
-            <div class="input-box">
-                <label id="nombre_tienda" for="nombre_tienda">Nombre del negocio</label>
-                <input type="text" id="nombre_tienda" name="nombre_tienda" required>
-                <br>
-
-                <label id="ruc" for="ruc">No. Ruc</label>
-                <input type="text" id="ruc_tienda" name="ruc_tienda" required>
-                <br>
-
-                <label id="direccion_matriz" for="direccion_matriz">Dirección Matriz</label>
-                <input type="text" id="direccion_matriz" name="direccion_matriz" required>
-                <br>
-
-                <label id="sucursal" for="sucursal">Direccion sucursal</label>
-                <input type="text" id="direccion_sucursal" name="direccion_sucursal" required>
-                <br>
-
-                <label id="correo_tienda" for="correo_tienda">Correo de la tienda</label>
-                <input type="text" id="correo_electronico_tienda" name="correo_electronico_tienda" required>
-                <br>
-
-                <label id="telefono_tienda" for="telefono_tienda<">Telefono</label>
-                <input type="text" id="telefono_tienda" name="telefono_tienda" required>
-                <br> <br><br>
-            </div>
+            <input type="text" id="nombre_tienda" name="nombre_tienda" placeholder="Ingrese el nombre del negocio" required>
+            <input type="text" id="ruc_tienda" name="ruc_tienda" placeholder="No. Ruc" required>
+            <input type="text" id="direccion_matriz" name="direccion_matriz" placeholder="Ingrese la Dirección Matriz" required>
+            <input type="text" id="direccion_sucursal" name="direccion_sucursal" placeholder="Ingrese la Dirección Sucursal" required>
+            <input type="text" id="correo_electronico_tienda" name="correo_electronico_tienda" placeholder="Ingrese el Correo de la tienda" required>
+            <input type="text" id="telefono_tienda" name="telefono_tienda" placeholder="Ingrese el Teléfono o Celular" required>
 
             <div id="boton">
-                <button type="submit" id="">Guardar</button>
-                <button type="cancelar" id="">Cancelar</button>
+                <button type="submit" id="guardar">Guardar</button>
+                <button type="cancelar" id="cancelar">Cancelar</button>
             </div>
         </div>
+    </div>
 </form>

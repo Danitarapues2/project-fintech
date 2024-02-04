@@ -26,7 +26,7 @@ http://localhost:4000/registro *
 
 http://localhost:4000/cliente/agregar/ *
 
-http://localhost:4000/cliente/listar/
+http://localhost:4000/cliente/listar/ *
 
 
 
