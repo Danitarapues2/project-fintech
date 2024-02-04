@@ -6,9 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     buscar.addEventListener('keyup', () => {
 
         const texto = buscar.value.toLowerCase();
-
-
-
+        
         document.querySelectorAll('#table-gestion-clientes tbody tr').forEach(fila => {
 
             let nombre = fila.querySelector('td:nth-child(1) p').textContent.toLowerCase();

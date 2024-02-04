@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin-top: -160px;
+    margin-top: -30px;
 }
 
 #cliente-listar-contenido {
@@ -18,6 +18,8 @@
     border-radius: 10px;
     border: 2px solid black;
     background-color: #ffffff;
+    position: sticky;
+    top: 0;
 }
 
 table {
@@ -26,7 +28,6 @@ table {
 
 .fila-titulos th {
     border: none;
-
     padding: 1px 15px 1px 15px;
 }
 
@@ -78,6 +79,13 @@ p {
     border-radius: 10px;
     display: inline-block;
     justify-content: center;
+    max-height: 410px; /* Altura máxima del contenedor */
+    overflow-y: auto;
+}
+
+.div-table::-webkit-scrollbar-thumb {
+    background-color: #808080; 
+    border-radius: 5px; 
 }
 
 .fila-titulos {
@@ -98,7 +106,9 @@ p {
 
 .buscador {
     text-align: right;
-
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
 }
 
 .buscador input {
