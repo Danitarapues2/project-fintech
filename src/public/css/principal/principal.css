@@ -4,33 +4,43 @@ body {
   padding: 0;
   font-family: "Noto Sans", sans-serif;
 }
+.box {
+  width:100%;
+  padding: 20px;
+  max-width: 500px;
+  border-radius: 5px;
+  margin: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  background-color: #1F547E;
+}
+.texto_2, h2{
+  color: #ffffff;
+  border-radius: 10px;
+  text-align: center;
+}
 
 h4{
     margin: 50px;
-    color: #fff;
+    color: #000000;
 }
 
 .custom-button {
-    background-color: #e6e6e6;
+    background-color: #1F547E;
     display: inline-block;
     padding: 10px 20px; /* Ajusta el relleno según tus necesidades */
     text-decoration: none;
     font-size: 16px; /* Tamaño del texto */
     cursor: pointer;
     border-radius: 20px;
+    color:#ffffff;
   }
   
   .custom-button:hover {
-    background-color: #fff;
+    background-color: #9dccf3;
 box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.445);
     color: #ffffff; 
     text-decoration: none;
   }
-
-
-
-
-
 
 .hero {
   display: grid;
@@ -71,8 +81,6 @@ box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.445);
   right: -10%;
   bottom: -10%;
   left: -10%;
-  background: #1f547e;
-  background-blend-mode: screen;
 }
 
 .hero__bg picture {
@@ -89,6 +97,7 @@ box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.445);
   object-position: 77% 50%;
   height: auto;
   width: 100%;
+  background-image:"/img/logo.png";
 }
 
 .hero__cnt {
