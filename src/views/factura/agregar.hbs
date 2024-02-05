@@ -1,14 +1,18 @@
 <link rel="stylesheet" href="/css/factura/agregar.css">
-<h1>Agregar Factura</h1>
-
 <form action="/factura/agregar" method="post">
+
+<div id="factura-agregar-container">
+
+ <div class="box">
+<center><h1>Agregar Factura</h1></center>
+
 <div>
-    <label for="nombres">fecha emision:</label>
+    <label for="fecha_emision">Fecha emision:</label>
     <input type="text" name="fecha_emision" required>
 </div>
 
 <div>
-    <label for="apellidos">Descripcion:</label>
+    <label for="descripcion">Descripcion:</label>
     <input type="text" name="descripcion" required>
 </div>
 
@@ -18,48 +22,50 @@
 </div>
 
 <div>
-    <label for="telefono">precio unitario:</label>
+    <label for="precio_unitario">Precio unitario:</label>
     <input type="text" name="precio_unitario" required>
 </div>
 
 <div>
-    <label for="telefono">precio total:</label>
+    <label for="precio_total">Precio total:</label>
     <input type="text" name="precio_total" required>
 </div>   
 
 <div>
-    <label for="telefono">precio total:</label>
+    <label for="impuesto_12">Impuesto 12:</label>
     <input type="text" name="impuesto_12" required>
 </div>
 
 <div>
-<label for="telefono">precio total:</label>
+<label for="impuesto_0">Impuesto 0l:</label>
     <input type="text" name="impuesto_0" required>
 </div>
 
 <div>
-<label for="telefono">precio total:</label>
+<label for="descuento">Descuento:</label>
     <input type="text" name="descuento" required>
 </div>
 
 <div>
-<label for="telefono">precio total:</label>
+<label for="valor_subtotal">Valor subtotal:</label>
     <input type="text" name="valor_subtotal" required>
 </div>
 
 <div>
-<label for="telefono">precio total:</label>
+<label for="valor_iva">Valor iva:</label>
     <input type="text" name="valor_iva" required>
 </div>
 
 <div>
-<label for="telefono">precio total:</label>
+<label for="valor_total">Valor total:</label>
     <input type="text" name="valor_total" required>
 </div>
 
 <div id="boton">
       <button type="submit" id="">Guardar</button>
       <button type="cancelar" id="">Cancelar</button>
+      </div>
+      </div>
       </div>
       
 </form>
