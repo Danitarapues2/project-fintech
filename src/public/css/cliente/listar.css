@@ -105,6 +105,48 @@ p {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.270);
 }
 
+button[type="editar"], button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+button[type="eliminar"], button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+button[type="editar"] {
+    background-color: #2f7e1f;
+    color: white;
+}
+
+button[type="editar"]:hover {
+    background-color: #38cc0b;
+}
+
+button[type="eliminar"] {
+    background-color: #9e0000;
+    color: white;
+}
+
+button[type="eliminar"]:hover {
+    background-color: #d80101;
+}
+
+button:hover {
+    box-shadow: 2px 2px 2px 2px rgb(134, 134, 134);
+}
+
+
+
 .buscador {
     text-align: right;
     font-weight: bold;
