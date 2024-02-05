@@ -3,19 +3,26 @@
 
 <div id="tienda-listar-container">
 <div class="conjunto1">
-    {{#each lista}}        <h1>tienda Listar</h1>
+    {{#each lista}}        
+    <center><h1>Mi Tienda</h1></center>
 
     <div class="conjunto2">
+        <img src="/img/tienda_imagen.png" alt="MDN"/>
         <p>{{nombre_tienda}}</p>
+        <!---
         <p>{{ruc_tienda}}</p>
         <p>{{direccion_matriz}}</p>
         <p>{{direccion_sucursal}}</p>
         <p>{{correo_electronico}}</p>
-        <p>{{telefono_tienda}}</p>
+        <p>{{telefono_tienda}}</p> -->
         <div>
-            <a href="/tienda/editar/{{id_tienda}}"><button id="btn">Editar</button></a>
-            <button type="submit">Vista</button>
-            <a href="/factura/agregar"><button type="button">Crear factura</button></a>
+            <center>
+                <button type="submit">Vista</button>
+            <a href="/factura/agregar"><button type="submit">Crear factura</button></a>
+            <a href="/tienda/editar/{{id_tienda}}"><button type="submit">Editar</button></a>
+            </center>
+            
+            
         </div>
     </div>
     {{/each}}
