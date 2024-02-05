@@ -6,23 +6,39 @@ tiendaCtl.mostrar = (req, res) => {
     res.render('tienda/agregar', { showNavbar: true });
 }
 
-//mandar
+//mandar una sola vez 
+let tiendaRegistrada = false;
+
 tiendaCtl.mandar = async (req, res) => {
-    const id =req.id_tienda  //ojo
-    const { nombre_tienda,ruc_tienda,direccion_matriz,direccion_sucursal,correo_electronico_tienda,telefono_tienda } = req.body
-    const nuevoEnvio = {
-        nombre_tienda,
-        ruc_tienda,
-        direccion_matriz,
-        direccion_sucursal,
-        correo_electronico_tienda,
-        telefono_tienda
- 
+    if (!tiendaRegistrada) {
+        const id = req.id_tienda;  // Asumiendo que id_tienda está definido en req
+        const { nombre_tienda, ruc_tienda, direccion_matriz, direccion_sucursal, correo_electronico_tienda, telefono_tienda } = req.body;
+
+        const nuevaTienda = {
+            nombre_tienda,
+            ruc_tienda,
+            direccion_matriz,
+            direccion_sucursal,
+            correo_electronico_tienda,
+            telefono_tienda
+        };
+
+        try {
+            await orm.tienda.create(nuevaTienda);
+            req.flash('success', 'Guardado exitosamente');
+            tiendaRegistrada = true; // Marcar como registrada
+            res.redirect('/tienda/listar/');
+        } catch (error) {
+            console.error("Error al intentar registrar la tienda:", error);
+            req.flash('error', 'Error al intentar registrar la tienda');
+            res.redirect('/tienda/listar/');
+        }
+    } else {
+        console.log("La tienda ya ha sido registrada anteriormente.");
+        req.flash('info', 'La tienda ya ha sido registrada anteriormente.');
+        res.redirect('/tienda/listar/');
     }
-    await orm.tienda.create(nuevoEnvio)
-    req.flash('success', 'Guardado exitosamente')
-    res.redirect('/tienda/listar/')
-}
+};
 
 tiendaCtl.listar = async (req, res) => {
     const lista = await sql.query('select * from tiendas')

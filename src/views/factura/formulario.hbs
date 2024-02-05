@@ -1,0 +1,98 @@
+<link rel="stylesheet" href="/css/cliente/listar.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<script src="/script/cliente/buscador.js"></script>
+
+
+<div id="cliente-listar-container">
+    <div id="cliente-listar-contenedor">
+        <h1 id="titulo-gestion" class="titulo-gestion">Gestión de Clientes</h1>
+        <button id="button-agregar" class="button-agregar">
+            <a href="/cliente/agregar/" style="color:white; text-decoration: none; ">
+                Agregar</a>
+        </button>
+        <br>
+        <div class="buscador">
+            <label for="buscar">Buscar:</label>
+            <input type="text" id="buscar" placeholder="Buscador" >
+
+        </div>
+        <br>
+        <div class="div-table">
+            <table class="table-gestion-clientes" id="table-gestion-clientes">
+                <thead class="thead-titulos" id="thead-titulos">
+                    <tr class="fila-titulos" id="fila-titulos">
+                        <th class="th-titulos-esquina-izquierda" id="th-titulos-esquina-izquierda">
+                            <p>Nombre</p>
+                        </th>
+                        <th class="th-titulos" id="th-titulos">
+                            <p>Apellido</p>
+                        </th>
+                        <th class="th-titulos" id="th-titulos">
+                            <p>Cédula</p>
+                        </th>
+                        <th class="th-titulos" id="th-titulos">
+                            <p>Celular</p>
+                        </th>
+                        <th class="th-titulos" id="th-titulos">
+                            <p>Correo Electrónico</p>
+                        </th>
+                        <th class="th-titulos" id="th-titulos">
+                            <p>Dirección</p>
+                        </th>
+                        <th class="th-titulos-esquina-derecha" id="th-titulos-esquina-derecha" colspan="2">
+                            <p>Acción</p>
+                        </th>
+                    </tr>
+                </thead>
+                {{#each lista}}
+                <tbody>
+                    <tr class="fila-campos" id="fila-campos">
+                        <td class="td-campos" id="td-campos">
+                            <p>{{nombre_cliente}}</p>
+                        </td>
+                        <td class="td-campos" id="td-campos">
+                            <p>{{apellido_cliente}}</p>
+                        </td>
+                        <td class="td-campos" id="td-campos">
+                            <p>{{cedula_cliente}}</p>
+                        </td>
+                        <td class="td-campos" id="td-campos">
+                            <p>{{celular_cliente}}</p>
+                        </td>
+                        <td class="td-campos" id="td-campos">
+                            <p>{{correo_cliente}}</p>
+                        </td>
+                        <td class="td-campos" id="td-campos">
+                            <p>{{direccion_cliente}}</p>
+                        </td>
+                        <td class="td-campos" id="td-campos">
+                            <div>
+                                <a href="/cliente/editar/{{id_cliente}}">
+                                    <button type="button" style="border: none;">
+                                        <i class="fas fa-pencil-alt" style="color: green; font-size: 18px"></i>
+                                    </button>
+                                </a>
+                            </div>
+
+                        </td>
+
+                        <td class="td-campos" id="td-campos">
+                            <div>
+                                <a href="/cliente/eliminar/{{id_cliente}}">
+                                    <button type="button"
+                                        style="border: none; background-color: red; border-radius:10px; height: 30px;">
+                                        <i class="fas fa-trash-alt" style=" font-size: 18px"></i>
+                                    </button>
+                                </a>
+                            </div>
+
+                        </td>
+                    </tr>
+                </tbody>
+                {{/each}}
+            </table>
+        </div>
+    </div>
+</div>
+
+
