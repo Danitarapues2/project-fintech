@@ -92,5 +92,6 @@ app.use(require('./router/principal.router'))
 app.use('/cliente', require('./router/cliente.router'))
 app.use('/tienda', require('./router/tienda.router'))
 app.use('/factura', require('./router/factura.router'))
+app.use('/tienda', require('./router/visualizar.router'))
 // Exportar la aplicación
 module.exports = app;

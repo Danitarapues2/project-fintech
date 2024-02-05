@@ -41,8 +41,7 @@ tiendaCtl.mandar = async (req, res) => {
 };
 
 tiendaCtl.listar = async (req, res) => {
-    const ids = req.params.id
-    const lista = await sql.query('select * from tiendas where id_tienda =1' , [ids])
+    const lista = await sql.query('select * from tiendas')
     res.render('tienda/listar', { lista, showNavbar: true })
 }
 

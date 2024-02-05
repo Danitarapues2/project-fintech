@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="/css/tienda/listar.css">
+
+
+<div id="tienda-listar-container">
+<div class="conjunto1">
+    {{#each lista}}        
+
+    <div class="conjunto2">
+        <h2>Datos del administrador</h2>
+        <p>{{nombres_usuario}}</p>
+        <p>{{apellidos_usuario}}</p>
+        <p>{{cedula_usuario}}</p>
+        <p>{{celular_usuario}}</p>
+        <p>{{correo_electronico_usuario}}</p>
+        <h2>Datos de la tienda</h2>
+        <p>{{nombre_tienda}}</p>
+        <p>{{ruc_tienda}}</p>
+        <p>{{direccion_matriz}}</p>
+        <p>{{direccion_sucursal}}</p>
+        <p>{{correo_electronico}}</p>
+        <p>{{telefono_tienda}}</p>
+        
+    </div>
+    {{/each}}
+</div>
+    
+
+</div>
