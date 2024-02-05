@@ -1,4 +1,5 @@
 body {
+    font-family: Arial, sans-serif;
     margin: 0;
 }
 
@@ -6,25 +7,13 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 80%; 
-    max-width: 800px; 
+    width: 80%; /* Cambiado a un porcentaje para ser más flexible */
+    max-width: 800px; /* Agregado un máximo para evitar que el contenido se extienda demasiado en pantallas grandes */
     margin: auto;
     align-items: center;
 }
 
-p {
-    text-align: center;
-    text-transform: uppercase;
-}
 
-img {
-    width: 100%; 
-    max-width: 400px; 
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 10px auto;
-}
 
 .conjunto1 {
     background-color: #fff;
@@ -42,32 +31,39 @@ img {
     border: 1px solid #d5d5d5;
     border-radius: 30px;
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.445);
+    text-align: center;
 }
+
+.titulos{
+    background-color: #1F547E;
+    color: white;
+    text-align: center;
+    border-radius: 20px;
+}
+
 
 #btn,
 button[type="submit"] {
-    background-color: #3498db;
+    background-color: #ff3535;
     color: #fff;
     border-radius: 10px;
     padding: 10px 15px;
     cursor: pointer;
-    margin: 20px auto; 
+    margin: 20px auto;
+    text-align: center;
 }
 
 #btn,
 button[type="submit"]:hover {
-    background-color: #0180d4;
+    background-color: #d40101;
     color: #fff;
     box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.544);
 }
 
-.botone{
-    background-color: #d5d5d5;
-    border-radius: 20px;
-}
+/* Regla de medios para pantallas más pequeñas */
 @media only screen and (max-width: 600px) {
     #tienda-listar-container {
-        width: 90%; 
+        width: 90%; /* Cambiado a un porcentaje menor para pantallas más pequeñas */
     }
 
     .conjunto1 {

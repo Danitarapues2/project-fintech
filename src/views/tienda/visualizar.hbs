@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/css/tienda/listar.css">
+<link rel="stylesheet" href="/css/tienda/visualizar.css">
 
 
 <div id="tienda-listar-container">
@@ -6,20 +6,44 @@
     {{#each lista}}        
 
     <div class="conjunto2">
-        <h2>Datos del administrador</h2>
-        <p>{{nombres_usuario}}</p>
-        <p>{{apellidos_usuario}}</p>
-        <p>{{cedula_usuario}}</p>
-        <p>{{celular_usuario}}</p>
-        <p>{{correo_electronico_usuario}}</p>
-        <h2>Datos de la tienda</h2>
-        <p>{{nombre_tienda}}</p>
-        <p>{{ruc_tienda}}</p>
-        <p>{{direccion_matriz}}</p>
-        <p>{{direccion_sucursal}}</p>
-        <p>{{correo_electronico}}</p>
-        <p>{{telefono_tienda}}</p>
-        
+        <div class="titulos">
+            <h2 >Datos del Administrador</h2>
+        </div>
+        <label >Nombres:</label>
+        <input value="{{nombres_usuario}}" disabled></input>
+        <br>
+        <label>Apellidos:</label>
+        <input value="{{apellidos_usuario}}" disabled></input>
+        <br>
+        <label> Cedula:</label>
+        <input value="{{cedula_usuario}}" disabled></input>
+        <br>
+        <label>Celular:</label>
+        <input value="{{celular_usuario}}" disabled></input>
+        <br>
+        <label>Correo Electronico:</label>
+        <input value="{{correo_electronico_usuario}}" disabled></input>
+        <div class="titulos">
+            <h2>Datos de la Tienda</h2>
+        </div>
+        <label>Nombre del Negocio:</label>
+        <input value="{{nombre_tienda}}" disabled></input>
+        <br>
+        <label>No. Ruc :</label>
+        <input value="{{ruc_tienda}}" disabled></input>
+        <br>
+        <label>Dirección de Matriz :</label>
+        <input value="{{direccion_matriz}}" disabled></input>
+        <br>
+        <label>Dirección Sucursal :</label>
+        <input value="{{direccion_sucursal}}" disabled></input>
+        <br>
+        <label>Correo Electronico :</label>
+        <input value="{{correo_electronico}}" disabled></input>
+        <br>
+        <label>Telefono :</label>
+        <input value="{{telefono_tienda}}" disabled></input>
+                <center><a href="/tienda/listar"><button id="btn" type="submit">Cancelar</button></a></center> 
     </div>
     {{/each}}
 </div>
