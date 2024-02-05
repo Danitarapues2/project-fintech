@@ -1,35 +1,39 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0; /* Reset default margin */
+    margin: 0;
 }
 
 #factura-agregar-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    height: 100vh;
 }
 
 .box {
     background-color: #f1f0f0;
     width: 80%;
-    padding: 20px;
-    max-width: 400px;
+    max-width: 800px;
     border-radius: 10px;
-    margin: 10px;
+    margin: 50px;
+    padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    grid-gap: 20px;
+    align-items: center; 
 }
 
 h1 {
     text-align: center;
     color: #333;
+    grid-column: span 2; 
 }
 
 .input-box {
     margin-top: 15px;
 }
 
-/* Estilos para las etiquetas y campos de entrada */
 label {
     display: block;
     margin-bottom: 5px;
@@ -37,7 +41,7 @@ label {
 }
 
 input {
-    width: 80%;
+    width: 100%;
     padding: 10px;
     border: 1px solid #1F547E;
     border-radius: 4px;
@@ -50,30 +54,20 @@ input {
 input:focus {
     background-color: white;
     color: black;
-    outline: none; /* Remove default focus outline */
-}
-
-.input-box input {
-    position: relative;
-    width: 100%;
-    padding: 10px;
-    border: none;
     outline: none;
-    color: rgb(255, 255, 255);
-    font-size: 1em;
-    letter-spacing: 0.05em;
-    box-sizing: border-box; /* Include padding in the width calculation */
 }
 
-/* Estilos para los botones */
 #boton {
-    text-align: center;
-    margin: 15px;
+    display: flex;
+    justify-content: center;
+    grid-column: span 2; 
 }
 
-button[type="submit"], button {
-    padding: 10px 20px;
-    margin-right: 10px;
+button[type="submit"],
+button[type="button"] {
+    width: 45%; 
+    padding: 10px;
+    margin: 0 5px; 
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -83,25 +77,27 @@ button[type="submit"], button {
 button[type="submit"] {
     background-color: #1F547E;
 }
+
 button[type="submit"]:hover {
     background-color: #0b75cc;
 }
-button[type="cancelar"] {
+
+button[type="button"] {
     background-color: #9e0000;
 }
-button[type="cancelar"]:hover {
+
+button[type="button"]:hover {
     background-color: #d80101;
 }
 
-button:hover {
-    box-shadow: 2px 2px 2px 2px rgb(134, 134, 134);
-}
 
-/* Media query for smaller screens */
 @media screen and (max-width: 600px) {
     .box {
-        width: 90%;
-        padding: 20px;
-        max-width: none;
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+    }
+
+    #boton {
+        grid-column: span 1; 
     }
 }
