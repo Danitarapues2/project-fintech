@@ -2,26 +2,24 @@
 
 
 <div id="tienda-listar-container">
-    <h1>tienda Listar</h1>
-    {{#each lista}}
+<div class="conjunto1">
+    {{#each lista}}        <h1>tienda Listar</h1>
 
-    <a href="/tienda/editar/{{id_tienda}}"><button id="btn">Editar</button></a>
-    <p>{{nombre_tienda}}</p>
-    <p>{{ruc_tienda}}</p>
-    <p>{{direccion_matriz}}</p>
-    <p>{{direccion_sucursal}}</p>
-    <p>{{correo_electronico}}</p>
-    <p>{{telefono_tienda}}</p>
+    <div class="conjunto2">
+        <p>{{nombre_tienda}}</p>
+        <p>{{ruc_tienda}}</p>
+        <p>{{direccion_matriz}}</p>
+        <p>{{direccion_sucursal}}</p>
+        <p>{{correo_electronico}}</p>
+        <p>{{telefono_tienda}}</p>
+        <div>
+            <a href="/tienda/editar/{{id_tienda}}"><button id="btn">Editar</button></a>
+            <button type="submit">Vista</button>
+            <a href="/factura/agregar"><button type="button">Crear factura</button></a>
+        </div>
+    </div>
+    {{/each}}
+</div>
     
 
-
-    <div>
-        <a href="/factura/agregar"><button type="button"
-                style="background-color: blue;">Crear factura</button></a>
-    </div>
-
-<div>
-    <button type="submit">Vista</button>
-</div>
-    {{/each}}
 </div>
