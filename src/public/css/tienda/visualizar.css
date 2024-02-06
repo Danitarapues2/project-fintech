@@ -6,27 +6,36 @@ body {
 #tienda-listar-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    width: 80%; /* Cambiado a un porcentaje para ser más flexible */
-    max-width: 800px; /* Agregado un máximo para evitar que el contenido se extienda demasiado en pantallas grandes */
-    margin: auto;
-    align-items: center;
+    justify-content: center;
+    width: 80%;
+    max-width: 800px;
+    margin: 10px auto;
+    align-items: flex-start;
+    color: #1F547E;
 }
-
-
 
 .conjunto1 {
     background-color: #fff;
-    padding: 10px;
+    padding: 4px;
     margin: 40px auto;
-    width: 60%; 
-    max-width: 500px; 
+    width: 100%;
     box-sizing: border-box;
     border-radius: 30px;
+    text-align: center;
+}
+
+hr {
+    height: 1px;
+    background-color: #1F547E;
+    border: none;
+    margin: 20px 0;
 }
 
 .conjunto2 {
-    margin: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 10px;
     padding: 10px;
     border: 1px solid #d5d5d5;
     border-radius: 30px;
@@ -34,15 +43,19 @@ body {
     text-align: center;
 }
 
-.titulos{
+.formulario_2 {
+    margin: 10px;
+}
+
+.titulos {
     background-color: #1F547E;
     color: white;
     text-align: center;
     border-radius: 20px;
+    margin: 20px;
+    font-weight: lighter;
 }
 
-
-#btn,
 button[type="submit"] {
     background-color: #ff3535;
     color: #fff;
@@ -53,25 +66,37 @@ button[type="submit"] {
     text-align: center;
 }
 
-#btn,
 button[type="submit"]:hover {
     background-color: #d40101;
     color: #fff;
     box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.544);
 }
 
-/* Regla de medios para pantallas más pequeñas */
+.form-group {
+    flex: 0 0 calc(50% - 10px);
+    margin-bottom: 10px;
+    text-align: left;
+    display: inline-block;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"] {
+    background-color: #b4b4b4b7;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px; 
+}
+
 @media only screen and (max-width: 600px) {
-    #tienda-listar-container {
-        width: 90%; /* Cambiado a un porcentaje menor para pantallas más pequeñas */
+    .conjunto2 {
+        width: 100%;
     }
 
-    .conjunto1 {
-        width: 90%; 
-        max-width: none; 
-    }
-
-    img {
-        max-width: 100%; 
+    .form-group {
+        width: 100%;
     }
 }
