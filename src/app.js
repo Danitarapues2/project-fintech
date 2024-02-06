@@ -8,7 +8,7 @@ const passport = require('passport');
 const flash = require('connect-flash');
 const MySQLStore = require('express-mysql-session')(session);
 const bodyparser = require('body-parser');
-const fileUpload = require("express-fileupload");
+const fileUpload = require ("express-fileupload");
 const helmet = require('helmet');
 
 
