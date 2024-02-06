@@ -5,6 +5,9 @@ const orm = require('../database/dataBase.orm')
 facturaCtl.mostrar = (req, res) => {
     res.render('factura/agregar', { showNavbar: true });
 }
+facturaCtl.mostrarhistorial = (req, res) => {
+    res.render('factura/historial', { showNavbar: true });
+}
  ////
  facturaCtl.mandar = async (req, res) => {
     try {

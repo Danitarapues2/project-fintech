@@ -1,0 +1,122 @@
+table {
+    background-color: #fff;
+    padding: 10px;
+    margin: 40px auto;
+    width: 60%;
+    max-width: 600px;
+    box-sizing: border-box;
+    border-radius: 30px;
+    margin-top: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.buscador {
+    margin-left: 715px;
+}
+
+.buscador input {
+    border: 1px solid rgb(96, 96, 96);
+    border-radius: 5px;
+    width: 200px;
+    height: 25px;
+    text-align: center;
+}
+
+button[type="visualizar"] {
+    background-color: #00000091;
+    color: white;
+}
+
+button[type="visualizar"]:hover {
+    background-color: #000000;
+}
+
+button[type="eliminar"],
+button {
+    padding: 5px 15px;
+    margin-right: 0px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+p {
+    text-align: center;
+}
+
+.contenedor {
+    border-radius: 5px;
+    width: 200px;
+    height: 0px;
+    text-align: center;
+    margin-left: 320px;
+}
+
+.boton {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    color: #fff;
+}
+
+button[type="PDF"] {
+    background-color: #a10000;
+    color: white;
+}
+
+button[type="PDF"]:hover {
+    background-color: #ff0000;
+}
+
+.siguiente {
+    border-radius: 5px;
+    width: 100px;
+    height: 35px;
+    text-align: center;
+    margin-left: 425px;
+    margin-top: -30px;
+}
+
+.siguiente {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    color: #fff;
+}
+
+button[type="siguiente"] {
+    background-color: #1F547E;
+    color: white;
+}
+
+button[type="siguiente"]:hover {
+    background-color: #27242D;
+}
+
+.anterior {
+    border-radius: 5px;
+    width: 100px;
+    height: 35px;
+    text-align: center;
+    margin-left: 370px;
+    margin-top: -55px;
+}
+
+.anterior {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    color: #fff;
+}
+
+button[type="anterior"] {
+    background-color: #1F547E;
+    color: white;
+}
+
+button[type="anterior"]:hover {
+    background-color: #27242D;
+}
