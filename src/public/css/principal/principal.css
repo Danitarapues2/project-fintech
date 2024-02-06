@@ -1,5 +1,5 @@
         /* General Styles */
-        html, body {
+         body {
             margin: 0;
             padding: 0;
             font-family: "Noto Sans", sans-serif;
@@ -77,17 +77,11 @@
 
         /* Image Styles */
         .hero__bg {
-            display: grid;
             position: relative;
             z-index: 0;
-            grid-template-columns: 1fr;
-            grid-template-rows: 1fr;
-            place-items: center;
-            animation: fade-in 0.75s linear;
-            will-change: opacity;
             max-width: 100%;
             height: auto;
-            opacity: 0.8; /* Adjust opacity as needed */
+            overflow: hidden;
         }
 
         .hero__bg::before {
@@ -109,14 +103,26 @@
             will-change: transform;
         }
 
+        .bg-layer {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-image: url("/img/logo.png"); /* Reemplaza con la ruta de tu patrón de fondo */
+            background-size: auto; /* Ajusta según tus necesidades */
+            background-repeat: repeat;
+            opacity: 1; /* Ajusta la opacidad según sea necesario */
+        }
+        
         .hero__bg img {
             display: block;
             object-fit: cover;
-            object-position: 77% 50%;
-            height: auto;
+            object-position: center center;
+            height: 100%;
             width: 100%;
-            background-image: url("/img/logo.png"); /* Corrected background-image */
+            z-index: 1; /* Asegura que la imagen esté encima del fondo */
         }
+
 
         /* Hero Content Styles */
         .hero__cnt {
