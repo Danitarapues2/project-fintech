@@ -3,13 +3,16 @@ const sql = require('../database/dataBase.sql')
 const orm = require('../database/dataBase.orm')
 
 facturaCtl.mostrar = (req, res) => {
-    res.render('factura/agregar', { showNavbar: true });
+    const fechaActual = new Date().toISOString().slice(0, 10);
+
+    res.render('factura/agregar', { showNavbar: true, fechaActual: fechaActual });
 }
+
 facturaCtl.mostrarhistorial = (req, res) => {
     res.render('factura/historial', { showNavbar: true });
 }
- ////
- facturaCtl.mandar = async (req, res) => {
+////
+facturaCtl.mandar = async (req, res) => {
     try {
         // Obtener la lista de clientes desde la base de datos
         const clientes = await orm.cliente.findAll();
@@ -64,8 +67,8 @@ facturaCtl.crearFactura = async (req, res) => {
 
 //mandar
 facturaCtl.mandar = async (req, res) => {
-    const id =req.id_cliente  //ojo
-    const { fecha_emision,descripcion,cantidad,precio_unitario,precio_total,impuesto_12,impuesto_0, descuento,valor_subtotal, valor_iva, valor_total } = req.body
+    const id = req.id_cliente  //ojo
+    const { fecha_emision, descripcion, cantidad, precio_unitario, precio_total, impuesto_12, impuesto_0, descuento, valor_subtotal, valor_iva, valor_total } = req.body
     const nuevoEnvio = {
         fecha_emision,
         descripcion,
@@ -88,7 +91,7 @@ facturaCtl.mandar = async (req, res) => {
 
 facturaCtl.listar = async (req, res) => {
     const lista = await sql.query('SELECT * FROM facturas INNER JOIN detalle_facturas ON facturas.id_factura = detalle_facturas.id_detalle_factura ');
-    res.render('factura/listar', { lista ,showNavbar: true })
+    res.render('factura/listar', { lista, showNavbar: true })
 }
 
 

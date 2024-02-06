@@ -3,12 +3,19 @@ body {
     margin: 0;
 }
 
-#factura-agregar-container {
+
+.factura-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
+
+
+form {
+    padding-left: 200px;
+}
+
 
 .box {
     background-color: #f1f0f0;
@@ -19,26 +26,37 @@ body {
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
-    align-items: center; 
+    align-items: center;
 }
+
+
+.herramientasDiv {
+    margin-left: 200px;
+}
+
 
 h1 {
     text-align: center;
     color: #333;
-    grid-column: span 2; 
+    grid-column: span 2;
 }
+
 
 .input-box {
     margin-top: 15px;
 }
+
 
 label {
     display: block;
     margin-bottom: 5px;
     color: #616060;
 }
+
+
+
 
 input {
     width: 100%;
@@ -51,44 +69,53 @@ input {
     font-size: 15px;
 }
 
+
 input:focus {
     background-color: white;
     color: black;
     outline: none;
 }
 
+
 #boton {
     display: flex;
     justify-content: center;
-    grid-column: span 2; 
+    grid-column: span 2;
 }
+
 
 button[type="submit"],
 button[type="button"] {
-    width: 45%; 
+    width: 45%;
     padding: 10px;
-    margin: 0 5px; 
+    margin: 0 5px;
     color: #fff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 
+
 button[type="submit"] {
     background-color: #1F547E;
 }
+
 
 button[type="submit"]:hover {
     background-color: #0b75cc;
 }
 
+
 button[type="button"] {
     background-color: #9e0000;
 }
 
+
 button[type="button"]:hover {
     background-color: #d80101;
 }
+
+
 
 
 @media screen and (max-width: 600px) {
@@ -97,7 +124,9 @@ button[type="button"]:hover {
         grid-gap: 10px;
     }
 
+
     #boton {
-        grid-column: span 1; 
+        grid-column: span 1;
     }
 }
+

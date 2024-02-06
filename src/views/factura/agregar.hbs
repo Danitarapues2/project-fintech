@@ -1,141 +1,122 @@
-<!--
-
-<form action="/factura/agregar" method="post">
-
-<div id="factura-agregar-container">
-
- <div class="box">
-<center><h1>Agregar Factura</h1></center>
-
-<div>
-    <label for="fecha_emision">Fecha emision:</label>
-    <input type="text" name="fecha_emision"  placeholder="Ingrese " required>
-</div>
-
-<div>
-    <label for="descripcion">Descripcion:</label>
-    <input type="text" name="descripcion"  placeholder="Ingrese " required>
-</div>
-
-<div>
-    <label for="cantidad">Cantidad:</label>
-    <input type="text" name="cantidad" placeholder="Ingrese "  required>
-</div>
-
-<div>
-    <label for="precio_unitario">Precio unitario:</label>
-    <input type="text" name="precio_unitario" placeholder="Ingrese "  required>
-</div>
-
-<div>
-    <label for="precio_total">Precio total:</label>
-    <input type="text" name="precio_total" placeholder="Ingrese "  required>
-</div>   
-
-<div>
-    <label for="impuesto_12">Impuesto 12:</label>
-    <input type="text" name="impuesto_12" placeholder="Ingrese "  required>
-</div>
-
-<div>
-<label for="impuesto_0">Impuesto 0l:</label>
-    <input type="text" name="impuesto_0"  placeholder="Ingrese " required>
-</div>
-
-<div>
-<label for="descuento">Descuento:</label>
-    <input type="text" name="descuento"  placeholder="Ingrese " required>
-</div>
-
-<div>
-<label for="valor_subtotal">Valor subtotal:</label>
-    <input type="text" name="valor_subtotal"  placeholder="Ingrese " required>
-</div>
-
-<div>
-<label for="valor_iva">Valor iva:</label>
-    <input type="text" name="valor_iva"  placeholder="Ingrese " required>
-</div>
-
-<div>
-<label for="valor_total">Valor total:</label>
-    <input type="text" name="valor_total" placeholder="Ingrese "  required>
-</div>
-
-<div id="boton">
-      <button type="submit" id="">Guardar</button>
-      <button type="cancelar" id="">Cancelar</button>
-      
-</form>  -->
-
-
 <link rel="stylesheet" href="/css/factura/agregar.css">
-<form action="/factura/agregar" method="post">
-    <div id="factura-agregar-container">
-        <div class="box">
-            <center><h1>Agregar Factura</h1></center>
 
-            <div class="input-box">
-                <label for="fecha_emision">Fecha emisión:</label>
-                <input type="text" name="fecha_emision" placeholder="Ingrese" required>
-            </div>
 
-            <div class="input-box">
-                <label for="descripcion">Descripción:</label>
-                <input type="text" name="descripcion" placeholder="Ingrese" required>
-            </div>
 
-            <div class="input-box">
-                <label for="cantidad">Cantidad:</label>
-                <input type="text" name="cantidad" placeholder="Ingrese" required>
-            </div>
 
-            <div class="input-box">
-                <label for="precio_unitario">Precio unitario:</label>
-                <input type="text" name="precio_unitario" placeholder="Ingrese" required>
-            </div>
+<script src="/script/factura/calculos.js" defer></script>
 
-            <div class="input-box">
-                <label for="precio_total">Precio total:</label>
-                <input type="text" name="precio_total" placeholder="Ingrese" required>
-            </div>
 
-            <div class="input-box">
-                <label for="impuesto_12">Impuesto 12:</label>
-                <input type="text" name="impuesto_12" placeholder="Ingrese" required>
-            </div>
+<div id="factura-container">
+    <form action="/factura/agregar" method="post">
+        <div id="factura-agregar-container">
 
-            <div class="input-box">
-                <label for="impuesto_0">Impuesto 0:</label>
-                <input type="text" name="impuesto_0" placeholder="Ingrese" required>
-            </div>
 
-            <div class="input-box">
-                <label for="descuento">Descuento:</label>
-                <input type="text" name="descuento" placeholder="Ingrese" required>
-            </div>
+            <div class="box">
+                <center>
+                    <h1>Agregar Factura</h1>
+                </center>
+                <div class="input-box">
+                    <label for="fecha_emision">Fecha emisión:</label>
+                    <input type="text" id="fecha-creacion" name="fecha_emision" value="{{ fechaActual }}">
+                </div>
 
-            <div class="input-box">
-                <label for="valor_subtotal">Valor subtotal:</label>
-                <input type="text" name="valor_subtotal" placeholder="Ingrese" required>
-            </div>
 
-            <div class="input-box">
-                <label for="valor_iva">Valor iva:</label>
-                <input type="text" name="valor_iva" placeholder="Ingrese" required>
-            </div>
+                <div>
+                    <table id="detalle_factura">
+                        <thead>
+                            <tr>
 
-            <div class="input-box">
-                <label for="valor_total">Valor total:</label>
-                <input type="text" name="valor_total" placeholder="Ingrese" required>
-            </div>
 
-            <div id="boton">
-                <button type="submit" id="">Guardar</button>
-                <br>
-                <button type="button" id="">Cancelar</button>
+                                <th>
+                                    <label>CANT.</label>
+                                </th>
+                                <th>
+                                    <label>DESCRIPCION</label>
+                                </th>
+                                <th>
+                                    <label>P.UNITARIO</label>
+                                </th>
+                                <th>
+                                    <label>V.TOTAL</label>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input name="cantidad" type="number" oninput="calcularPrecioTotal()"></td>
+                                <td><input name="descripcion" type="text"></td>
+                                <td><input name="precio_unitario" type="text" oninput="calcularPrecioTotal()"></td>
+                                <td><input name="precio_total" type="text" readonly></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+
+                <div class="input-box">
+                    <label for="impuesto_12">Impuesto 12:</label>
+                    <input type="text" name="impuesto_12" placeholder="Ingrese">
+                </div>
+
+
+                <div class="input-box">
+                    <label for="impuesto_0">Impuesto 0:</label>
+                    <input type="text" name="impuesto_0" placeholder="Ingrese">
+                </div>
+
+
+                <div class="input-box">
+                    <label for="descuento">Descuento:</label>
+                    <input type="text" name="descuento" placeholder="Ingrese" oninput="calcularDescuento()">
+                </div>
+
+
+                <div class="input-box">
+                    <label for="valor_subtotal">Valor subtotal:</label>
+                    <input type="text" name="valor_subtotal" id="sub_total" placeholder="Ingrese">
+                </div>
+
+
+                <div class="input-box">
+                    <label for="valor_iva">Valor iva:</label>
+                    <input type="text" name="valor_iva" placeholder="Ingrese">
+                </div>
+
+
+                <div class="input-box">
+                    <label for="valor_total">Valor total:</label>
+                    <input type="text" name="valor_total" placeholder="Ingrese">
+                </div>
+
+
+                <div id="boton">
+                    <button type="submit" id="">Guardar</button>
+                    <br>
+                    <button type="button" id="">Cancelar</button>
+                </div>
             </div>
         </div>
+    </form>
+
+
+    <div id="herramientasDiv" class="herramientasDiv">
+        <table id="herramientas">
+            <tr>
+                <th colspan="2">Herramientas</th>
+            </tr>
+            <tr>
+                <td>Agregar Fila</td>
+                <td><button id="add-row">+</button></td>
+            </tr>
+            <tr>
+                <td>Eliminar Fila</td>
+                <td><button id="remove-row">-</button></td>
+            </tr>
+        </table>
     </div>
-</form>
+</div>
+
+
 
