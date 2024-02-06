@@ -5,25 +5,33 @@
 
       <div class="box">
 
-            <h2>Agregar Cliente</h2>
-            <input type="text" id="nombre_cliente" name="nombre_cliente"  placeholder="Ingresa el nombre" required>
-            <br>
-<br>
-           <input type="text" id="apellido_cliente" name="apellido_cliente"  placeholder="Ingrese el apellido " required>
-            <br>
-<br>
-            <input type="text" id="direccion_cliente" name="direccion_cliente" placeholder="Ingrese la direccion " required>
-            <br>
-<br>
-            <input type="text" id="correo_cliente" name="correo_cliente" placeholder="Ingrese el correo elctronico " required>
-            <br>
-<br>
-            <input type="text" id="celular_cliente" name="celular_cliente" placeholder="Ingrese el celular  " required>
-            <br>
-<br>
-            <input type="text" id="cedula_cliente" name="cedula_cliente" placeholder="Ingrese la cedula " required>
-            <br> 
+         <h2>Agregar Cliente</h2>
 
+         <body>
+            <input type="text" id="nombre_cliente" name="nombre_cliente" placeholder="Ingresa el nombre"
+               pattern="[A-Za-záéíóúÁÉÍÓÚñÑüÜ\s]+" title="Solo se permiten letras y espacios" required>
+
+            <br>
+            <br>
+        
+         <input type="text" id="apellido_cliente" name="apellido_cliente" placeholder="Ingrese el apellido" pattern="[A-Za-záéíóúÁÉÍÓÚñÑüÜ\s]+" title="Solo se permiten letras y espacios" required>
+
+         <br>
+         <br>
+         <input type="address" id="direccion_cliente" name="direccion_cliente" placeholder="Ingrese la direccion "
+            required>
+         <br>
+         <br>
+         <input type="text" id="correo_cliente" name="correo_cliente" placeholder="Ingrese el correo electronico "
+            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" title="Ingrese un correo valido" required>
+         <br>
+         <br>
+         <input type="text" id="celular_cliente" name="celular_cliente" placeholder="Ingrese el celular" pattern="[0-9]{10}" title="Ingrese un número de celular válido de 10 dígitos" maxlength="10" required>
+         <br>
+         <br>
+         <input type="text" id="cedula_cliente" name="cedula_cliente" placeholder="Ingrese la cedula " pattern="[0-9]{10}" title="Ingrese un número de cedula válido de 10 dígitos" maxlength="10"  required>
+         <br>
+ </body>
          <div id="boton">
             <button type="submit" id="">Guardar</button>
             <button type="cancelar" id="">Cancelar</button>
