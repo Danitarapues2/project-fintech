@@ -61,10 +61,10 @@ label {
 input {
     width: 100%;
     padding: 10px;
-    border: 1px solid #1F547E;
+    border: 1px solid #000000;
     border-radius: 4px;
-    background-color: #1F547E;
-    color: white;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
     box-sizing: border-box;
     font-size: 15px;
 }
@@ -130,3 +130,88 @@ button[type="button"]:hover {
     }
 }
 
+.herramientasDiv {
+    background-color: #f1f0f0;
+    width: 80%;
+    padding: 20px;
+    max-width: 125px;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 1125px;
+    margin-top: -400px;
+}
+
+th{
+    border-bottom: 2px solid black;
+}
+
+button[type="add-row"] {
+    background-color: #1F547E;
+    color: white;
+}
+
+button[type="add-row"]:hover {
+    background-color: #0b75cc;
+}
+
+button[type="remove-row"] {
+    background-color: #1F547E;
+    color: white;
+}
+
+button[type="remove-row"]:hover {
+    background-color: #0b75cc;
+}
+
+.agregar {
+    background-color: #f1f0f0;
+    width: 80px;
+    padding: 5px;
+    border-left: solid 1px #000000;
+    border-top: solid 1px #000000;
+    border-bottom: solid 1px #000000;
+    margin: 10px;
+}
+.agregar2 {
+    background-color: #f1f0f0;
+    width: 80px;
+    padding: 5px;
+    border-right: solid 1px #000000;
+    border-top: solid 1px #000000;
+    border-bottom: solid 1px #000000;
+    margin: 10px;
+}
+
+.eliminar {
+    background-color: #f1f0f0;
+    width: 80px;
+    padding: 5px;
+    border-left: solid 1px #000000;
+    border-top: solid 1px #000000;
+    border-bottom: solid 1px #000000;
+    margin: 10px;
+}
+.eliminar2 {
+    background-color: #f1f0f0;
+    width: 80px;
+    padding: 5px;
+    border-right: solid 1px #000000;
+    border-top: solid 1px #000000;
+    border-bottom: solid 1px #000000;
+    margin: 10px;
+}
+
+.agregart {
+    border-radius: 5px;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+}
+
+.removert {
+    border-radius: 5px;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+}
