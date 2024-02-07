@@ -67,28 +67,40 @@ facturaCtl.crearFactura = async (req, res) => {
 
 //mandar
 facturaCtl.mandar = async (req, res) => {
-    const id = req.id_cliente  //ojo
-    const { fecha_emision, descripcion, cantidad, precio_unitario, precio_total, impuesto_12, impuesto_0, descuento, valor_subtotal, valor_iva, valor_total } = req.body
-    const nuevoEnvio = {
-        fecha_emision,
-        descripcion,
-        cantidad,
-        precio_unitario,
-        precio_total,
-        impuesto_12,
-        impuesto_0,
-        descuento,
-        valor_subtotal,
-        valor_iva,
-        valor_total
-    }
-    await orm.factura.create(nuevoEnvio)
-    await orm.detalle_factura.create(nuevoEnvio)
-    await orm.detalle_total.create(nuevoEnvio)
-    req.flash('success', 'Guardado exitosamente')
-    res.redirect('/factura/listar/')
-}
+    try {
+        const { fecha_emision, descripcion, cantidad, precio_unitario, precio_total, impuesto_12, impuesto_0, descuento, valor_subtotal, valor_iva, valor_total } = req.body;
+        
+        // Iterar sobre los arrays de datos enviados desde el formulario
+        for (let i = 0; i < cantidad.length; i++) {
+            const nuevoEnvio = {
+                fecha_emision: fecha_emision[i],
+                descripcion: descripcion[i],
+                cantidad: cantidad[i],
+                precio_unitario: precio_unitario[i],
+                precio_total: precio_total[i],
+                impuesto_12: impuesto_12[i],
+                impuesto_0: impuesto_0[i],
+                descuento: descuento[i],
+                valor_subtotal: valor_subtotal[i],
+                valor_iva: valor_iva[i],
+                valor_total: valor_total[i]
+            };
+            
+            // Guardar los datos en la base de datos utilizando ORM
+            await orm.factura.create(nuevoEnvio);
+            await orm.detalle_factura.create(nuevoEnvio);
+            await orm.detalle_total.create(nuevoEnvio);
+            // Aquí agregar más lógica para guardar los datos en otras tablas relacionadas.
+        }
 
+        req.flash('success', 'Datos guardados exitosamente');
+        res.redirect('/factura/listar/');
+    } catch (error) {
+        console.error("Error al guardar los datos:", error);
+        req.flash('error', 'Error al guardar los datos');
+        res.redirect('/factura/listar/');
+    }
+};
 facturaCtl.listar = async (req, res) => {
     const lista = await sql.query('SELECT * FROM facturas INNER JOIN detalle_facturas ON facturas.id_factura = detalle_facturas.id_detalle_factura ');
     res.render('factura/listar', { lista, showNavbar: true })
