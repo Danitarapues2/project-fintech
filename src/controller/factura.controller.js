@@ -69,29 +69,33 @@ facturaCtl.crearFactura = async (req, res) => {
 facturaCtl.mandar = async (req, res) => {
     try {
         const { fecha_emision, descripcion, cantidad, precio_unitario, precio_total, impuesto_12, impuesto_0, descuento, valor_subtotal, valor_iva, valor_total } = req.body;
-        
-        // Iterar sobre los arrays de datos enviados desde el formulario
+
+        const nuevoEnvio = {
+            fecha_emision,
+            impuesto_12,
+            impuesto_0,
+            descuento,
+            valor_subtotal,
+            valor_iva,
+            valor_total
+        }
+
         for (let i = 0; i < cantidad.length; i++) {
             const nuevoEnvio = {
-                fecha_emision: fecha_emision[i],
                 descripcion: descripcion[i],
                 cantidad: cantidad[i],
                 precio_unitario: precio_unitario[i],
-                precio_total: precio_total[i],
-                impuesto_12: impuesto_12[i],
-                impuesto_0: impuesto_0[i],
-                descuento: descuento[i],
-                valor_subtotal: valor_subtotal[i],
-                valor_iva: valor_iva[i],
-                valor_total: valor_total[i]
+                precio_total: precio_total[i]
             };
-            
-            // Guardar los datos en la base de datos utilizando ORM
-            await orm.factura.create(nuevoEnvio);
+
             await orm.detalle_factura.create(nuevoEnvio);
-            await orm.detalle_total.create(nuevoEnvio);
-            // Aquí agregar más lógica para guardar los datos en otras tablas relacionadas.
+
         }
+        // Guardar los datos en la base de datos utilizando ORM
+        await orm.factura.create(nuevoEnvio);
+        await orm.detalle_total.create(nuevoEnvio);
+        // Aquí agregar más lógica para guardar los datos en otras tablas relacionadas.
+
 
         req.flash('success', 'Datos guardados exitosamente');
         res.redirect('/factura/listar/');
