@@ -1,10 +1,8 @@
 <link rel="stylesheet" href="/css/factura/agregar.css">
 
 
-
-
 <script src="/script/factura/calculos.js" defer></script>
-
+<script defer src="/script/factura/filas.js"></script>
 
 <div id="factura-container">
     <form action="/factura/agregar" method="post">
@@ -42,19 +40,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><input name="cantidad" type="number" oninput="calcularPrecioTotal()"></td>
-                                <td><input name="descripcion" type="text"></td>
-                                <td><input name="precio_unitario" type="text" oninput="calcularPrecioTotal()"></td>
-                                <td><input name="precio_total" type="text" readonly></td>
-                            </tr>
-                            <tr>
-                                <td><input name="cantidad" type="number" oninput="calcularPrecioTotal()"></td>
-                                <td><input name="descripcion" type="text"></td>
-                                <td><input name="precio_unitario" type="text" oninput="calcularPrecioTotal()"></td>
-                                <td><input name="precio_total" type="text" readonly></td>
-                            </tr>
-                            <tr>
+                            <tr class="fila_cada_producto" id="fila_cada_producto">
                                 <td><input name="cantidad" type="number" oninput="calcularPrecioTotal()"></td>
                                 <td><input name="descripcion" type="text"></td>
                                 <td><input name="precio_unitario" type="text" oninput="calcularPrecioTotal()"></td>
@@ -118,7 +104,7 @@
             </tr>
             <tr>
                 <td>Agregar Fila</td>
-                <td><button id="add-row">+</button></td>
+                <td><button id="add-row" onclick="agregarFila()">+</button></td>
             </tr>
             <tr>
                 <td>Eliminar Fila</td>
