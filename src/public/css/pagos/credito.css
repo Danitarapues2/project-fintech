@@ -3,7 +3,7 @@ body {
     margin: 0; /* Reset default margin */
 }
 
-#cliente-agregar-container {
+#credito-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,15 +33,15 @@ h2 {
 label {
     display: block;
     margin-bottom: 5px;
-    color: #616060;
+    color: #000000;
 }
 
 input {
     width: 100%;
     padding: 10px;
-    border: 1px solid #1F547E;
+    border: 1px solid #b2dcff;
     border-radius: 4px;
-    background-color: #1F547E;
+    background-color: #b2dcff;
     color: white;
     box-sizing: border-box;
     font-size: 15px;
