@@ -50,42 +50,34 @@
 
                     </table>
                 </div>
-
-                <div class="input-box">
-                    <label for="impuesto_12">Impuesto 12:</label>
-                    <input type="text" name="impuesto_12" placeholder="Ingrese">
+                <div class="calculos">
+                    <div class="cuadrosubtotal">
+                        <div class="subtotal_texto"><label for="valor_subtotal">Valor subtotal:</label></div>
+                        <div class="subtotal"><input type="text" name="valor_subtotal" id="sub_total"
+                                placeholder="Ingrese"></div>
+                    </div>
+                    <div class="cuadroimpues_0">
+                        <div class="subtotal_texto"><label for="impuesto_0">Impuesto 0:</label></div>
+                        <div class="subtotal"><input type="text" name="impuesto_0" placeholder="Ingrese"></div>
+                    </div>
+                    <div class="cuadroimpues_12">
+                        <div class="subtotal_texto"><label for="impuesto_12">Impuesto 12:</label></div>
+                        <div class="subtotal"> <input type="text" name="impuesto_12" placeholder="Ingrese"></div>
+                    </div>
+                    <div class="cuadro_dsct">
+                        <div class="subtotal_texto"><label for="descuento">Descuento:</label></div>
+                        <div class="subtotal"><input type="text" name="descuento" placeholder="Ingrese"
+                                oninput="calcularDescuento()"></div>
+                    </div>
+                    <div class="cuadro_iva">
+                        <div class="subtotal_texto"><label for="valor_iva">Valor iva:</label></div>
+                        <div class="subtotal"><input type="text" name="valor_iva" placeholder="Ingrese"></div>
+                    </div>
+                    <div class="cuadro_valor_total">
+                        <div class="subtotal_texto"><label for="valor_total">Valor total:</label></div>
+                        <div class="subtotal"><input type="text" name="valor_total" placeholder="Ingrese"></div>
+                    </div>
                 </div>
-
-
-                <div class="input-box">
-                    <label for="impuesto_0">Impuesto 0:</label>
-                    <input type="text" name="impuesto_0" placeholder="Ingrese">
-                </div>
-
-
-                <div class="input-box">
-                    <label for="descuento">Descuento:</label>
-                    <input type="text" name="descuento" placeholder="Ingrese" oninput="calcularDescuento()">
-                </div>
-
-
-                <div class="input-box">
-                    <label for="valor_subtotal">Valor subtotal:</label>
-                    <input type="text" name="valor_subtotal" id="sub_total" placeholder="Ingrese">
-                </div>
-
-
-                <div class="input-box">
-                    <label for="valor_iva">Valor iva:</label>
-                    <input type="text" name="valor_iva" placeholder="Ingrese">
-                </div>
-
-
-                <div class="input-box">
-                    <label for="valor_total">Valor total:</label>
-                    <input type="text" name="valor_total" placeholder="Ingrese">
-                </div>
-
 
                 <div id="boton">
                     <button type="submit" id="">Guardar</button>
@@ -98,18 +90,18 @@
 
 
     <div id="herramientasDiv" class="herramientasDiv">
-        <table id="herramientas">
-            <tr>
-                <th colspan="2">Herramientas</th>
-            </tr>
-            <tr >
-                <td class="agregar">Agregar Fila</td>
-                <td class="agregar2"><button class="agregart" id="add-row" type="add-row" onclick="agregarFila()">+</button></td>
-            </tr>
-            <tr>
-                <td class="eliminar">Eliminar Fila</td>
-                <td class="eliminar2"><button class="removert" id="remove-row" type="remove-row">-</button></td>
-            </tr>
-        </table>
+        <div>
+            <h3>Herramientas</h3>
+            <hr>
+            <div class="cuadroa">
+                <div class="agr_fila">Agregar Fila</div>
+                <div class="agr_fila"><button class="agregart" id="add-row" type="add-row"
+                        onclick="agregarFila()">+</button></div>
+            </div>
+            <div class="cuadroe">
+                <div class="elim_fila">Eliminar Fila</div>
+                <div class="elim_fila"><button class="removert" id="remove-row" type="remove-row">-</button></div>
+            </div>
+        </div>
     </div>
 </div>

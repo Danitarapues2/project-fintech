@@ -25,9 +25,6 @@ form {
     margin: 50px;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
     align-items: center;
 }
 
@@ -62,7 +59,6 @@ input {
     width: 100%;
     padding: 10px;
     border: 1px solid #000000;
-    border-radius: 4px;
     background-color: #ffffff;
     color: rgb(0, 0, 0);
     box-sizing: border-box;
@@ -115,9 +111,6 @@ button[type="button"]:hover {
     background-color: #d80101;
 }
 
-
-
-
 @media screen and (max-width: 600px) {
     .box {
         grid-template-columns: 1fr;
@@ -142,7 +135,7 @@ button[type="button"]:hover {
     margin-top: -400px;
 }
 
-th{
+th {
     border-bottom: 2px solid black;
 }
 
@@ -173,6 +166,7 @@ button[type="remove-row"]:hover {
     border-bottom: solid 1px #000000;
     margin: 10px;
 }
+
 .agregar2 {
     background-color: #f1f0f0;
     width: 80px;
@@ -184,14 +178,17 @@ button[type="remove-row"]:hover {
 }
 
 .eliminar {
+    top: 10px;
     background-color: #f1f0f0;
     width: 80px;
     padding: 5px;
     border-left: solid 1px #000000;
     border-top: solid 1px #000000;
     border-bottom: solid 1px #000000;
+    border-right: solid 1px #000000;
     margin: 10px;
 }
+
 .eliminar2 {
     background-color: #f1f0f0;
     width: 80px;
@@ -199,19 +196,133 @@ button[type="remove-row"]:hover {
     border-right: solid 1px #000000;
     border-top: solid 1px #000000;
     border-bottom: solid 1px #000000;
-    margin: 10px;
+    border-left: solid 1px #000000;
+    margin: 5px;
 }
 
 .agregart {
-    border-radius: 5px;
+    border-radius: 12px;
     width: 35px;
     height: 35px;
     text-align: center;
+    font-size: 26px;
 }
 
 .removert {
-    border-radius: 5px;
+    border-radius: 12px;
     width: 35px;
     height: 35px;
     text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.cuadroa {
+    border: solid 1px #000000;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 12px;
+    margin-bottom: 6px;
+}
+
+.cuadroe {
+    border: solid 1px #000000;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 12px;
+}
+
+.agr_fila {
+    padding: 2px;
+    text-align: center;
+}
+
+.elim_fila {
+    padding: 2px;
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+    margin-top: -5px;
+}
+
+hr {
+    margin-top: -15px;
+    border-width: 3px;
+    border: solid 1px #000000;
+}
+
+.calculos {
+    background-color: #f1f0f0;
+    width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 0px;
+}
+
+.cuadrosubtotal {
+    border: solid 1px #000000;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 12px;
+    margin-bottom: 6px;
+}
+
+.subtotal {
+    padding: 4px;
+    display: inline-block;
+    text-align: center;
+}
+
+.subtotal input {
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.subtotal_texto {
+    padding-top: 15px;
+    padding-left: 45px;
+}
+
+.cuadroimpues_0 {
+    border: solid 1px #000000;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 12px;
+    margin-bottom: 6px;
+}
+
+.cuadroimpues_12 {
+    border: solid 1px #000000;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 12px;
+    margin-bottom: 6px;
+}
+
+.cuadro_dsct {
+    border: solid 1px #000000;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 12px;
+    margin-bottom: 6px;
+}
+
+.cuadro_iva {
+    border: solid 1px #000000;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 12px;
+    margin-bottom: 6px;
+}
+
+.cuadro_valor_total {
+    border: solid 1px #000000;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 12px;
+    margin-bottom: 6px;
 }
