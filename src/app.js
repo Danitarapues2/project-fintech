@@ -91,9 +91,11 @@ app.use(require("./router/debito.router"))
 app.use(require("./router/credito.router"))
 app.use(require("./router/registro.router"))
 app.use(require('./router/principal.router'))
+app.use(require('./router/principal.router'))
 app.use('/cliente', require('./router/cliente.router'))
 app.use('/tienda', require('./router/tienda.router'))
 app.use('/factura', require('./router/factura.router'))
 app.use('/tienda', require('./router/visualizar.router'))
+app.use('/forma_pago', require('./router/forma_pago.router'))
 // Exportar la aplicación
 module.exports = app;

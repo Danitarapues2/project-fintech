@@ -68,6 +68,9 @@
             ¿Ya tienes una cuenta? <a href="/login">Inicia sesión</a>
         </p>
         <form action="/registro" method="POST" id="form">
+        {{#each list}}
+            <input type="text" name="name" id="name" value="{{maximo}}" >
+            {{/each}}
             <div class="form-group">
                 <div class="input-group">
                     <label >Nombres:</label>
@@ -102,3 +105,5 @@
         </form>
     </div>
 </body>
+
+<script src="/js/usuario"></script>

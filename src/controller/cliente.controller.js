@@ -1,15 +1,17 @@
 const clienteCtl = {}
 const sql = require('../database/dataBase.sql')
 const orm = require('../database/dataBase.orm')
+const cliente = require('../models/cliente')
 
-clienteCtl.mostrar = (req, res) => {
-    res.render('cliente/agregar', { showNavbar: true });
+clienteCtl.mostrar =async (req, res) => {
+     const list = await sql.query('select max (id_cliente) as maximo  from clientes')
+    res.render('cliente/agregar', {list, showNavbar: true });
 }
 
 //mandar
 clienteCtl.mandar = async (req, res) => {
     const id =req.id_cliente  //ojo
-    const { nombre_cliente,apellido_cliente,direccion_cliente,correo_cliente,celular_cliente,cedula_cliente } = req.body
+    const { nombre_cliente,apellido_cliente,direccion_cliente,correo_cliente,celular_cliente,cedula_cliente,numb } = req.body
     const nuevoEnvio = {
         nombre_cliente,
         apellido_cliente,
@@ -19,7 +21,11 @@ clienteCtl.mandar = async (req, res) => {
         cedula_cliente
  
     }
+    const nuevoEnvio1 =  {
+        clienteIdCliente: numb
+    }
     await orm.cliente.create(nuevoEnvio)
+    await orm.factura.create(nuevoEnvio1)
     req.flash('success', 'Guardado exitosamente')
     res.redirect('/cliente/listar/')
 }

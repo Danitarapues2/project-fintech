@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="/css/tienda/agregar.css">
+<form action="/forma_pago/agregar" method="post">
+    <div id="tienda-agregar-container">
+        <div class="box">
+            {{#each list}}
+            <input type="hidden" name="numero" id="numero" value="{{maximo}}" >
+            {{/each}}
+            <h2>Agregar Tienda</h2>        
+            <input type="text" id="nombre_forma_pago" name="nombre_forma_pago" placeholder="Ingrese forma de pago"
+                required>
+            <input type="text" id="estado" name="estado" placeholder="Estado" required>
+               
+            <div id="boton">
+                <button type="submit" id="guardar">Guardar</button>
+                <button type="cancelar" id="cancelar">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<script src="/js/forma.js"></script>

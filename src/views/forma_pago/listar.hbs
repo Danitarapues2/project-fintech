@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="/css/cliente/listar.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<script src="/script/cliente/buscador.js"></script>
+
+
+<div id="cliente-listar-container">
+    
+    <div id="cliente-listar-contenedor">
+
+        <p id="titulo-gestion" class="titulo-gestion" style="padding-top: 20px;  margin: 0 auto; text-align:center; font-size: 25px;" >Gestión de Clientes</p>
+
+
+        <button id="button-agregar" class="button-agregar">
+            <a href="/forma_pago/agregar/" style="color:white; text-decoration: none; ">
+                Agregar</a>
+        </button>
+
+                {{#each lista}}
+                <tbody>
+                    <tr class="fila-campos" id="fila-campos">
+                        <td class="td-campos" id="td-campos">
+                            <p>{{nombre_forma_pago}}</p>
+                        </td>
+                        <td class="td-campos" id="td-campos">
+                            <p>{{estado}}</p>
+                        </td>
+                       
+                                
+                            </div>
+
+                        </td>                     
+                    </tr>
+                </body>
+                {{/each}}
+            </table>
+
+        </div>
+        <div>
+
+        </div>
+    </div>
+</div>
+
+
