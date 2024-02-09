@@ -2,6 +2,7 @@ const facturaCtl = {}
 const sql = require('../database/dataBase.sql')
 const orm = require('../database/dataBase.orm')
 
+
 facturaCtl.mostrar = async (req, res) => {
     const list = await sql.query('SELECT max (id_detalle_total) as maximo FROM detalle_totals');
     const fechaActual = new Date().toISOString().slice(0, 10);
@@ -32,14 +33,8 @@ facturaCtl.mandar = async (req, res) => {
 // Después de que el usuario haya seleccionado un cliente en el formulario, puedes manejar la creación de la factura con el cliente seleccionado.
 facturaCtl.mandar = async (req, res) => {
     const idClienteSeleccionado = req.body.id_cliente;
+
     try {
-        const { fecha_emision } = req.body;
-
-        const nuevoEnvioFactura = {
-            fecha_emision,
-            id_cliente: idClienteSeleccionado
-        }
-
         const { impuesto_12, impuesto_0, descuento, valor_subtotal, valor_iva, valor_total, numero } = req.body;
         const nuevoEnvioTotal = {
             impuesto_12,
@@ -49,12 +44,17 @@ facturaCtl.mandar = async (req, res) => {
             valor_iva,
             valor_total
         }
-        const nuevoEnvio1 = {
+        await orm.detalle_total.create(nuevoEnvioTotal);
+
+        const { fecha_emision } = req.body;
+        const nuevoEnvioFactura = {
+            fecha_emision,
+            id_cliente: idClienteSeleccionado,
             detalleTotalIdDetalleTotal: numero
         }
 
-        await orm.detalle_total.create(nuevoEnvioTotal, nuevoEnvio1);
-        console.log(nuevoEnvio1)
+        await orm.factura.create(nuevoEnvioFactura);
+
 
         const { descripcion, cantidad, precio_unitario, precio_total } = req.body;
         for (let i = 0; i < cantidad.length; i++) {
@@ -64,14 +64,11 @@ facturaCtl.mandar = async (req, res) => {
                 precio_unitario: precio_unitario[i],
                 precio_total: precio_total[i]
             };
-
             await orm.detalle_factura.create(nuevoEnvioDetalle);
-
         }
         // Guardar los datos en la base de datos utilizando ORM
-        await orm.factura.create(nuevoEnvioFactura);
-        // Aquí agregar más lógica para guardar los datos en otras tablas relacionadas.
 
+        // Aquí agregar más lógica para guardar los datos en otras tablas relacionadas.
 
         req.flash('success', 'Datos guardados exitosamente');
         res.redirect('/factura/listar/');
