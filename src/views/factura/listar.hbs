@@ -6,31 +6,33 @@
     <h1>Factura</h1>
     <div class="row">
         {{#each lista}}
-        <div id="tarjeta">
+        <div>
             <u>
                 <h2>Datos </h2>
             </u>
-            <div>
-                <p>{{nombre_cliente}}</p>
-                <p>{{apellido_cliente}}</p>
-                <p>{{direccion_cliente}}</p>
-                <p>{{correo_cliente}}</p>
-                <p>{{celular_cliente}}</p>
-                <p>{{cedula_cliente}}</p>
-                <p>{{fecha_emision}}</p>
-                <p>{{descripcion}}</p>
-                <p>{{cantidad}}</p>
-                <p>{{precio_unitario}}</p>
-                <p>{{precio_total}}</p>
-                <p>{{impuesto_12}}</p>
-                <p>{{impuesto_0}}</p>
-                <p>{{descuento}}</p>
-                <p>{{valor_subtotal}}</p>
-                <p>{{valor_iva}}</p>
-                <p>{{valor_total}}</p>
-                <div>
-                    
-            </div>
+            <p>{{nombre_cliente}}</p>
+            <p>{{apellido_cliente}}</p>
+            <p>{{direccion_cliente}}</p>
+            <p>{{correo_cliente}}</p>
+            <p>{{celular_cliente}}</p>
+            <p>{{cedula_cliente}}</p>
+            <p>Fecha</p>
+            <p>{{fecha_emision}}</p>
+
+            <p>Detalle Factura</p>
+            <p>{{descripcion}}</p>
+            <p>{{cantidad}}</p>
+            <p>{{precio_unitario}}</p>
+            <p>{{precio_total}}</p>
+
+            <p>Detalle total</p>
+            <p>{{impuesto_12}}</p>
+            <p>{{impuesto_0}}</p>
+            <p>{{descuento}}</p>
+            <p>{{valor_subtotal}}</p>
+            <p>{{valor_iva}}</p>
+            <p>{{valor_total}}</p>
+
             {{/each}}
         </div>
     </div>

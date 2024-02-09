@@ -79,8 +79,8 @@ factura.hasMany(detalle_factura)
 detalle_factura.belongsTo(factura)
 
 //relacion factura-detalle_total
-factura.hasMany(detalle_total)
-detalle_total.belongsTo(factura)
+detalle_total.hasMany(factura)
+factura.belongsTo(detalle_total)
 
 
 

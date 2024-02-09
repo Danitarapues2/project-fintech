@@ -1,6 +1,5 @@
 <link rel="stylesheet" href="/css/factura/agregar.css">
 
-
 <script src="/script/factura/calculos.js" defer></script>
 <script defer src="/script/factura/filas.js"></script>
 
@@ -23,7 +22,6 @@
                     <table id="detalle_factura">
                         <thead>
                             <tr>
-
 
                                 <th>
                                     <label>CANT.</label>
@@ -50,7 +48,11 @@
 
                     </table>
                 </div>
+                {{#each list}}
+                <p> Nº <input type="text" name="numero" id="numero" value="{{maximo}}"> </p>
+                {{/each}}
                 <div class="calculos">
+
                     <div class="cuadrosubtotal">
                         <div class="subtotal_texto"><label for="valor_subtotal">Valor subtotal:</label></div>
                         <div class="subtotal"><input type="text" name="valor_subtotal" id="sub_total"
@@ -105,3 +107,5 @@
         </div>
     </div>
 </div>
+
+<script src="/js/detalle_total.js"></script>

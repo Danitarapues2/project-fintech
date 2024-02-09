@@ -10,4 +10,5 @@ router.get('/listar',listar)
 router.get('/listar',listar)
 router.get('/historial',mostrarhistorial)
 
+
 module.exports = router
