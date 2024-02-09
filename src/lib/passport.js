@@ -69,13 +69,8 @@ passport.use(
             }
 
             const usuarios = await orm.usuario.findOne({ where: { correo_electronico_usuario: correo_electronico_usuario } });
-
             if (usuarios === null) {
                 const nuevoUsuario = {
-                const { nombres_usuario, apellidos_usuario,cedula_usuario,celular_usuario,correo_electronico_usuario,password_usuario,numero } = req.body;
-
-                let nuevoUsuario = {
-                    ///
                     nombres_usuario,
                     apellidos_usuario,
                     cedula_usuario,
@@ -84,13 +79,7 @@ passport.use(
                     password_usuario
                 };
                 nuevoUsuario.password_usuario = await helpers.encryptPassword(password_usuario);
-
-                const nuevoEnvio1 = {
-                    usuarioIdUsuario: numero
-                }
-
-                const resultado = await orm.usuario.create(nuevoUsuario,nuevoEnvio1);
-
+                const resultado = await orm.usuario.create(nuevoUsuario);
                 nuevoUsuario.id = resultado.insertId;
                 return done(null, nuevoUsuario);
             } else {
