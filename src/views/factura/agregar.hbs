@@ -4,7 +4,7 @@
 <script defer src="/script/factura/filas.js"></script>
 
 <div id="factura-container">
-    <form action="/factura/agregar" method="post">
+    <form action="/factura/agregar/:id" method="post">
         <div id="factura-agregar-container">
 
 
@@ -17,7 +17,51 @@
                     <input type="text" id="fecha-creacion" name="fecha_emision" value="{{ fechaActual }}">
                 </div>
 
+                {{#each lista}}
+                <tbody>
+                    <tr class="fila-campos" id="fila-campos">
+                        <td class="td-campos" id="td-campos">
+                            <p>{{nombre_cliente}}</p>
+                        </td>
+                        <td class="td-campos" id="td-campos">
+                            <p>{{apellido_cliente}}</p>
+                        </td>
+                        <td class="td-campos" id="td-campos">
+                            <p>{{cedula_cliente}}</p>
+                        </td>
+                        <td class="td-campos" id="td-campos">
+                            <p>{{celular_cliente}}</p>
+                        </td>
+                        <td class="td-campos" id="td-campos">
+                            <p>{{correo_cliente}}</p>
+                        </td>
+                        <td class="td-campos" id="td-campos">
+                            <p>{{direccion_cliente}}</p>
+                        </td>
+                        <td class="td-campos" id="td-campos">
+                            <div>
+                                <a href="/cliente/editar/{{id_cliente}}">
+                                    <button type="editar">
+                                        <i class="fas fa-pencil-alt"></i>
+                                    </button>
+                                </a>
+                            </div>
 
+                        </td>
+
+                        <td class="td-campos" id="td-campos">
+                            <div>
+                                <a href="/cliente/eliminar/{{id_cliente}}">
+                                    <button type="eliminar">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </a>
+                            </div>
+
+                        </td>
+                    </tr>
+                </tbody>
+                {{/each}}
                 <div>
                     <table id="detalle_factura">
                         <thead>
@@ -48,9 +92,14 @@
 
                     </table>
                 </div>
+
+
+
                 {{#each list}}
                 <p> Nº <input type="text" name="numero" id="numero" value="{{maximo}}"> </p>
                 {{/each}}
+
+
                 <div class="calculos">
 
                     <div class="cuadrosubtotal">

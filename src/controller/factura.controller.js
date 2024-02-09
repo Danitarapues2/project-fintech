@@ -3,12 +3,18 @@ const sql = require('../database/dataBase.sql')
 const orm = require('../database/dataBase.orm')
 
 
-facturaCtl.mostrar = async (req, res) => {
-    const list = await sql.query('SELECT max (id_detalle_total) as maximo FROM detalle_totals');
-    const fechaActual = new Date().toISOString().slice(0, 10);
-    res.render('factura/agregar', { list, showNavbar: true, fechaActual: fechaActual });
-}
 
+facturaCtl.mostrar = async (req, res) => {
+    
+    //traer fk de id_detalle_total
+    const list = await sql.query('SELECT max (id_detalle_total) as maximo FROM detalle_totals');
+
+     //listar cliente segun id
+    const ids = req.params.id
+    const lista = await sql.query('select * from clientes where id_cliente =?', [ids])
+    const fechaActual = new Date().toISOString().slice(0, 10);
+    res.render('factura/agregar', { list, showNavbar: true, fechaActual: fechaActual,lista });
+}
 
 facturaCtl.mostrarhistorial = (req, res) => {
     res.render('factura/historial', { showNavbar: true });
