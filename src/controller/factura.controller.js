@@ -3,7 +3,6 @@ const sql = require('../database/dataBase.sql')
 const orm = require('../database/dataBase.orm')
 
 
-
 facturaCtl.mostrar = async (req, res) => {
     
     //traer fk de id_detalle_total
@@ -13,7 +12,11 @@ facturaCtl.mostrar = async (req, res) => {
     const ids = req.params.id
     const lista = await sql.query('select * from clientes where id_cliente =?', [ids])
     const fechaActual = new Date().toISOString().slice(0, 10);
-    res.render('factura/agregar', { list, showNavbar: true, fechaActual: fechaActual,lista });
+
+    const id = req.params.id
+    const listaT = await sql.query('select * from tiendas where id_tienda = 2')
+    res.render('factura/agregar', { list, showNavbar: true, fechaActual: fechaActual,lista,listaT });
+
 }
 
 facturaCtl.mostrarhistorial = (req, res) => {

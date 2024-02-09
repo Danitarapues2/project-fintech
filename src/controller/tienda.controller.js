@@ -8,7 +8,7 @@ tiendaCtl.mostrar = async(req, res) => {
 }
 
 //mandar
-tiendaCtl.mandar = async (req, res) => {
+tiendaCtl.mandarTienda = async (req, res) => {
     const id =req.id_tienda  //ojo
     const { nombre_tienda, ruc_tienda, direccion_matriz, direccion_sucursal, correo_electronico_tienda, telefono_tienda,numero} = req.body
     const nuevoEnvio = {
@@ -18,8 +18,8 @@ tiendaCtl.mandar = async (req, res) => {
         direccion_sucursal,
         correo_electronico_tienda,
         telefono_tienda
- 
     }
+
     const nuevoEnvio1 =  {
         tiendaIdTienda: numero
     }
@@ -41,6 +41,10 @@ tiendaCtl.traer = async (req, res) => {
     const id = req.params.id
     const lista = await sql.query('select * from tiendas where id_tienda =?', [id])
     res.render('tienda/editar', { lista })
+}
+
+//traer datos
+tiendaCtl.listarUnaTienda = async (req, res) => {
 }
 
 tiendaCtl.actualizar = async (req, res) => {

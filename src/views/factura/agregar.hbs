@@ -17,6 +17,35 @@
                     <input type="text" id="fecha-creacion" name="fecha_emision" value="{{ fechaActual }}">
                 </div>
 
+                {{#each listaT}}
+                <div class="form-group">
+                    <label for="nombre-tienda">Nombre del Negocio:</label>
+                    <input id="nombre-tienda" type="text" value="{{nombre_tienda}}" disabled />
+                </div>
+                <div class="form-group">
+                    <label for="ruc">No. RUC:</label>
+                    <input id="ruc" type="text" value="{{ruc_tienda}}" disabled />
+                </div>
+                <div class="form-group">
+                    <label for="direccion-matriz">Dirección de Matriz:</label>
+                    <input id="direccion-matriz" type="text" value="{{direccion_matriz}}" disabled />
+                </div>
+                <div class="form-group">
+                    <label for="direccion-sucursal">Dirección Sucursal:</label>
+                    <input id="direccion-sucursal" type="text" value="{{direccion_sucursal}}" disabled />
+                </div>
+                <div class="form-group">
+                    <label for="correo-tienda">Correo Electrónico </label>
+                    <input id="correo-tienda" type="text" value="{{correo_electronico_tienda}}" disabled />
+                </div>
+                <div class="form-group">
+                    <label for="telefono-tienda">Teléfono Tienda:</label>
+                    <input id="telefono-tienda" type="text" value="{{telefono_tienda}}" disabled />
+                </div>
+
+
+                {{/each}}
+
                 {{#each lista}}
                 <tbody>
                     <tr class="fila-campos" id="fila-campos">
@@ -105,7 +134,8 @@
                     <div class="cuadrosubtotal">
                         <div class="subtotal_texto"><label for="valor_subtotal">Valor subtotal:</label></div>
                         <div class="subtotal"><input type="text" name="valor_subtotal" id="sub_total"
-                                placeholder="Ingrese"></div>
+                                placeholder="Ingrese">
+                        </div>
                     </div>
                     <div class="cuadroimpues_0">
                         <div class="subtotal_texto"><label for="impuesto_0">Impuesto 0:</label></div>
@@ -137,24 +167,25 @@
                 </div>
             </div>
         </div>
-    </form>
+</div>
+</form>
 
 
-    <div id="herramientasDiv" class="herramientasDiv">
-        <div>
-            <h3>Herramientas</h3>
-            <hr>
-            <div class="cuadroa">
-                <div class="agr_fila">Agregar Fila</div>
-                <div class="agr_fila"><button class="agregart" id="add-row" type="add-row"
-                        onclick="agregarFila()">+</button></div>
-            </div>
-            <div class="cuadroe">
-                <div class="elim_fila">Eliminar Fila</div>
-                <div class="elim_fila"><button class="removert" id="remove-row" type="remove-row">-</button></div>
-            </div>
+<div id="herramientasDiv" class="herramientasDiv">
+    <div>
+        <h3>Herramientas</h3>
+        <hr>
+        <div class="cuadroa">
+            <div class="agr_fila">Agregar Fila</div>
+            <div class="agr_fila"><button class="agregart" id="add-row" type="add-row"
+                    onclick="agregarFila()">+</button></div>
+        </div>
+        <div class="cuadroe">
+            <div class="elim_fila">Eliminar Fila</div>
+            <div class="elim_fila"><button class="removert" id="remove-row" type="remove-row">-</button></div>
         </div>
     </div>
+</div>
 </div>
 
 <script src="/js/detalle_total.js"></script>
