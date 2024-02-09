@@ -2,14 +2,22 @@
 <form action="/tienda/agregar" method="post">
     <div id="tienda-agregar-container">
         <div class="box">
+            {{#each list}}
+            <p> Nº <input type="text" name="numero" id="numero" value="{{maximo}}"> </p>
+            {{/each}}
             <h2>Agregar Tienda</h2>
 
-            <input type="text" id="nombre_tienda" name="nombre_tienda" placeholder="Ingrese el nombre del negocio" required>
+            <input type="text" id="nombre_tienda" name="nombre_tienda" placeholder="Ingrese el nombre del negocio"
+                required>
             <input type="text" id="ruc_tienda" name="ruc_tienda" placeholder="No. Ruc" required>
-            <input type="text" id="direccion_matriz" name="direccion_matriz" placeholder="Ingrese la Dirección Matriz" required>
-            <input type="text" id="direccion_sucursal" name="direccion_sucursal" placeholder="Ingrese la Dirección Sucursal" required>
-            <input type="text" id="correo_electronico_tienda" name="correo_electronico_tienda" placeholder="Ingrese el Correo de la tienda" required>
-            <input type="text" id="telefono_tienda" name="telefono_tienda" placeholder="Ingrese el Teléfono o Celular" required>
+            <input type="text" id="direccion_matriz" name="direccion_matriz" placeholder="Ingrese la Dirección Matriz"
+                required>
+            <input type="text" id="direccion_sucursal" name="direccion_sucursal"
+                placeholder="Ingrese la Dirección Sucursal" required>
+            <input type="text" id="correo_electronico_tienda" name="correo_electronico_tienda"
+                placeholder="Ingrese el Correo de la tienda" required>
+            <input type="text" id="telefono_tienda" name="telefono_tienda" placeholder="Ingrese el Teléfono o Celular"
+                required>
 
             <div id="boton">
                 <button type="submit" id="guardar">Guardar</button>
@@ -18,3 +26,5 @@
         </div>
     </div>
 </form>
+
+<script src="/js/tienda.js"></script>
