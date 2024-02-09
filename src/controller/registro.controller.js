@@ -1,10 +1,15 @@
 const registro = {};
 
+const orm = require("../database/dataBase.orm")
+const sql = require("../database/dataBase.sql");
 const passport = require('passport');
 
+
 registro.mostrarRegistro = async(req, res) => {
-    res.render('login/registro');
+    const list = await sql.query('SELECT max (id_usuario) as maximo FROM usuarios');
+    res.render('login/registro',{list});
 };
+
 //registro
 registro.Registro = passport.authenticate('local.signup', {
     successRedirect: '/login',

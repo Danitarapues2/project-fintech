@@ -1,14 +1,14 @@
-class optenerName {
+class optenerNumero {
     constructor(){
-        this.name = document.getElementById( 'name' );
+        this.numero = document.getElementById( 'numero' );
     }
     obtener(){
-        if(this.name.value === ''){
-            this.name.value = 1
+        if(this.numero.value === ''){
+            this.numero.value = 1
         } else{
-            this.name.value = parseInt(this.name.value) + 1
+            this.numero.value = parseInt(this.numero.value) + 1
         }
     }
 }
-let names = new optenerName()
-window.onload = names.obtener()
+let numeros = new optenerNumero()
+window.onload = numeros.obtener()
