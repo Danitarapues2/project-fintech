@@ -1,0 +1,30 @@
+/*
+.mensaje {
+    padding: 5px;
+    margin-bottom: 2px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}*/

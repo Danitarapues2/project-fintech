@@ -31,7 +31,7 @@ passport.use(
                         user,
                         req.flash(
                             "message",
-                            "Bienvenido" + " " + user.correo_electronico_usuario
+                            "Bienvenido a Fintech" + " " + user.correo_electronico_usuario
                         )
                     );
                 } else {
@@ -57,11 +57,20 @@ passport.use(
             passReqToCallback: true,
         },
         async (req, correo_electronico_usuario, password_usuario, done) => {
+            const { nombres_usuario, apellidos_usuario, cedula_usuario, celular_usuario } = req.body;
+            const celularRegex = /^[0-9]{10}$/;
+            const cedulaRegex = /^[0-9]{10}$/;
+
+            if (!celularRegex.test(celular_usuario)) {
+                return done(null, false, req.flash("message", "El número de celular debe tener exactamente 10 caracteres y contener solo números."));
+            }
+            if (!cedulaRegex.test(cedula_usuario)) {
+                return done(null, false, req.flash("message", "La cédula debe tener exactamente 10 caracteres y contener solo números."));
+            }
+
             const usuarios = await orm.usuario.findOne({ where: { correo_electronico_usuario: correo_electronico_usuario } });
             if (usuarios === null) {
-                const { nombres_usuario, apellidos_usuario,cedula_usuario,celular_usuario,correo_electronico_usuario,password_usuario } = req.body;
-                let nuevoUsuario = {
-                    ///
+                const nuevoUsuario = {
                     nombres_usuario,
                     apellidos_usuario,
                     cedula_usuario,
@@ -72,15 +81,14 @@ passport.use(
                 nuevoUsuario.password_usuario = await helpers.encryptPassword(password_usuario);
                 const resultado = await orm.usuario.create(nuevoUsuario);
                 nuevoUsuario.id = resultado.insertId;
-                return done(null, nuevoUsuario)
-
+                return done(null, nuevoUsuario);
             } else {
                 if (usuarios) {
                     const usuario = usuarios;
-                    if (username == usuario.nombres_usuarios) {
-                        done(null, false, req.flash("message", "El nombre de usuario ya existe."));
+                    if (nombres_usuario === usuario.nombres_usuarios) {
+                        return done(null, false, req.flash("message", "El nombre de usuario ya existe."));
                     } else {
-                        let nuevoUsuario = {
+                        const nuevoUsuario = {
                             correo_electronico_usuario,
                             password_usuario
                         };

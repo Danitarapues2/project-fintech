@@ -11,28 +11,28 @@
                     <div id="input-box" class="box-nombre-apellido">
                         <div>
                             <label>Nombres:</label>
-                            <input type="text" name="nombres_Dueño" placeholder="Ingresa tus nombres completos" />
+                            <input type="text" name="nombres_Dueño" placeholder="Ingresa tus nombres completos"  pattern="[A-Za-záéíóúÁÉÍÓÚñÑüÜ\s]+" title="Solo se permiten letras y espacios"/>
                         </div>
                         <div id="separacion">
                             <label>Apellidos:</label>
-                            <input type="text" name="apellidos_Dueño" placeholder="Ingresa tus apellidos completos" />
+                            <input type="text" name="apellidos_Dueño" placeholder="Ingresa tus apellidos completos"  pattern="[A-Za-záéíóúÁÉÍÓÚñÑüÜ\s]+" title="Solo se permiten letras y espacios" />
                         </div>
                     </div>
                     <div id="input-box" class="box-celular-cedula">
                         <div>
                             <label>Celular:</label>
-                            <input type="number" name="celular_Dueño" placeholder="099860898" />
+                            <input type="number" name="celular_Dueño" placeholder="099860898" pattern="[0-9]{10}" title="Ingrese un número de celular válido de 10 dígitos" required />
                         </div>
                         <div id="separacion">
                             <label>Cedula:</label>
-                            <input type="number" name="cedula_Dueño" placeholder="######" />
+                            <input type="number" name="cedula_Dueño" placeholder="######" pattern="[0-9]{10}" title="Ingrese un número de celular válido de 10 dígitos" />
                         </div>
                     </div>
 
                     <div id="input-box" class="box-correo-contraseña">
                         <div>
                             <label>Correo:</label>
-                            <input type="email" name="correo_electronico_Dueño" placeholder="ejemplo@gmail.com" />
+                            <input type="email" name="correo_electronico_Dueño" placeholder="ejemplo@gmail.com"  pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" title="Ingrese un correo valido"  />
                         </div>
                         <div id="separacion">
                             <label>Contraseña:</label>
