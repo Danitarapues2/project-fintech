@@ -1,38 +1,59 @@
-<link rel="stylesheet" href="/css/cliente/listar.css">
+<link rel="stylesheet" href="/css/factura/listar.css">
 <form action="factura/listar/" method="get"></form>
 
 
 <div id="cliente-listar-container">
-    <h1>Factura</h1>
-    <div class="row">
-        {{#each lista}}
-        <div>
-            <u>
-                <h2>Datos </h2>
-            </u>
-            <p>{{nombre_cliente}}</p>
-            <p>{{apellido_cliente}}</p>
-            <p>{{direccion_cliente}}</p>
-            <p>{{correo_cliente}}</p>
-            <p>{{celular_cliente}}</p>
-            <p>{{cedula_cliente}}</p>
-            <p>Fecha</p>
-            <p>{{fecha_emision}}</p>
-
-            <p>Detalle Factura</p>
-            <p>{{descripcion}}</p>
-            <p>{{cantidad}}</p>
-            <p>{{precio_unitario}}</p>
-            <p>{{precio_total}}</p>
-
-            <p>Detalle total</p>
-            <p>{{impuesto_12}}</p>
-            <p>{{impuesto_0}}</p>
-            <p>{{descuento}}</p>
-            <p>{{valor_subtotal}}</p>
-            <p>{{valor_iva}}</p>
-            <p>{{valor_total}}</p>
-
-            {{/each}}
-        </div>
+    <div class="title-container">
+        <h1>Factura</h1>
     </div>
+    
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Dirección</th>
+                    <th>Correo</th>
+                    <th>Celular</th>
+                    <th>Cédula</th>
+                    <th>Fecha de Emisión</th>
+                    <th>Descripción</th>
+                    <th>Cantidad</th>
+                    <th>Precio Unitario</th>
+                    <th>Precio Total</th>
+                    <th>Impuesto 12%</th>
+                    <th>Impuesto 0%</th>
+                    <th>Descuento</th>
+                    <th>Valor Subtotal</th>
+                    <th>Valor IVA</th>
+                    <th>Valor Total</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each lista}}
+                <tr>
+                    <td>{{nombre_cliente}}</td>
+                    <td>{{apellido_cliente}}</td>
+                    <td>{{direccion_cliente}}</td>
+                    <td>{{correo_cliente}}</td>
+                    <td>{{celular_cliente}}</td>
+                    <td>{{cedula_cliente}}</td>
+                    <td>{{fecha_emision}}</td>
+                    <td>{{descripcion}}</td>
+                    <td>{{cantidad}}</td>
+                    <td>{{precio_unitario}}</td>
+                    <td>{{precio_total}}</td>
+                    <td>{{impuesto_12}}</td>
+                    <td>{{impuesto_0}}</td>
+                    <td>{{descuento}}</td>
+                    <td>{{valor_subtotal}}</td>
+                    <td>{{valor_iva}}</td>
+                    <td>{{valor_total}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>

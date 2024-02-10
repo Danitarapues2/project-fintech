@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0; 
+}
+
+#cliente-listar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+#cliente-listar-contenedor {
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(78, 78, 78, 0.1);
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #EAEAEA;
+}
+
+h3 {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+thead tr {
+    background-color: #1F547E;
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+.button-agregar {
+    background-color: #1F547E;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px;
+    display: block;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    width: 150px;
+    margin: 0 auto;
+}
+
+.button-agregar a {
+    color: white;
+    text-decoration: none;
+}
+
+.button-agregar:hover {
+    background-color: #154366;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 767px) {
+    #cliente-listar-container {
+        padding: 20px;
+    }
+
+    #cliente-listar-contenedor {
+        width: 100%;
+    }
+
+    .button-agregar {
+        width: 100%;
+    }
+}

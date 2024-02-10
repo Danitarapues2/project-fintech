@@ -7,32 +7,30 @@
     
     <div id="cliente-listar-contenedor">
 
-        <p id="titulo-gestion" class="titulo-gestion" style="padding-top: 20px;  margin: 0 auto; text-align:center; font-size: 25px;" >Gestión de Clientes</p>
+        <p id="titulo-gestion" class="titulo-gestion" style="padding-top: 20px;  margin: 0 auto; text-align:center; font-size: 25px;" ></p>
 
-
+        <h3>Forma de pago</h3>
         <button id="button-agregar" class="button-agregar">
             <a href="/forma_pago/agregar/" style="color:white; text-decoration: none; ">
                 Agregar</a>
         </button>
-
+        <hr>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
                 {{#each lista}}
-                <tbody>
-                    <tr class="fila-campos" id="fila-campos">
-                        <td class="td-campos" id="td-campos">
-                            <p>{{nombre_forma_pago}}</p>
-                        </td>
-                        <td class="td-campos" id="td-campos">
-                            <p>{{estado}}</p>
-                        </td>
-                       
-                                
-                            </div>
-
-                        </td>                     
-                    </tr>
-                </body>
+                <tr>
+                    <td>{{nombre_forma_pago}}</td>
+                    <td>{{estado}}</td>
+                </tr>
                 {{/each}}
-            </table>
+            </tbody>
+        </table>
 
         </div>
         <div>
