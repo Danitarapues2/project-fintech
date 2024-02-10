@@ -33,18 +33,15 @@ form {
     margin-left: 200px;
 }
 
-
 h1 {
     text-align: center;
     color: #333;
     grid-column: span 2;
 }
 
-
 .input-box {
     margin-top: 15px;
 }
-
 
 label {
     display: block;
@@ -52,10 +49,7 @@ label {
     color: #616060;
 }
 
-
-
-
-input {
+.calculos input {
     width: 100%;
     padding: 10px;
     border: 1px solid #000000;
@@ -65,8 +59,7 @@ input {
     font-size: 15px;
 }
 
-
-input:focus {
+.calculos input:focus {
     background-color: white;
     color: black;
     outline: none;
@@ -329,12 +322,12 @@ hr {
 
 .datos_cliente {
     background-color: #f1f0f0;
+    width: 400px;
     padding: 20px;
     border-radius: 10px;
     margin: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-left: 0px;
-    
 }
 
 .nom_cliente {
@@ -345,6 +338,10 @@ hr {
     margin-bottom: 6px;
 }
 
+.nom_cliente label {
+    padding-top: 15px;
+    padding-left: 45px;
+}
 
 .nombre_cli {
     width: 220px;
@@ -354,5 +351,26 @@ hr {
 
 .cuadro_nom_cedu {
     display: flex;
-    max-width: 100%;
+}
+
+img {
+    width: 200px;
+}
+
+.form-group input {
+    background: none;
+    border: none;
+}
+
+.imagen_nombre {
+    display: flex;
+}
+
+#nombre-tienda {
+    height: 140px;
+}
+
+#tabla-contenedor {
+    margin-left: 485px;
+    margin-top: -160px;
 }
