@@ -396,3 +396,23 @@ height: 30px;
 .linea_cuentas {
     width: 780px;
 }
+
+#nombres {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#nombre-tienda {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#direccion-matriz {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#direccion-sucursal{
+    font-size: 16px;
+    font-weight: bold;
+}
