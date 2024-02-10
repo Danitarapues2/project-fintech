@@ -16,192 +16,197 @@
                         {{#each listaT}}
                         <div class="form-group">
                             <p>Tienda
-                            <input id="nombre-tienda" type="text" value="{{nombre_tienda}}" disabled /></p>
+                                <input id="nombre-tienda" type="text" value="{{nombre_tienda}}" disabled />
+                            </p>
                         </div>
                     </div>
                     <div id="derecha">
-                    <div id="tabla-contenedor">
-                        <table border="1" id="numero">
-                            <tr>
-                                <td>
-                                    <h3>RUC</h3>
-                                </td>
-                                <td>
-                                    <h3>{{ruc_tienda}}</h3>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" id="nFactura">
-                                    <h3>Factura </h3>
-                                    <h3>NO. OO2-002-123456789</h3>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <h3>AUT.SRI</h3>
-                                </td>
-                                <td>
-                                    <h3>1234567890</h3>
-                                </td>
-                            </tr>
-                        </table>
+                        <div id="tabla-contenedor">
+                            <table border="1" id="numero">
+                                <tr>
+                                    <td>
+                                        <h3>RUC</h3>
+                                    </td>
+                                    <td>
+                                        <h3>{{ruc_tienda}}</h3>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" id="nFactura">
+                                        <h3>Factura </h3>
+                                        <h3>NO. OO2-002-123456789</h3>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h3>AUT.SRI</h3>
+                                    </td>
+                                    <td>
+                                        <h3>1234567890</h3>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
                     </div>
-           
-                </div>
                     <div class="form-group">
                         <input id="nombres" type="text" value="{{nombres_usuario}} {{apellidos_usuario}}" disabled />
                     </div>
-                    <br><hr class="linea_nombre">
+                    <br>
+                    <hr class="linea_nombre">
                     <div class="form-group">
                         <p>Direcion matriz:
-                        <input id="direccion-matriz" type="text" value="{{direccion_matriz}}" disabled /></p>
+                            <input id="direccion-matriz" type="text" value="{{direccion_matriz}}" disabled />
+                        </p>
                     </div>
                     <div class="form-group">
                         <p>Direcion sucursal:
-                        <input id="direccion-sucursal" type="text" value="{{direccion_sucursal}}" disabled /></p>
+                            <input id="direccion-sucursal" type="text" value="{{direccion_sucursal}}" disabled />
+                        </p>
                     </div>
-                    <br><hr>
+                    <br>
+                    <hr>
                     {{/each}}
                     {{#each lista}}
+
                     <div class="datos_cliente">
                         <div class="cuadro_nom_cedu">
                             <div class="nom_cliente">
-                                <div class="nombre_cli">
-                                    <label>Sr (es):</label>
-                                    <input id="nombre_cliente" name="nombre_cliente" type="text"
-                                        value="{{nombre_cliente}} {{apellido_cliente}}" disabled />
-                                </div>
+                                <label>Sr (es):</label>
+                                <input id="nombre_cliente" name="nombre_cliente" type="text"
+                                    value="{{nombre_cliente}} {{apellido_cliente}}" disabled />
+
+
                             </div>
                             <div class="nom_cliente">
-                                <div class="nombre_cli">
-                                    <label>Cedula:</label>
-                                    <input id="cedula_cliente" name="cedula_cliente" type="text"
-                                        value="{{cedula_cliente}}" disabled />
-                                </div>
+                                <label>Cedula:</label>
+                                <input id="cedula_cliente" name="cedula_cliente" type="text" value="{{cedula_cliente}}"
+                                    disabled />
                             </div>
                         </div>
                         <div class="cuadro_nom_cedu">
                             <div class="nom_cliente">
-                                <div class="nombre_cli">
-                                    <label>Celular:</label>
-                                    <input id="celular_cliente" name="celular_cliente" type="text"
-                                        value="{{celular_cliente}}" disabled />
-                                </div>
+                                <label>Celular:</label>
+                                <input id="celular_cliente" name="celular_cliente" type="text"
+                                    value="{{celular_cliente}}" disabled />
                             </div>
                             <div class="nom_cliente">
-                                <div class="nombre_cli">
-                                    <label>Correo:</label>
-                                    <input id="correo_cliente" name="correo_cliente" type="text"
-                                        value="{{correo_cliente}}" disabled />
-                                </div>
+                                <label>Correo:</label>
+                                <input id="correo_cliente" name="correo_cliente" type="text" value="{{correo_cliente}}"
+                                    disabled>
                             </div>
                         </div>
                         <div class="cuadro_nom_cedu">
                             <div class="nom_cliente">
-                                <div class="nombre_cli">
-                                    <label>Dirección:</label>
-                                    <input id="direccion_cliente" name="direccion_cliente" type="text"
-                                        value="{{direccion_cliente}}" disabled />
-                                </div>
+                                <label>Dirección:</label>
+                                <input id="direccion_cliente" name="direccion_cliente" type="text"
+                                    value="{{direccion_cliente}}" disabled />
                             </div>
                             {{/each}}
                             <div class="nom_cliente"><label>Fecha emisión:</label>
-                                <div class="nombre_cli">
-                                    <input type="text" id="fecha-creacion" name="fecha_emision" value="{{fechaActual}}">
-                                </div>
-                            </div>
-                        </div><br>
-                        <br><hr class="linea_cuentas"><br>
-                        <div>
-                            <table id="detalle_factura">
-                                <thead>
-                                    <tr>
-                                        <th>
-                                            <label>CANT.</label>
-                                        </th>
-                                        <th>
-                                            <label>DESCRIPCION</label>
-                                        </th>
-                                        <th>
-                                            <label>P.UNITARIO</label>
-                                        </th>
-                                        <th>
-                                            <label>V.TOTAL</label>
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="fila_cada_producto" id="fila_cada_producto">
-                                        <td><input name="cantidad" type="number" oninput="calcularPrecioTotal()"></td>
-                                        <td><input name="descripcion" type="text"></td>
-                                        <td><input name="precio_unitario" type="text" oninput="calcularPrecioTotal()">
-                                        </td>
-                                        <td><input name="precio_total" type="text" readonly></td>
-                                    </tr>
-                                </tbody>
 
-                            </table>
-                        </div><br>
-                        <br><hr class="linea_cuentas"><br>
-                        {{#each list}}
-                        <p> Nº <input type="text" name="numero" id="numero" value="{{maximo}}"> </p>
-                        {{/each}}
 
-                        <div class="calculos">
-                            <div class="cuadrosubtotal">
-                                <div class="subtotal_texto"><label for="valor_subtotal">Valor subtotal:</label></div>
-                                <div class="subtotal"><input type="text" name="valor_subtotal" id="sub_total"
-                                        placeholder="Ingrese">
-                                </div>
-                            </div>
-                            <div class="cuadroimpues_0">
-                                <div class="subtotal_texto"><label for="impuesto_0">Impuesto 0:</label></div>
-                                <div class="subtotal"><input type="text" name="impuesto_0" placeholder="Ingrese"></div>
-                            </div>
-                            <div class="cuadroimpues_12">
-                                <div class="subtotal_texto"><label for="impuesto_12">Impuesto 12:</label></div>
-                                <div class="subtotal"> <input type="text" name="impuesto_12" placeholder="Ingrese">
-                                </div>
-                            </div>
-                            <div class="cuadro_dsct">
-                                <div class="subtotal_texto"><label for="descuento">Descuento:</label></div>
-                                <div class="subtotal"><input type="text" name="descuento" placeholder="Ingrese"
-                                        oninput="calcularDescuento()"></div>
-                            </div>
-                            <div class="cuadro_iva">
-                                <div class="subtotal_texto"><label for="valor_iva">Valor iva:</label></div>
-                                <div class="subtotal"><input type="text" name="valor_iva" placeholder="Ingrese"></div>
-                            </div>
-                            <div class="cuadro_valor_total">
-                                <div class="subtotal_texto"><label for="valor_total">Valor total:</label></div>
-                                <div class="subtotal"><input type="text" name="valor_total" placeholder="Ingrese"></div>
+                                <input type="text" id="fecha-creacion" name="fecha_emision" value="{{fechaActual}}"
+                                    disabled>
+
+
                             </div>
                         </div>
-                        <div id="boton">
-                            <button type="submit" id="">Guardar</button>
-                            <br>
-                            <button type="button" id="">Cancelar</button>
+                    </div>
+                    <br>
+                    <br>
+                    <hr class="linea_cuentas"><br>
+                    <div>
+                        <table id="detalle_factura">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <label>CANT.</label>
+                                    </th>
+                                    <th>
+                                        <label>DESCRIPCION</label>
+                                    </th>
+                                    <th>
+                                        <label>P.UNITARIO</label>
+                                    </th>
+                                    <th>
+                                        <label>V.TOTAL</label>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="fila_cada_producto" id="fila_cada_producto">
+                                    <td><input name="cantidad" type="number" oninput="calcularPrecioTotal()"></td>
+                                    <td><input name="descripcion" type="text"></td>
+                                    <td><input name="precio_unitario" type="text" oninput="calcularPrecioTotal()">
+                                    </td>
+                                    <td><input name="precio_total" type="text" readonly></td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                    </div><br>
+                    <br>
+                    <hr class="linea_cuentas"><br>
+                    {{#each list}}
+                    <p> Nº <input type="text" name="numero" id="numero" value="{{maximo}}"> </p>
+                    {{/each}}
+
+                    <div class="calculos">
+                        <div class="cuadrosubtotal">
+                            <div class="subtotal_texto"><label for="valor_subtotal">Valor subtotal:</label></div>
+                            <div class="subtotal"><input type="text" name="valor_subtotal" id="sub_total"
+                                    placeholder="Ingrese">
+                            </div>
                         </div>
+                        <div class="cuadroimpues_0">
+                            <div class="subtotal_texto"><label for="impuesto_0">Impuesto 0:</label></div>
+                            <div class="subtotal"><input type="text" name="impuesto_0" placeholder="Ingrese"></div>
+                        </div>
+                        <div class="cuadroimpues_12">
+                            <div class="subtotal_texto"><label for="impuesto_12">Impuesto 12:</label></div>
+                            <div class="subtotal"> <input type="text" name="impuesto_12" placeholder="Ingrese">
+                            </div>
+                        </div>
+                        <div class="cuadro_dsct">
+                            <div class="subtotal_texto"><label for="descuento">Descuento:</label></div>
+                            <div class="subtotal"><input type="text" name="descuento" placeholder="Ingrese"
+                                    oninput="calcularDescuento()"></div>
+                        </div>
+                        <div class="cuadro_iva">
+                            <div class="subtotal_texto"><label for="valor_iva">Valor iva:</label></div>
+                            <div class="subtotal"><input type="text" name="valor_iva" placeholder="Ingrese"></div>
+                        </div>
+                        <div class="cuadro_valor_total">
+                            <div class="subtotal_texto"><label for="valor_total">Valor total:</label></div>
+                            <div class="subtotal"><input type="text" name="valor_total" placeholder="Ingrese"></div>
+                        </div>
+                    </div>
+                    <div id="boton">
+                        <button type="submit" id="">Guardar</button>
+                        <br>
+                        <button type="button" id="">Cancelar</button>
                     </div>
                 </div>
             </div>
-        </form>
+    </div>
+    </form>
 
 
-        <div id="herramientasDiv" class="herramientasDiv">
-            <div>
-                <h3>Herramientas</h3>
-                <hr>
-                <div class="cuadroa">
-                    <div class="agr_fila">Agregar Fila</div>
-                    <div class="agr_fila"><button class="agregart" id="add-row" type="add-row"
-                            onclick="agregarFila()">+</button></div>
-                </div>
-                <div class="cuadroe">
-                    <div class="elim_fila">Eliminar Fila</div>
-                    <div class="elim_fila"><button class="removert" id="remove-row" type="remove-row">-</button></div>
-                </div>
+    <div id="herramientasDiv" class="herramientasDiv">
+        <div>
+            <h3>Herramientas</h3>
+            <hr>
+            <div class="cuadroa">
+                <div class="agr_fila">Agregar Fila</div>
+                <div class="agr_fila"><button class="agregart" id="add-row" type="add-row"
+                        onclick="agregarFila()">+</button></div>
+            </div>
+            <div class="cuadroe">
+                <div class="elim_fila">Eliminar Fila</div>
+                <div class="elim_fila"><button class="removert" id="remove-row" type="remove-row">-</button></div>
             </div>
         </div>
+    </div>
     </div>
     <script src="/js/detalle_total.js"></script>

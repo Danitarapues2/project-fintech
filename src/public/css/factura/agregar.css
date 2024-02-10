@@ -319,39 +319,47 @@ hr {
     border-radius: 12px;
     margin-bottom: 6px;
 }
-
-.datos_cliente {
-    background-color: #f1f0f0;
-    width: 400px;
-    padding: 20px;
-    border-radius: 10px;
-    margin: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-left: 0px;
+.cuadro_nom_cedu {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
 }
+
 
 .nom_cliente {
     border: solid 1px #000000;
+    flex: 1;
     display: flex;
     justify-content: space-between;
     border-radius: 12px;
     margin-bottom: 6px;
+    /* Añadimos un margen derecho para separar los elementos */
+    margin-right: 10px;
 }
+
+
+.nom_cliente:last-child {
+    /* Quitamos el margen derecho del último elemento */
+    margin-right: 0;
+}
+
 
 .nom_cliente label {
     padding-top: 15px;
-    padding-left: 45px;
+    padding-left: 10px;
+    max-width: 50%;
+
+
 }
 
-.nombre_cli {
-    width: 220px;
-    display: flex;
-    flex-direction: row;
+
+.nom_cliente input {
+    padding-top: 15px;
+    max-width: 50%;
+    background-color: white;
+    border-radius: 10px;
 }
 
-.cuadro_nom_cedu {
-    display: flex;
-}
 
 img {
     width: 200px;
