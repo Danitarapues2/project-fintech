@@ -1,30 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0; 
+}
+
 #cliente-listar-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin-top: -30px;
+    height: 90vh;
+    margin-top: -60px;
 }
 
 #cliente-listar-contenido {
-    border: 1px solid black;
     display: flex;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(78, 78, 78, 0.1);
+    width: 80%;
+    margin: 0 auto;
 }
 
 .thead-titulos {
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 20px;
     border: 2px solid black;
     background-color: #ffffff;
     position: sticky;
-    top: 0;
+    margin: 1px;
+    padding: 2px;
 }
-
 table {
     border-collapse: separate;
+    padding: 10px;
 }
+
+table, thbody, .fila-campos {
+    background-color: #ffffff0e;
+}
+table, thbody, .fila-campos:hover {
+    background-color: #d4d3d380;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+border-radius: 10px;}
+
+
 
 .fila-titulos th {
     border: none;
@@ -68,8 +85,11 @@ p {
 
 .titulo-gestion {
     justify-content: center;
-    font-size: 15px;
-    font-weight: bold
+    font-size: 25px;
+    font-weight: bold;
+    padding-top: 20px; 
+    margin: 20px; 
+    text-align:center; 
 }
 
 .div-table {
@@ -85,7 +105,7 @@ p {
 }
 
 .div-table::-webkit-scrollbar-thumb {
-    background-color: #808080; 
+    background-color: #e6e6e6; 
     border-radius: 5px; 
 }
 
@@ -103,9 +123,25 @@ p {
     display: block;
     border: solid #1F547E;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.270);
+    
+}
+
+.button-agregar, a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 5px;
 }
 
 button[type="editar"], button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+button[type="factura"], button {
     padding: 10px 20px;
     margin-right: 10px;
     color: #fff;
@@ -130,6 +166,14 @@ button[type="editar"] {
 
 button[type="editar"]:hover {
     background-color: #38cc0b;
+}
+button[type="factura"] {
+    background-color: #db9121;
+    color: white;
+}
+
+button[type="factura"]:hover {
+    background-color: #f89603;
 }
 
 button[type="eliminar"] {
@@ -160,4 +204,27 @@ button:hover {
     width: 200px;
     height: 25px;
     text-align: center;
+}
+
+/* Estilos para pantallas grandes */
+@media screen and (min-width: 768px) {
+    #cliente-listar-contenido {
+        width: 80%;
+        max-width: none;
+    }
+}
+
+/* Estilos para dispositivos móviles */
+@media screen and (max-width: 767px) {
+    #cliente-listar-container {
+        padding: 20px;
+    }
+    #cliente-listar-contenido {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .titulo-gestion {
+        margin-left: 0;
+    }
 }

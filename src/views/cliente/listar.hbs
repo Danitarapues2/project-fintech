@@ -6,16 +6,15 @@
 <div id="cliente-listar-container">
     
     <div id="cliente-listar-contenedor">
-
-        <p id="titulo-gestion" class="titulo-gestion" style="padding-top: 20px;  margin: 0 auto; text-align:center; font-size: 25px;" >Gestión de Clientes</p>
-
+<br>
+        <p id="titulo-gestion" class="titulo-gestion"  >Gestión de Clientes</p>
 
         <button id="button-agregar" class="button-agregar">
-            <a href="/cliente/agregar" style="color:white; text-decoration: none; ">
+            <a href="/cliente/agregar" >
                 Agregar</a>
         </button>
-
-
+        <br>
+<hr>
         <br>
         <div class="buscador">
             <label for="buscar">Buscar:</label>
@@ -71,6 +70,7 @@
                         <td class="td-campos" id="td-campos">
                             <p>{{direccion_cliente}}</p>
                         </td>
+
                         <td class="td-campos" id="td-campos">
                             <div>
                                 <a href="/cliente/editar/{{id_cliente}}">
@@ -79,7 +79,16 @@
                                     </button>
                                 </a>
                             </div>
+                        </td>
 
+                        <td class="td-campos" id="td-campos">
+                            <div>
+                                <a href="/factura/agregar/{{id_cliente}}">
+                                        <button type="factura">
+                                            <i class="far fa-file-alt"></i>
+                                    </button>
+                                 </a>
+                            </div>
                         </td>
 
                         <td class="td-campos" id="td-campos">
@@ -94,16 +103,7 @@
 
                         </td>
 
-                         <td class="td-campos" id="td-campos">
-                            <div>
-                                <a href="/factura/agregar/{{id_cliente}}">
-                                    <button type="editar">
-                                       <h5>Crear</h5>
-                                       <h5>Factura</h5>
-                                    </button>
-                                </a>
-                            </div>
-                        </td>
+                         
                     </tr>
                 </tbody>
                 {{/each}}
