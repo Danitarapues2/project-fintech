@@ -27,7 +27,7 @@
                                     <h3>RUC</h3>
                                 </td>
                                 <td>
-                                    <h3>{{RUCTienda}}</h3>
+                                    <h3>{{ruc_tienda}}</h3>
                                 </td>
                             </tr>
                             <tr>
@@ -51,10 +51,7 @@
                     <div class="form-group">
                         <input id="nombres" type="text" value="{{nombres_usuario}} {{apellidos_usuario}}" disabled />
                     </div>
-                    <div class="form-group">
-                        <input id="ruc" type="text" value="{{ruc_tienda}}" disabled />
-                    </div>
-                    <br><hr>
+                    <br><hr class="linea_nombre">
                     <div class="form-group">
                         <p>Direcion matriz:
                         <input id="direccion-matriz" type="text" value="{{direccion_matriz}}" disabled /></p>
@@ -63,9 +60,7 @@
                         <p>Direcion sucursal:
                         <input id="direccion-sucursal" type="text" value="{{direccion_sucursal}}" disabled /></p>
                     </div>
-                    <div class="form-group">
-                        <input id="telefono-tienda" type="text" value="{{telefono_tienda}}" disabled />
-                    </div>
+                    <br><hr>
                     {{/each}}
                     {{#each lista}}
                     <div class="datos_cliente">
@@ -115,7 +110,8 @@
                                     <input type="text" id="fecha-creacion" name="fecha_emision" value="{{fechaActual}}">
                                 </div>
                             </div>
-                        </div>
+                        </div><br>
+                        <br><hr class="linea_cuentas"><br>
                         <div>
                             <table id="detalle_factura">
                                 <thead>
@@ -145,7 +141,8 @@
                                 </tbody>
 
                             </table>
-                        </div>
+                        </div><br>
+                        <br><hr class="linea_cuentas"><br>
                         {{#each list}}
                         <p> Nº <input type="text" name="numero" id="numero" value="{{maximo}}"> </p>
                         {{/each}}

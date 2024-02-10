@@ -374,3 +374,17 @@ img {
     margin-left: 485px;
     margin-top: -160px;
 }
+
+.linea_nombre {
+    width: 350px;
+    margin-left: 0px;
+}
+
+#fila_cada_producto input{
+width: 175px;
+height: 30px;
+}
+
+.linea_cuentas {
+    width: 780px;
+}
