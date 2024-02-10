@@ -33,18 +33,15 @@ form {
     margin-left: 200px;
 }
 
-
 h1 {
     text-align: center;
     color: #333;
     grid-column: span 2;
 }
 
-
 .input-box {
     margin-top: 15px;
 }
-
 
 label {
     display: block;
@@ -52,10 +49,7 @@ label {
     color: #616060;
 }
 
-
-
-
-input {
+.calculos input {
     width: 100%;
     padding: 10px;
     border: 1px solid #000000;
@@ -65,8 +59,7 @@ input {
     font-size: 15px;
 }
 
-
-input:focus {
+.calculos input:focus {
     background-color: white;
     color: black;
     outline: none;
@@ -325,4 +318,101 @@ hr {
     justify-content: space-between;
     border-radius: 12px;
     margin-bottom: 6px;
+}
+.cuadro_nom_cedu {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+
+.nom_cliente {
+    border: solid 1px #000000;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 12px;
+    margin-bottom: 6px;
+    /* Añadimos un margen derecho para separar los elementos */
+    margin-right: 10px;
+}
+
+
+.nom_cliente:last-child {
+    /* Quitamos el margen derecho del último elemento */
+    margin-right: 0;
+}
+
+
+.nom_cliente label {
+    padding-top: 15px;
+    padding-left: 10px;
+    max-width: 50%;
+
+
+}
+
+
+.nom_cliente input {
+    padding-top: 15px;
+    max-width: 50%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+
+img {
+    width: 200px;
+}
+
+.form-group input {
+    background: none;
+    border: none;
+}
+
+.imagen_nombre {
+    display: flex;
+}
+
+#nombre-tienda {
+    height: 140px;
+}
+
+#tabla-contenedor {
+    margin-left: 485px;
+    margin-top: -160px;
+}
+
+.linea_nombre {
+    width: 350px;
+    margin-left: 0px;
+}
+
+#fila_cada_producto input{
+width: 175px;
+height: 30px;
+}
+
+.linea_cuentas {
+    width: 780px;
+}
+
+#nombres {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#nombre-tienda {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#direccion-matriz {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#direccion-sucursal{
+    font-size: 16px;
+    font-weight: bold;
 }

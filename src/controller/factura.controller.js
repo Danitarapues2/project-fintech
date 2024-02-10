@@ -13,7 +13,7 @@ facturaCtl.mostrar = async (req, res) => {
     const lista = await sql.query('select * from clientes where id_cliente =?', [ids])
     const fechaActual = new Date().toISOString().slice(0, 10);
 
-    const listaT = await sql.query('select * from tiendas where id_tienda = 1')
+    const listaT = await sql.query('SELECT * FROM usuarios INNER JOIN tiendas ON usuarios.id_usuario = tiendas.id_tienda');
     res.render('factura/agregar', { list, showNavbar: true, fechaActual: fechaActual,lista,listaT });
 
 }

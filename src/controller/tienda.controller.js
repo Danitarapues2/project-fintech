@@ -4,7 +4,7 @@ const orm = require('../Database/dataBase.orm')
 
 tiendaCtl.mostrar = async(req, res) => {
     const list = await sql.query('select max (id_tienda) as maximo  from tiendas')
-    res.render('tienda/agregar',{list});
+    res.render('tienda/agregar',{list,showNavbar: true });
 }
 
 //mandar
@@ -33,14 +33,14 @@ tiendaCtl.mandarTienda = async (req, res) => {
 
 tiendaCtl.listar = async (req, res) => {
     const lista = await sql.query('select * from tiendas')
-    res.render('tienda/listar', { lista })
+    res.render('tienda/listar', { lista, showNavbar: true  })
 }
 
 //traer datos
 tiendaCtl.traer = async (req, res) => {
     const id = req.params.id
     const lista = await sql.query('select * from tiendas where id_tienda =?', [id])
-    res.render('tienda/editar', { lista })
+    res.render('tienda/editar', { lista,showNavbar: true  })
 }
 
 //traer datos
