@@ -8,5 +8,7 @@ visualizarCtl.listar = async (req, res) => {
     res.render('tienda/visualizar', { lista, showNavbar: true })
 }
 
+visualizarCtl.listarUnaTienda = async (req, res) => {
+}
 
 module.exports = visualizarCtl

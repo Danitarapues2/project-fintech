@@ -2,95 +2,106 @@
 
 <script src="/script/factura/calculos.js" defer></script>
 <script defer src="/script/factura/filas.js"></script>
+
 <body>
     <div id="factura-container">
-    <form action="/factura/agregar/:id" method="post">
-        <div id="factura-agregar-container">
+        <form action="/factura/agregar/:id" method="post">
 
+            <div id="factura-agregar-container">
 
-            <div class="box">
-                <center>
-                    <h1>Agregar Factura</h1>
-                </center>
+                <div class="box">
+                    <center>
+                        <h1>Agregar Factura</h1>
+                    </center>
 
-                {{#each listaT}}
-                <div class="form-group">
-                    <label for="nombre-tienda">Nombre del Negocio:</label>
-                    <input id="nombre-tienda" type="text" value="{{nombre_tienda}}" disabled />
-                </div>
-                <div class="form-group">
-                    <label for="ruc">No. RUC:</label>
-                    <input id="ruc" type="text" value="{{ruc_tienda}}" disabled />
-                </div>
-                <div class="form-group">
-                    <label for="direccion-matriz">Dirección de Matriz:</label>
-                    <input id="direccion-matriz" type="text" value="{{direccion_matriz}}" disabled />
-                </div>
-                <div class="form-group">
-                    <label for="direccion-sucursal">Dirección Sucursal:</label>
-                    <input id="direccion-sucursal" type="text" value="{{direccion_sucursal}}" disabled />
-                </div>
-                <div class="form-group">
-                    <label for="correo-tienda">Correo Electrónico </label>
-                    <input id="correo-tienda" type="text" value="{{correo_electronico_tienda}}" disabled />
-                </div>
-                <div class="form-group">
-                    <label for="telefono-tienda">Teléfono Tienda:</label>
-                    <input id="telefono-tienda" type="text" value="{{telefono_tienda}}" disabled />
-                </div>
+                    {{#each listaT}}
 
+                      <div class="form-group">
+                        <label for="nombres">Nombres:</label>
+                        <input id="nombres" type="text" value="{{nombres_usuario}} {{apellidos_usuario}}" disabled />
+                    </div>
+                    <div class="form-group">
+                        <label for="apellidos">Apellidos:</label>
+                        <input id="apellidos" type="text" value="{{apellidos_usuario}}" disabled />
+                    </div>
 
-                {{/each}}
+                    <div class="form-group">
+                        <label for="nombre-tienda">Nombre del Negocio:</label>
+                        <input id="nombre-tienda" type="text" value="{{nombre_tienda}}" disabled />
+                    </div>
+                    <div class="form-group">
+                        <label for="ruc">No. RUC:</label>
+                        <input id="ruc" type="text" value="{{ruc_tienda}}" disabled />
+                    </div>
+                    <div class="form-group">
+                        <label for="direccion-matriz">Dirección de Matriz:</label>
+                        <input id="direccion-matriz" type="text" value="{{direccion_matriz}}" disabled />
+                    </div>
+                    <div class="form-group">
+                        <label for="direccion-sucursal">Dirección Sucursal:</label>
+                        <input id="direccion-sucursal" type="text" value="{{direccion_sucursal}}" disabled />
+                    </div>
+                    <div class="form-group">
+                        <label for="correo-tienda">Correo Electrónico </label>
+                        <input id="correo-tienda" type="text" value="{{correo_electronico_tienda}}" disabled />
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono-tienda">Teléfono Tienda:</label>
+                        <input id="telefono-tienda" type="text" value="{{telefono_tienda}}" disabled />
+                    </div>
+                    {{/each}}
 
-                {{#each lista}}
-                <div class="datos_cliente">
-                    <div class="cuadro_nom_cedu">
-                        <div class="nom_cliente">
-                            <div class="nombre_cli">
+                    {{#each lista}}
+                    <div class="datos_cliente">
+
+                        <div class="cuadro_nom_cedu">
+                            <div class="nom_cliente">
                                 <label>Sr (es):</label>
                                 <input id="nombre_cliente" name="nombre_cliente" type="text"
                                     value="{{nombre_cliente}} {{apellido_cliente}}" disabled />
                             </div>
-                        </div>
-                        <div class="nom_cliente">
-                            <div class="nombre_cli">
-                                <label>Cedula:</label>
-                                <input id="cedula_cliente" name="cedula_cliente" type="text" value="{{cedula_cliente}}"
-                                    disabled />
+
+                            <div class="cuadro_nom_cedu">
+                                <div class="nom_cliente">
+                                    <label>Cedula:</label>
+                                    <input id="cedula_cliente" name="cedula_cliente" type="text"
+                                        value="{{cedula_cliente}}" disabled />
+                                </div>
+
                             </div>
                         </div>
-                    </div>
-                    <div class="cuadro_nom_cedu">
-                        <div class="nom_cliente">
-                            <div class="nombre_cli">
+
+                        <div class="cuadro_nom_cedu">
+                            <div class="nom_cliente">
                                 <label>Celular:</label>
                                 <input id="celular_cliente" name="celular_cliente" type="text"
                                     value="{{celular_cliente}}" disabled />
                             </div>
-                        </div>
-                        <div class="nom_cliente">
-                            <div class="nombre_cli">
+
+                            <div class="nom_cliente">
                                 <label>Correo:</label>
                                 <input id="correo_cliente" name="correo_cliente" type="text" value="{{correo_cliente}}"
                                     disabled />
                             </div>
                         </div>
-                    </div>
-                    <div class="cuadro_nom_cedu">
-                        <div class="nom_cliente">
-                            <div class="nombre_cli">
+
+                        <div class="cuadro_nom_cedu">
+
+                            <div class="nom_cliente">
                                 <label>Dirección:</label>
                                 <input id="direccion_cliente" name="direccion_cliente" type="text"
                                     value="{{direccion_cliente}}" disabled />
                             </div>
-                        </div>
-                        {{/each}}
-                        <div class="nom_cliente"><label>Fecha emisión:</label>
-                            <div class="nombre_cli">
+
+                            {{/each}}
+                            <div class="nom_cliente">
+                                <label>Fecha emisión:</label>
                                 <input type="text" id="fecha-creacion" name="fecha_emision" value="{{fechaActual}}">
                             </div>
+                            
                         </div>
                     </div>
+
                     <div>
                         <table id="detalle_factura">
                             <thead>
@@ -114,14 +125,14 @@
                                 <tr class="fila_cada_producto" id="fila_cada_producto">
                                     <td><input name="cantidad" type="number" oninput="calcularPrecioTotal()"></td>
                                     <td><input name="descripcion" type="text"></td>
-                                    <td><input name="precio_unitario" type="text" oninput="calcularPrecioTotal()"></td>
+                                    <td><input name="precio_unitario" type="text" oninput="calcularPrecioTotal()">
+                                    </td>
                                     <td><input name="precio_total" type="text" readonly></td>
                                 </tr>
                             </tbody>
 
                         </table>
                     </div>
-
 
 
                     {{#each list}}
@@ -143,7 +154,8 @@
                         </div>
                         <div class="cuadroimpues_12">
                             <div class="subtotal_texto"><label for="impuesto_12">Impuesto 12:</label></div>
-                            <div class="subtotal"> <input type="text" name="impuesto_12" placeholder="Ingrese"></div>
+                            <div class="subtotal"> <input type="text" name="impuesto_12" placeholder="Ingrese">
+                            </div>
                         </div>
                         <div class="cuadro_dsct">
                             <div class="subtotal_texto"><label for="descuento">Descuento:</label></div>
@@ -167,7 +179,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+    </div>
     </form>
 
 
@@ -186,12 +198,8 @@
             </div>
         </div>
     </div>
-</div>
-<<<<<<< HEAD
-=======
-</div>
+    </div>
+    </div>
 </body>
-
->>>>>>> 04ad2499fa89fb4a4bd2e06c0a6ad4f7cbc0896b
 
 <script src="/js/detalle_total.js"></script>

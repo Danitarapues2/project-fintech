@@ -329,12 +329,12 @@ hr {
 
 .datos_cliente {
     background-color: #f1f0f0;
-    width: 400px;
     padding: 20px;
     border-radius: 10px;
     margin: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-left: 0px;
+    
 }
 
 .nom_cliente {
@@ -345,10 +345,6 @@ hr {
     margin-bottom: 6px;
 }
 
-.nom_cliente label {
-    padding-top: 15px;
-    padding-left: 45px;
-}
 
 .nombre_cli {
     width: 220px;
@@ -358,4 +354,5 @@ hr {
 
 .cuadro_nom_cedu {
     display: flex;
+    max-width: 100%;
 }
