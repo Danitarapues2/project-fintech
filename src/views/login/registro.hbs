@@ -69,7 +69,7 @@
         </p>
         <form action="/registro" method="POST" id="form">
             {{#each list}}
-            <input type="text" name="numero" id="numero" value="{{maximo}}">
+            <input type="hidden" name="numero" id="numero" value="{{maximo}}">
             {{/each}}
             <div class="form-group">
                 <div class="input-group">
