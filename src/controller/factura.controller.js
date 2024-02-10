@@ -88,9 +88,153 @@ facturaCtl.mandar = async (req, res) => {
 };
 
 facturaCtl.listar = async (req, res) => {
-    const lista = await sql.query('SELECT facturas.id_factura, facturas.fecha_emision, detalle_facturas.descripcion, detalle_facturas.cantidad, detalle_facturas.precio_unitario  FROM facturas INNER JOIN detalle_facturas ON facturas.id_factura = detalle_facturas.id_detalle_factura ');
-    res.render('factura/listar', { lista, showNavbar: true })
+    try {
+        const lista = await sql.query(`
+            SELECT  
+                id_tienda AS id, 
+                nombre_tienda AS nombre, 
+                ruc_tienda AS ruc, 
+                direccion_matriz AS direccion, 
+                correo_electronico_tienda AS correo, 
+                telefono_tienda AS telefono, 
+                '' AS descripcion, 
+                NULL AS cantidad, 
+                NULL AS precio_unitario, 
+                NULL AS nombre_cliente, 
+                NULL AS apellido_cliente, 
+                NULL AS direccion_cliente, 
+                NULL AS correo_cliente, 
+                NULL AS celular_cliente, 
+                NULL AS cedula_cliente, 
+                NULL AS impuesto_12, 
+                NULL AS impuesto_0, 
+                NULL AS descuento, 
+                NULL AS valor_subtotal, 
+                NULL AS valor_iva, 
+                NULL AS valor_total, 
+                NULL AS fecha_emision 
+            FROM  
+                tiendas 
+            
+            UNION 
+            
+            SELECT  
+                NULL AS id, 
+                '' AS nombre, 
+                '' AS ruc, 
+                '' AS direccion, 
+                '' AS correo, 
+                '' AS telefono, 
+                descripcion, 
+                cantidad, 
+                precio_unitario, 
+                NULL AS nombre_cliente, 
+                NULL AS apellido_cliente, 
+                NULL AS direccion_cliente, 
+                NULL AS correo_cliente, 
+                NULL AS celular_cliente, 
+                NULL AS cedula_cliente, 
+                NULL AS impuesto_12, 
+                NULL AS impuesto_0, 
+                NULL AS descuento, 
+                NULL AS valor_subtotal, 
+                NULL AS valor_iva, 
+                NULL AS valor_total, 
+                NULL AS fecha_emision 
+            FROM  
+                detalle_facturas 
+            
+            UNION 
+            
+            SELECT  
+                NULL AS id, 
+                '' AS nombre, 
+                '' AS ruc, 
+                '' AS direccion, 
+                '' AS correo, 
+                '' AS telefono, 
+                NULL AS descripcion, 
+                NULL AS cantidad, 
+                NULL AS precio_unitario, 
+                nombre_cliente, 
+                apellido_cliente, 
+                direccion_cliente, 
+                correo_cliente, 
+                celular_cliente, 
+                cedula_cliente, 
+                NULL AS impuesto_12, 
+                NULL AS impuesto_0, 
+                NULL AS descuento, 
+                NULL AS valor_subtotal, 
+                NULL AS valor_iva, 
+                NULL AS valor_total, 
+                NULL AS fecha_emision 
+            FROM  
+                clientes 
+            
+            UNION 
+            
+            SELECT  
+                NULL AS id, 
+                '' AS nombre, 
+                '' AS ruc, 
+                '' AS direccion, 
+                '' AS correo, 
+                '' AS telefono, 
+                NULL AS descripcion, 
+                NULL AS cantidad, 
+                NULL AS precio_unitario, 
+                NULL AS nombre_cliente, 
+                NULL AS apellido_cliente, 
+                NULL AS direccion_cliente, 
+                NULL AS correo_cliente, 
+                NULL AS celular_cliente, 
+                NULL AS cedula_cliente, 
+                impuesto_12, 
+                impuesto_0, 
+                descuento, 
+                valor_subtotal, 
+                valor_iva, 
+                valor_total, 
+                NULL AS fecha_emision 
+            FROM  
+                detalle_totals 
+            
+            UNION 
+            
+            SELECT  
+                NULL AS id, 
+                '' AS nombre, 
+                '' AS ruc, 
+                '' AS direccion, 
+                '' AS correo, 
+                '' AS telefono, 
+                NULL AS descripcion, 
+                NULL AS cantidad, 
+                NULL AS precio_unitario, 
+                NULL AS nombre_cliente, 
+                NULL AS apellido_cliente, 
+                NULL AS direccion_cliente, 
+                NULL AS correo_cliente, 
+                NULL AS celular_cliente, 
+                NULL AS cedula_cliente, 
+                NULL AS impuesto_12, 
+                NULL AS impuesto_0, 
+                NULL AS descuento, 
+                NULL AS valor_subtotal, 
+                NULL AS valor_iva, 
+                NULL AS valor_total, 
+                fecha_emision 
+            FROM  
+                facturas
+        `);
+        res.render('factura/listar', { lista, showNavbar: true });
+    } catch (error) {
+        console.error("Error al obtener la lista de facturas :", error);
+        // Manejo del error aquí
+    }
 }
+
 
 
 
