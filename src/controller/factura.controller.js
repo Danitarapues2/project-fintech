@@ -88,7 +88,7 @@ facturaCtl.mandar = async (req, res) => {
 };
 
 facturaCtl.listar = async (req, res) => {
-    const lista = await sql.query('SELECT * FROM facturas INNER JOIN detalle_facturas ON facturas.id_factura = detalle_facturas.id_detalle_factura ');
+    const lista = await sql.query('SELECT facturas.id_factura, facturas.fecha_emision, detalle_facturas.descripcion, detalle_facturas.cantidad, detalle_facturas.precio_unitario  FROM facturas INNER JOIN detalle_facturas ON facturas.id_factura = detalle_facturas.id_detalle_factura ');
     res.render('factura/listar', { lista, showNavbar: true })
 }
 
