@@ -18,7 +18,7 @@ facturaCtl.mostrar = async (req, res) => {
 
 }
 
-facturaCtl.mostrarhistorial = async(req, res) => {
+facturaCtl.mostrarhistorial = async (req, res) => {
     try {
         const mostrar = await sql.query(`
             SELECT  
@@ -209,18 +209,20 @@ facturaCtl.mandar = async (req, res) => {
 
 
         const { descripcion, cantidad, precio_unitario, precio_total } = req.body;
-        for (let i = 0; i < cantidad.length; i++) {
+        const nuevosEnviosDetalles = []; // Array para almacenar todos los detalles
+
+        for (let i = 0; i < descripcion.length; i++) {
             const nuevoEnvioDetalle = {
                 descripcion: descripcion[i],
                 cantidad: cantidad[i],
                 precio_unitario: precio_unitario[i],
                 precio_total: precio_total[i]
             };
-            await orm.detalle_factura.create(nuevoEnvioDetalle);
+            nuevosEnviosDetalles.push(nuevoEnvioDetalle); // Agregar el detalle al array
         }
-        // Guardar los datos en la base de datos utilizando ORM
 
-        // Aquí agregar más lógica para guardar los datos en otras tablas relacionadas.
+        // Fuera del bucle, una vez que se hayan agregado todos los detalles
+        await orm.detalle_factura.bulkCreate(nuevosEnviosDetalles);
 
         req.flash('success', 'Datos guardados exitosamente');
         res.redirect('/factura/listar/');
