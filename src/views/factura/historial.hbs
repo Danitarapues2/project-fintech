@@ -28,6 +28,7 @@
         </tr>
     </thead>
     <tbody>
+        {{#each lista}}
         <tr>
             <td>
                 <p>20-02-2024</p>
@@ -39,7 +40,7 @@
                 <p>Contado</p>
             </td>
             <td>
-                <p>$15</p>
+                <p{{valor_total}}p>
             </td>
             <td>
                 <div>
@@ -97,7 +98,7 @@
                 </div>
             </td>
         </tr>
-
+        {{/each}}
     </tbody>
 </table>
 <div class="siguiente">
