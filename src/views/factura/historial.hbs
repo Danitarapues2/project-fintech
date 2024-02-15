@@ -28,7 +28,7 @@
         </tr>
     </thead>
     <tbody>
-        {{#each lista}}
+        {{#each mostrar}}
         <tr>
             <td>
                 <p>20-02-2024</p>
@@ -40,7 +40,8 @@
                 <p>Contado</p>
             </td>
             <td>
-                <p{{valor_total}}p>
+                <p>{{valor_total}}</p>
+                   
             </td>
             <td>
                 <div>
@@ -52,6 +53,9 @@
                 </div>
             </td>
         </tr>
+
+        {{/each}}
+
         <tr>
             <td>
                 <p>01-02-2024</p>
@@ -98,7 +102,6 @@
                 </div>
             </td>
         </tr>
-        {{/each}}
     </tbody>
 </table>
 <div class="siguiente">

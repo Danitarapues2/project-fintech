@@ -20,7 +20,7 @@ facturaCtl.mostrar = async (req, res) => {
 
 facturaCtl.mostrarhistorial = async(req, res) => {
     try {
-        const lista = await sql.query(`
+        const mostrar = await sql.query(`
             SELECT  
                 id_tienda AS id, 
                 nombre_tienda AS nombre, 
@@ -159,7 +159,7 @@ facturaCtl.mostrarhistorial = async(req, res) => {
             FROM  
                 facturas
         `);
-        res.render('factura/historial', { lista, showNavbar: true });
+        res.render('factura/historial', { mostrar, showNavbar: true });
     } catch (error) {
         console.error("Error al obtener la lista de facturas :", error);
         // Manejo del error aquí
