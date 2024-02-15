@@ -25,7 +25,6 @@ clienteCtl.mandar = async (req, res) => {
         clienteIdCliente: numb
     }
     await orm.cliente.create(nuevoEnvio)
-    await orm.factura.create(nuevoEnvio1)
     req.flash('success', 'Guardado exitosamente')
     res.redirect('/cliente/listar/')
 }
