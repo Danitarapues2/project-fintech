@@ -500,7 +500,7 @@ height: 30px;
      -moz-appearance: none;
           appearance: none;
   background: #16a34a;
-  border-radius: 0.25em;
+  border-radius: 20px;
   color: white;
   cursor: pointer;
   display: inline-block;
@@ -508,6 +508,7 @@ height: 30px;
   height: 3em;
   line-height: 3em;
   padding: 0 1em;
+  margin: 5px;
 }
 .button:hover {
   background-color: #17ac4e;
@@ -577,4 +578,26 @@ height: 30px;
 details[open] .details-modal-overlay {
   pointer-events: all;
   opacity: 0.5;
+}
+
+.osito_clase{
+    text-align: center;
+}
+
+.osito{
+    background-color: #e2e2e25d;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.osito_2{
+    background-color: #6ed694;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px   #000000;
+}
+
+.osito_2:hover{
+    background-color: #16a34a;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px   #000000;
 }
