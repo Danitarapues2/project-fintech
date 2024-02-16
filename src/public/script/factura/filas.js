@@ -150,3 +150,10 @@ removeButton.addEventListener("click", function () {
         alert("No se pueden eliminar más filas");
     }
 });
+
+
+
+
+
+
+/*modal  */
