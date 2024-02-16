@@ -127,6 +127,31 @@ button[type="button"]:hover {
     margin-left: 1125px;
     margin-top: -400px;
 }
+.tarjeta_cre {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+  }
+  
+  .circulo {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: #e0e0e0;
+box-shadow: 1px 1px 1px 1px black;
+    border-radius: 50%;
+    padding-right: 5px;
+    margin-right: 10px; /* Espacio entre el círculo y el texto */
+    transition: transform 0.2s ease;
+  }
+  
+  .circulo:hover {
+    transform: scale(1.1);
+    background-color: #2ee217;
+  }
+
+
 
 th {
     border-bottom: 2px solid black;
