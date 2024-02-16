@@ -10,44 +10,55 @@
                     <center>
                         <h1>Agregar Factura</h1>
                     </center>
-                    <div class="imagen_nombre">
-                        <img src="/img/tienda_imagen.png" />
-                        {{#each listaT}}
-                        <div class="form-group">
-                            <p>Tienda
-                                <input id="nombre-tienda" type="text" value="{{nombre_tienda}}" disabled />
-                            </p>
-                        </div>
-                    </div>
-                    <div id="derecha">
-                        <div id="tabla-contenedor">
-                            <table border="1" id="numero">
-                                <tr>
-                                    <td>
-                                        <h3>RUC</h3>
-                                    </td>
-                                    <td>
-                                        <h3>{{ruc_tienda}}</h3>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2" id="nFactura">
-                                        <h3>Factura </h3>
-                                        <h3>NO. OO2-002-123456789</h3>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <h3>AUT.SRI</h3>
-                                    </td>
-                                    <td>
-                                        <h3>1234567890</h3>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
+                     <div class="imagen_ruc">
+                        <div class="imagen_nombre">
+                            <img src="/img/tienda_imagen.png" />
+                            {{#each listaT}}
+                            <div class="nombre_tienda">
 
+
+                                <div>
+                                    <p> Tienda </p>
+                                </div>
+                                <div>
+                                    <input id="nombre-tienda" type="text" value="{{nombre_tienda}}" disabled />
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div id="derecha">
+                            <div id="tabla-contenedor">
+                                <table border="1" id="numero">
+                                    <tr>
+                                        <td>
+                                            <h3>RUC</h3>
+                                        </td>
+                                        <td>
+                                            <h3>{{ruc_tienda}}</h3>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" id="nFactura">
+                                            <h3>Factura </h3>
+                                            <h3>NO. OO2-002-123456789</h3>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h3>AUT.SRI</h3>
+                                        </td>
+                                        <td>
+                                            <h3>1234567890</h3>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+
+                        </div>
                     </div>
+
                     <div class="nombres_dueño">
                         <input id="nombres" type="text" value="{{nombres_usuario}} {{apellidos_usuario}}" disabled />
                     </div>
@@ -115,8 +126,9 @@
                     <br>
                     <br>
                     <hr class="linea_cuentas"><br>
-                    <div>
-                        <table id="detalle_factura">
+                    <div id="div_detalle_factura" style="overflow-x: auto;">
+                        <table id="detalle_factura" style="width: 100%;">
+
                             <thead>
                                 <tr>
                                     <th>
@@ -151,7 +163,7 @@
                     <p> Nº <input type="text" name="numero" id="numero" value="{{maximo}}"> </p>
                     {{/each}}
                     <div class="calculos_formas_pago">
-                         <div class="formas_pago">
+                        <div class="formas_pago">
                             <div class="titulo_pagos">
                                 <p>Formas de pago</p>
                             </div>
@@ -181,19 +193,21 @@
                                         <h1>Tarjeta de Credito</h1>
                                     </div>
                                     <div class="details-modal-content">
-                                        <form  class="osito_clase">
+                                        <form class="osito_clase">
                                             <br>
                                             <label for="card_number">Número de Tarjeta</label>
-                                            <input type="text" id="card_number" name="card_number" class="osito" placeholder="ingrese" ><br>
+                                            <input type="text" id="card_number" name="card_number" class="osito"
+                                                placeholder="ingrese"><br>
                                             <br>
                                             <label for="expiry_date">Fecha de Expiración</label>
-                                            <input type="text" id="expiry_date" name="expiry_date" class="osito"placeholder="ingrese"  ><br>
+                                            <input type="text" id="expiry_date" name="expiry_date" class="osito"
+                                                placeholder="ingrese"><br>
                                             <br>
                                             <label for="cvv">CVV</label>
-                                            <input type="text" id="cvv" name="cvv" class="osito"placeholder="ingrese"  >
+                                            <input type="text" id="cvv" name="cvv" class="osito" placeholder="ingrese">
                                             <br><br>
-                                            <input type=""  class="osito_2">
-                                        </form>        
+                                            <input type="" class="osito_2">
+                                        </form>
                                     </div>
                                 </div>
                             </details>
@@ -208,19 +222,22 @@
                                         <h1>Tarjeta de Débito</h1>
                                     </div>
                                     <div class="details-modal-content">
-                                        <form   style="background-color: antiquewhite; border-radius:25px; padding:10px; text-align:center; " >
+                                        <form
+                                            style="background-color: antiquewhite; border-radius:25px; padding:10px; text-align:center; ">
                                             <br>
                                             <label for="card_number">Número de Tarjeta</label>
-                                            <input type="text" id="card_number" name="card_number"  class="osito" placeholder="ingrese" ><br>
+                                            <input type="text" id="card_number" name="card_number" class="osito"
+                                                placeholder="ingrese"><br>
                                             <br>
                                             <label for="expiry_date">Fecha de Expiración</label>
-                                            <input type="text" id="expiry_date" name="expiry_date"  class="osito"placeholder="ingrese"  ><br>
+                                            <input type="text" id="expiry_date" name="expiry_date" class="osito"
+                                                placeholder="ingrese"><br>
                                             <br>
                                             <label for="cvv">CVV</label>
-                                            <input type="text" id="cvv" name="cvv"  class="osito"placeholder="ingrese"  >
+                                            <input type="text" id="cvv" name="cvv" class="osito" placeholder="ingrese">
                                             <br><br>
-                                            <input type=""  class="osito_2">
-                                        </form>        
+                                            <input type="" class="osito_2">
+                                        </form>
                                     </div>
                                 </div>
                             </details>
