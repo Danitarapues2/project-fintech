@@ -25,7 +25,6 @@ tiendaCtl.mandarTienda = async (req, res) => {
     }
     
     await orm.tienda.create(nuevoEnvio)
-    await orm.factura.create(nuevoEnvio1)
     console.log=(nuevoEnvio1)
     req.flash('success', 'Guardado exitosamente')
     res.redirect('/tienda/listar/')
