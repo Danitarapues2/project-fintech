@@ -155,40 +155,73 @@
                             <div class="titulo_pagos">
                                 <p>Formas de pago</p>
                             </div>
-                            <div class="tarjeta_cre">
-                                <label for="valor_total">Efectivo</label><br><a href="/" class="circulo"></a>
-                            </div>
-                            <div class="tarjeta_cre">
-                               <label for="valor_total">Tarjeta Débito</label><a href="/" class="circulo"></a>
-                            </div>
-                            <div class="tarjeta_cre">
-                                <label for="valor_total">Tarjeta Crédito</label><a href="/" class="circulo"></a>
-                            </div>
-<br>
-
                             <details>
                                 <summary>
-                                <div class="button">
-                                    Show 
-                                </div>
-                                <div class="details-modal-overlay"></div>
+                                    <div class="button">Efectivo</div>
+                                    <div class="details-modal-overlay"></div>
                                 </summary>
                                 <div class="details-modal">
-                                <div class="details-modal-close">
-
-                                </div>
-                                <div class="details-modal-title">
-                                    <h1>My details modal</h1>
-                                </div>
-                                <div class="details-modal-content">
-                                    <p>
-                                    You can click the X in the corner or click the overlay to close this modal.
-                                    Something like this could be useful as a nice way to show additional information,
-                                    but that's about as far as I would take it. It's just a nice way of styling the details element.
-                                    </p>
-                                </div>
+                                    <div class="details-modal-close"></div>
+                                    <div class="details-modal-title">
+                                        <h1> Efectivo</h1>
+                                    </div>
+                                    <div class="details-modal-content">
+                                        <p>Seleccionaste el método de pago: Efectivo</p>
+                                    </div>
                                 </div>
                             </details>
+                            <br>
+                            <details>
+                                <summary>
+                                    <div class="button">Crédito</div>
+                                    <div class="details-modal-overlay"></div>
+                                </summary>
+                                <div class="details-modal">
+                                    <div class="details-modal-close"></div>
+                                    <div class="details-modal-title">
+                                        <h1> Tarjeta de Crédito</h1>
+                                    </div>
+                                    <div class="details-modal-content">
+                                                    <form>
+                                            <label for="card_number">Número de Tarjeta:</label>
+                                            <input type="text" id="card_number" name="card_number" required><br>
+                                            <label for="expiry_date">Fecha de Expiración:</label>
+                                            <input type="text" id="expiry_date" name="expiry_date" required><br>
+                                            <label for="cvv">CVV:</label>
+                                            <input type="text" id="cvv" name="cvv" required><br>
+                                            <input type="submit" value="Pagar">
+                                        </form>
+                                    </div>
+                                </div>
+                            </details>
+                            <br>
+                            <details>
+                                <summary>
+                                    <div class="button">Débito</div>
+                                    <div class="details-modal-overlay"></div>
+                                </summary>
+                                <div class="details-modal">
+                                    <div class="details-modal-close"></div>
+                                    <div class="details-modal-title">
+                                        <h1>Tarjeta de Débito</h1>
+                                    </div>
+                                    <div class="details-modal-content">
+                                        <form>
+                                            <label for="card_number">Número de Tarjeta:</label>
+                                            <input type="text" id="card_number" name="card_number" required><br>
+                                            <label for="expiry_date">Fecha de Expiración:</label>
+                                            <input type="text" id="expiry_date" name="expiry_date" required><br>
+                                            <label for="cvv">CVV:</label>
+                                            <input type="text" id="cvv" name="cvv" required><br>
+                                            <input type="submit" value="Pagar">
+                                        </form>        </div>
+                                </div>
+                            </details>
+
+                            <br>
+
+
+                            
                         </div>
                         <div class="calculos">
                             <div class="cuadrosubtotal">
