@@ -1,144 +1,15 @@
-/*.box {
-    box-sizing: border-box;
-    font-family: 'bold, Times New Roman', Times, serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    border-radius: 10px;
-    overflow: hidden;
-    padding-left: 100px;
-}
-
-
-.form {
-    inset: 2px;
-    border-radius: 8px;
-    background: #85c3eade;
-    padding: 50px 40px;
-    display: flex;
-    flex-direction: column;
-}
-
-
-.form h2 {
-    color: #000000;
-    font-weight: 800;
-    text-align: center;
-    letter-spacing: 0.1em;
-}
-
-
-.input-box {
-    position: relative;
-    width: 380px;
-    margin-top: 20px;
-}
-
-
-.input-box input {
-    position: relative;
-    width: 100%;
-    padding: 10px 5px 5px;
-    border: none;
-    outline: none;
-    color: rgb(0, 0, 0);
-    font-size: 1em;
-    letter-spacing: 0.05em;
-}
-
-
-.input-box span {
-    position: relative;
-    left: 0;
-    padding: 10px 5px 10px;
-    font-size: 1em;
-    color: #000000;
-    font-weight: 500;
-    pointer-events: none;
-    letter-spacing: 0.05em;
-    transition: 0.5s;
-}
-
-
-.inputBox input:valid~span,
-.inputBox input:focus~span {
-    color: rgb(0, 0, 0);
-    transform: translateX(0px) translateY(-34px);
-    font-size: 0.75em;
-}
-
-
-.input-box i {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 2px;
-    background: #ffffff;
-    border-radius: 4px;
-    transition: 0.5s;
-    pointer-events: none;
-    z-index: 9;
-}
-
-
-.input-box input:valid~i,
-.input-box input:focus~i {
-    height: 44px;
-    background: transparent;
-}
-
-
-.links a {
-    margin: 10px 0;
-    font-size: 0.75em;
-    color: #ffffff;
-    text-decoration: none;
-}
-
-
-.links a:hover,
-.links a:nth-child(2) {
-    color: #ffffffec;
-}
-
-img {
-    position: absolute;
-    top: 0;
-    width: 13%;
-    margin-bottom: 5px;
-     }
-
-button[type="submit"] {
-    border: none;
-    outline: none;
-    background: #1F547E;
-    padding: 11px 25px;
-    width: 200px;
-    margin-top: 10px;
-    border-radius: 4px;
-    font-weight: 600;
-    cursor: pointer;
-    color: rgb(255, 255, 255);
-}
-
-
-button[type="submit"]:active {
-    opacity: 0.4;
-}*/
 
 body {
-    font-family: Corben;
     background-color: #E1E1E1;
     margin: 0;
 }
 
+
 .centered-image {
     display: block;
     margin: 10px auto;
-    width: 15%;
-    height: 15%;
+    width: 10%;
+    height: 10%;
 }
 
 .container {
