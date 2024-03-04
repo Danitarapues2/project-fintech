@@ -1,6 +1,10 @@
 <link rel="stylesheet" href="/css/factura/agregar.css">
 <script src="/script/factura/calculos.js" defer></script>
 <script defer src="/script/factura/filas.js"></script>
+<script src="/js/Pdf/html2pdf.bundle.min.js"></script>
+<button id="btnCrearPdf" type="button">
+    <i class="fas fa-file-pdf"></i>Exportar pdf
+</button>
 
 <body>
     <div id="factura-container">
@@ -162,7 +166,7 @@
                     {{#each list}}
                     <p> Nº <input type="text" name="numero" id="numero" value="{{maximo}}"> </p>
                     {{/each}}
-                    <div class="calculos_formas_pago">
+                    <!-- Na <div class="calculos_formas_pago">
                         <div class="formas_pago">
                             <div class="titulo_pagos">
                                 <p>Formas de pago</p>
@@ -242,6 +246,7 @@
                                 </div>
                             </details>
                         </div>
+                        -->
                         <div class="calculos">
                             <div class="cuadrosubtotal">
                                 <div class="subtotal_texto"><label for="valor_subtotal">Valor subtotal:</label></div>
@@ -301,3 +306,4 @@
     </div>
 </body>
 <script src="/js/detalle_total.js"></script>
+<script src="/js/Pdf/pdf.js"></script>
