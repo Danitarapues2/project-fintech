@@ -86,6 +86,9 @@ button[type="submit"]:hover {
 
 button[type="button"] {
     background-color: #9e0000;
+    width:400px;
+    height: 30px;
+    margin-right: 300px;
 }
 
 

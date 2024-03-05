@@ -11,4 +11,4 @@ class optenerNumb {
     }
 }
 let numbs = new optenerNumb()
-window.onload = numbs.obtener()
+window.onload = () => numbs.obtener();
